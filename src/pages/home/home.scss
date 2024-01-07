@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.home {
+
+  .features {
+    margin: 80px 104px ;
+
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 46px;
+      margin-bottom: 48px;
+      text-align: center;
+      color: $yellow-color;
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
+      gap: 38px;
+    }
+  }
+}
