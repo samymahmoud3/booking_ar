@@ -1,0 +1,55 @@
+
+.boxCategory {
+  width: 182px;
+  height: 108px;
+  border: 1px solid #E7E7E7;
+  border-radius: 8px;
+  padding: 16px 16px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 12px;
+
+    .car {
+      width: 80px;
+      height: 40px;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      height: 60px;
+
+      p { 
+        font-size: 14;
+        font-weight: 400;
+
+        &:first-child {
+          color: #292121;
+          margin-bottom: 10px;
+        }
+
+        &:last-child {
+          color: #787878;
+        }
+      }
+    }
+  }
+}
+
+.selected {
+  border: 1px solid #C1AE73;
+}

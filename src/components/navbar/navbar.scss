@@ -1,0 +1,53 @@
+@import '../../styles/variables.scss';
+
+.navbar {
+  width: 100%;
+  padding-left: 96px; 
+  padding-right: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+
+  .logo {
+    color: $yellow-color;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+
+    .link {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.2px;
+    
+      &:not(:last-child) {
+        padding-left: 1rem;
+      }
+
+      &.active {
+        color: $soft-color;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .login {
+    width: 153px;
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $light-color;
+    background-color: $yellow-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+}

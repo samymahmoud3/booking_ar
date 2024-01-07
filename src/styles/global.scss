@@ -1,0 +1,24 @@
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  padding: 8px;
+  border-radius: 9px;
+  display: inline-block;
+  color: $light-color;
+  background-color: $yellow-color;
+}

@@ -1,0 +1,254 @@
+@import '../../styles/variables.scss';
+
+.heroSection {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image:  url('/hero-bg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .description {
+    margin: 106px 300px 32px 300px;
+    text-align: center;
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 45px;
+      color: $light-color;
+    }
+  }
+
+  .booking {
+    height: fit-content;
+    margin-bottom: 30px;
+    margin-left: 104px;
+    margin-right: 104px;
+
+    .type {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      background: rgba( 255, 255, 255, 0.15 );
+      backdrop-filter: blur( 0px );
+      -webkit-backdrop-filter: blur( 0px );
+      border-radius: 20px 20px 0 0;
+
+      div {
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        cursor: pointer;
+      }
+
+      .firstActive {
+        background-color: $light-color;
+        border-radius: 0px 20px 0 0;
+
+        path {
+          fill: $yellow-color;
+        }
+
+        p {
+          color: $yellow-color;
+        }
+      }
+
+      .secondActive {
+        background-color: $light-color;
+
+        path {
+          fill: $yellow-color;
+        }
+
+        p {
+          color: $yellow-color;
+        }
+      }
+
+      .thirdActive {
+        background-color: $light-color;
+        border-radius: 20px 0 0 0;
+
+        path {
+          fill: $yellow-color;
+        }
+
+        p {
+          color: $yellow-color;
+        }
+      }
+
+      p {
+        font-weight: 500;
+        line-height: 19px;
+        color: $light-color;
+        margin-right: 8px;
+      }
+    }
+
+    .info {
+      background-color: $light-color;
+      padding: 34px 40px;
+      border-radius: 20px 0 20px 20px;
+      display: flex;
+      align-items: end;
+
+      div {
+
+        .methods {
+          display: flex;
+          align-items: center;
+
+          div:not(:last-child) {
+            margin-left: 20px;
+          }
+
+          .radio {
+            display: flex;
+            align-items: center;
+
+            input[type="radio"] {
+              position: absolute;
+              opacity: 0;
+              width: 18px;
+              height: 18px;
+
+              +.radio-label {
+                font-size: 18px;
+                font-weight: 500;
+
+                &:before {
+                  content: '';
+                  background: #FFFFFF;
+                  border-radius: 100%;
+                  border: 1.5px solid #A59C9C;
+                  display: inline-block;
+                  width: 18px;
+                  height: 18px;
+                  position: relative;
+                  top: 2px;
+                  vertical-align: top;
+                  cursor: pointer;
+                  text-align: center;
+                  transition: all 250ms ease;
+                  margin-left: 6px;
+                }
+              }
+
+              &:checked {
+                +.radio-label {
+                  &:before {
+                    background-color: $yellow-color;
+                    box-shadow: inset 0 0 0 4px #FFFFFF;
+                  }
+                }
+              }
+
+              &:focus {
+                +.radio-label {
+                  &:before {
+                    outline: none;
+                    border-color: $yellow-color;
+                  }
+                }
+              }
+
+              &:disabled {
+                +.radio-label {
+                  &:before {
+                    box-shadow: inset 0 0 0 4px #FFFFFF;
+                    border-color: darken(#FFFFFF, 25%);
+                    background: darken(#FFFFFF, 25%);
+                  }
+                }
+              }
+
+              +.radio-label {
+                &:empty {
+                  &:before {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .details {
+          display: flex;
+          align-items: center;
+          margin-top: 24px;
+
+          .box{
+            position: relative;
+
+            .title {
+              font-weight: 500;
+
+              span {
+                font-size: 24px;
+                line-height: 28px;
+                font-weight: 700;
+                color: #C9B979;
+              }
+            }
+            
+            &:not(:first-child) {
+            margin-right: 24px;
+            }
+
+            &:not(:last-child)::after {
+              position: absolute;
+              content: '';
+              width: 1px;
+              height: 27px;
+              background-color: #E6E6E6;
+              left: -10px;
+              top: 20px;
+            }
+          }
+        }
+
+        .categories {
+
+          .title {
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            margin-top: 8px;
+
+            span {
+              font-size: 24px;
+              font-weight: 500;
+              color: #C9B979;
+            }
+          }
+
+          .category {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
+            grid-gap: 5px;
+          }
+        }
+      }
+
+      .btn {
+        width: 160px;
+        text-align: center;
+        margin-right: 36px;
+
+        .link {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
