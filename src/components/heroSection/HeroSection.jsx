@@ -44,10 +44,10 @@ const HeroSection = () => {
         </div>
 
         <div className='info'>
-          <div>
+          <div className='content'>
             <div className='methods'>
               <div className="radio">
-                <input id="radio-1" name="radio" type="radio" checked />
+                <input id="radio-1" name="radio" type="radio"  />
                 <label htmlFor="radio-1" className="radio-label">ذهاب فقط</label>
               </div>
               <div className="radio">

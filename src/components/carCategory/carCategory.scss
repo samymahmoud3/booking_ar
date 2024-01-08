@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 40px;
+    height: 60px;
     margin-bottom: 12px;
 
     .car {
@@ -28,18 +28,16 @@
       height: 40px;
     }
 
-    .details {
+    .num {
       display: flex;
       flex-direction: column;
-      height: 60px;
 
-      p { 
+      div { 
         font-size: 14;
         font-weight: 400;
 
         &:first-child {
           color: #292121;
-          margin-bottom: 10px;
         }
 
         &:last-child {

@@ -6,9 +6,9 @@ const CarCategory = ({ category, select }) => {
       <p>{ category }</p>
       <div>
         <img className='car' src="/car.jpg" alt="car" />
-        <div className="details">
-          <p>د.إ 145</p>
-          <p>4x 3x</p>
+        <div className="num">
+          <div>د.إ 145</div>
+          <div>4x 3x</div>
         </div>
       </div>
     </div>
