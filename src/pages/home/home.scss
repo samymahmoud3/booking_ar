@@ -18,6 +18,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
       gap: 38px;
+
+      .item {
+        place-self: center;
+      }
     }
   }
 }

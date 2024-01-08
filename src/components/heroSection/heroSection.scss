@@ -182,9 +182,10 @@
         }
 
         .details {
-          display: flex;
-          align-items: center;
           margin-top: 24px;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 29px;
 
           .box{
             position: relative;
@@ -200,9 +201,9 @@
               }
             }
             
-            &:not(:first-child) {
-            margin-right: 24px;
-            }
+            // &:not(:first-child) {
+            // margin-right: 24px;
+            // }
 
             &:not(:last-child)::after {
               position: absolute;
