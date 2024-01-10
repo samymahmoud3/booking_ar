@@ -2,7 +2,7 @@ import './carCategory.scss'
 
 const CarCategory = ({ category, select }) => {
   return (
-    <div className={ `boxCategory ${select}` } onClick={ () => select(category) }>
+    <div className={ `boxCategory ${select}` } >
       <p>{ category }</p>
       <div>
         <img className='car' src="/car.jpg" alt="car" />

@@ -24,3 +24,80 @@ export const choosingData = [
       description: "نهتم بتقديم افضل خدمة من حيث المستوى والخبرة في تقديم الخدمات ",
     },
 ]
+
+export const carTypes = {
+  categories: [
+    {
+      id: 1,
+      category: "سيارة اقتصادية",
+    },
+    {
+      id: 2,
+      category: "سيارة عائلية",
+    },
+    {
+      id: 3,
+      category: "سيارة vip",
+    },
+    {
+      id: 4,
+      category: "فئة رجال الاعمال",
+    },
+    {
+      id: 5,
+      category: "المشاوير الخاصه",
+    },
+    
+  ],
+
+  cars: [
+    {
+      id: 1,
+      name: "Toyota1",
+      category: "سيارة اقتصادية",
+      image: "toyota-car.webp",
+    },
+    {
+      id: 2,
+      name: "Toyota2",
+      category: "سيارة اقتصادية",
+      image: "toyota-car.webp",
+    },
+    {
+      id: 3,
+      name: "Toyota3",
+      category: "سيارة اقتصادية",
+      image: "toyota-car.webp",
+    },
+    {
+      id: 4,
+      name: "Toyota4",
+      category: "سيارة عائلية",
+      image: "toyota-car.webp",
+    },
+    {
+      id: 5,
+      name: "Toyota5",
+      category: "سيارة vip",
+      image: "toyota-car.webp",
+    },
+    {
+      id: 6,
+      name: "Toyota6",
+      category: "فئة رجال الاعمال",
+      image: "toyota-car.webp",
+    },
+    {
+      id: 7,
+      name: "Mercedes",
+      category: "المشاوير الخاصه",
+      image: "toyota-car.webp",
+    },
+     {
+      id: 8,
+      name: "Mercedes",
+      category: "المشاوير الخاصه",
+      image: "toyota-car.webp",
+    },
+  ]
+};
