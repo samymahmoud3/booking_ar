@@ -22,3 +22,57 @@ body {
   color: $light-color;
   background-color: $yellow-color;
 }
+
+.carousel_section {
+    background-color: #FCFAF5;
+    height: fit-content;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    .carousel {
+      overflow: hidden;
+      margin: 50px auto;
+
+      .inner-carousel {
+        display: flex;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .item {
+
+        img {
+          width: 352px;
+          height: 202px;
+          pointer-events: none;
+        }
+
+        p {
+          font-size: 22px;
+          font-weight: 700;
+          line-height: 26.4px;
+          text-align: center;
+        }
+      }
+    }
+
+    .icons {
+      text-align: center;
+
+      .icon {
+        border-radius: 100%;
+        background-color: $light-color;
+        cursor: pointer;
+        padding: 10px;
+
+        &:hover {
+          background-color: $yellow-color;
+          color: $light-color;
+        }
+      }
+
+      .next {
+        margin-left: 32px;
+      }
+    }
+  }

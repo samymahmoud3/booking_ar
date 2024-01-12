@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from "react";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import { useRef, useState } from "react";
+import { ArrowBack, ArrowForward, Star } from "@mui/icons-material";
 import FeatureItem from "../../components/featureItem/FeatureItem";
 import Header from "../../components/heroSection/HeroSection";
-import { choosingData } from "../../data";
+import { choosingData, reviews } from "../../data";
 import { carTypes } from "../../data";
-import { motion } from 'framer-motion';
+import Filter from "../../components/filter/Filter";
 import './home.scss';
 
 const Home = () => {
   const [active, setActive] = useState(carTypes.categories[0].category);
-  const [width, setWidth] = useState(0);
   const carouselRef = useRef(null);
+  const carouselRef2 = useRef(null);
 
   const handleScroll = (direction) => {
     const { current } = carouselRef;
@@ -21,9 +21,14 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
-  }, [])
+  const handleScrollReviews = (direction) => {
+    const { current } = carouselRef2;
+    if (direction === "left") {
+      current.scrollLeft -= 302;
+    } else {
+      current.scrollLeft += 302;
+    }
+  };
 
   return (
     <div className="home">
@@ -45,44 +50,83 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="typeOfCars">
-        <div className="header">
-          <h2 className="title">انواع سيارتنا</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar </p>
-          <div className="filter">
-            { carTypes.categories.map((car) => (
-              <div className={ `category_btn ${active === car.category && "active"}` }
-                key={ car.id }
-                onClick={ () => setActive(car.category) }>
-                { car.category }
-              </div>
-            )) }
-          </div>
-        </div>
+      <section className="typeOfCars carousel_section">
+        <Filter
+          categories={ carTypes.categories }
+          active={ active }
+          setActive={ setActive }
+          title="انواع سيارتنا"
+          paragraph="تختارنا السيارات الأفضل لكل مشروعك"
+          show={ true }
+        />
         <div>
-          <motion.div className='carousel' ref={ carouselRef }>
-            <motion.div className='inner-carousel' drag="x" dragConstraints={ { right: 0, left: -width - 100 } }>
+          <div className='carousel' ref={ carouselRef } style={ { width: "89%" } }>
+            <div className='inner-carousel' >
               { carTypes.cars.map((car) => (
                 active === car.category &&
-                <motion.div className="carName" key={ car.id }>
+                <div className="item" key={ car.id }>
                   <img src={ car.image } alt={ car.name } />
                   <p>{ car.name }</p>
-                </motion.div>
+                </div>
               )) }
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
           <div className="icons">
-            <ArrowForward className="prev icon"
-              onClick={ () => handleScroll("right") }
-              sx={{ color: "#111928", fontSize: "52px" }}
-            />
-            <ArrowBack className="next icon"
+            <ArrowForward className="next icon"
               onClick={ () => handleScroll("left") }
               sx={{ color: "#111928", fontSize: "52px" }}
             />
+            <ArrowBack className="prev icon"
+              onClick={ () => handleScroll("right") }
+              sx={{ color: "#111928", fontSize: "52px" }}
+            />
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="reviews carousel_section">
+        <Filter
+          categories={ carTypes.categories }
+          active={ active }
+          setActive={ setActive }
+          title="تقييمات العملاء"
+          paragraph="تقييمات العملاء عن السيارات التي قدمناه"
+          show={ false }
+        />
+        <div>
+          <div  className='carousel' ref={ carouselRef2 } style={ { width: "79%" } }>
+            <div style={{padding:"30px 10px "}} className='inner-carousel'>
+              { reviews.map((review) => (
+                <div className="item" key={ review.id }>
+                  <img className="quotes" src="/quotes_icon.svg" alt="quotes_icon" />
+                  <div className="avatar">
+                    <img src={ review.avatar } alt={ review.name } />
+                    <h2>{ review.name }</h2>
+                  </div>
+                  <p className="comment">{ review.description }</p>
+                  <div className="star_icons">
+                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
+                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
+                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
+                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
+                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
+                  </div>
+                </div>
+              )) }
+            </div>
+          </div>
+          <div className="icons">
+            <ArrowForward className="next icon"
+              onClick={ () => handleScrollReviews("left") }
+              sx={{ color: "#111928", fontSize: "52px" }}
+            />
+            <ArrowBack className="prev icon"
+              onClick={ () => handleScrollReviews("right") }
+              sx={{ color: "#111928", fontSize: "52px" }}
+            />
+          </div>
+        </div>
+      </section>
 
     </div>
   )

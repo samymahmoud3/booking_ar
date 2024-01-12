@@ -101,3 +101,30 @@ export const carTypes = {
     },
   ]
 };
+
+export const reviews = [
+  {
+    id: 1,
+    avatar: "female_avatar.svg",
+    name: "اسماء مححمد",
+    description: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه ",
+  },
+  {
+    id: 2,
+    avatar: "female_avatar.svg",
+    name: "اسماء مححمد",
+    description: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه ",
+  },
+  {
+    id: 3,
+    avatar: "female_avatar.svg",
+    name: "اسماء مححمد",
+    description: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه ",
+  },
+  {
+    id: 4,
+    avatar: "female_avatar.svg",
+    name: "اسماء مححمد",
+    description: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه ",
+  },
+]
