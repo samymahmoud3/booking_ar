@@ -2,10 +2,11 @@ import { useRef, useState } from "react";
 import { ArrowBack, ArrowForward, Star } from "@mui/icons-material";
 import FeatureItem from "../../components/featureItem/FeatureItem";
 import Header from "../../components/heroSection/HeroSection";
-import { choosingData, reviews } from "../../data";
+import { accordionsData, choosingData, reviews } from "../../data";
 import { carTypes } from "../../data";
 import Filter from "../../components/filter/Filter";
 import './home.scss';
+import Accordion from "../../components/accordion/Accordion";
 
 const Home = () => {
   const [active, setActive] = useState(carTypes.categories[0].category);
@@ -74,11 +75,11 @@ const Home = () => {
           <div className="icons">
             <ArrowForward className="next icon"
               onClick={ () => handleScroll("left") }
-              sx={{ color: "#111928", fontSize: "52px" }}
+              sx={ { color: "#111928", fontSize: "52px" } }
             />
             <ArrowBack className="prev icon"
               onClick={ () => handleScroll("right") }
-              sx={{ color: "#111928", fontSize: "52px" }}
+              sx={ { color: "#111928", fontSize: "52px" } }
             />
           </div>
         </div>
@@ -94,8 +95,8 @@ const Home = () => {
           show={ false }
         />
         <div>
-          <div  className='carousel' ref={ carouselRef2 } style={ { width: "79%" } }>
-            <div style={{padding:"30px 10px "}} className='inner-carousel'>
+          <div className='carousel' ref={ carouselRef2 } style={ { width: "79%" } }>
+            <div style={ { padding: "30px 10px " } } className='inner-carousel'>
               { reviews.map((review) => (
                 <div className="item" key={ review.id }>
                   <img className="quotes" src="/quotes_icon.svg" alt="quotes_icon" />
@@ -105,11 +106,11 @@ const Home = () => {
                   </div>
                   <p className="comment">{ review.description }</p>
                   <div className="star_icons">
-                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
-                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
-                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
-                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
-                    <Star className="icon" sx={{ color: "#FFD231", fontSize: "20px" }} />
+                    <Star className="icon" sx={ { color: "#FFD231", fontSize: "20px" } } />
+                    <Star className="icon" sx={ { color: "#FFD231", fontSize: "20px" } } />
+                    <Star className="icon" sx={ { color: "#FFD231", fontSize: "20px" } } />
+                    <Star className="icon" sx={ { color: "#FFD231", fontSize: "20px" } } />
+                    <Star className="icon" sx={ { color: "#FFD231", fontSize: "20px" } } />
                   </div>
                 </div>
               )) }
@@ -118,14 +119,27 @@ const Home = () => {
           <div className="icons">
             <ArrowForward className="next icon"
               onClick={ () => handleScrollReviews("left") }
-              sx={{ color: "#111928", fontSize: "52px" }}
+              sx={ { color: "#111928", fontSize: "52px" } }
             />
             <ArrowBack className="prev icon"
               onClick={ () => handleScrollReviews("right") }
-              sx={{ color: "#111928", fontSize: "52px" }}
+              sx={ { color: "#111928", fontSize: "52px" } }
             />
           </div>
         </div>
+      </section>
+
+      <section className="accordions_section">
+        <div className="triangle" />
+        <div className="info">
+          <h3>التعليمات</h3>
+          <h2>أي أسئلة؟ ,انظر هنا</h2>
+          <p>
+            هناك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم
+            ,لكن الأغلبية عانت من التغيير بشكل ما.
+          </p>
+        </div>
+        <Accordion data={ accordionsData } />
       </section>
 
     </div>
