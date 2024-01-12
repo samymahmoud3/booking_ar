@@ -142,6 +142,55 @@ const Home = () => {
         <Accordion data={ accordionsData } />
       </section>
 
+      <section className="contact_section">
+        <div className="container">
+          <div className="info">
+            <h3>اتصل بنا</h3>
+            <h2> تواصل معنا</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius tempor
+              ,quis nostrud exervation ullamco,Ut enim adiqua minim Veniam
+              ,quis nostrud exervation ullamco
+            </p>
+            <div className="contact_details">
+              <div className="contact_item">
+              <img src="/home-icon.svg" alt="ourLocation" />
+              <div>
+                <h3>موقعنا</h3>
+                <p>99 شارع جومبلو بارك بيكانبارو,28292. اندونيسيا</p>
+              </div>
+            </div>
+            <div className="contact_item">
+              <img src="/phone-icon.svg" alt="phone-number" />
+              <div>
+                <h3>رقم الهاتف</h3>
+                <p>(+62)81 414 257 9980</p>
+              </div>
+            </div>
+            <div className="contact_item">
+              <img src="/email-icon.svg" alt="email-address" />
+              <div>
+                <h3>عنوان البريد الإلكتروني</h3>
+                <p>info@yourdomain.com</p>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div className="form_container">
+            <img src="/circle.svg" alt="circle-shape" className="circle_shape" />
+            <img src="/dotted-shape.svg" alt="dotted-shape" className="dotted-shape1" />
+            <img src="/dotted-shape.svg" alt="dotted-shape" className="dotted-shape2" />
+            <form action="" className="contact_form">
+              <input type="text" placeholder="اسمك" />
+              <input type="email" name="email" placeholder="بريدك الالكترونى" />
+              <input type="tel" placeholder="رقم الواتس اب" />
+              <textarea type="text" placeholder="رسالتك مع ذكر نوع الخدمة و التواريخ المراد حجزها" className="comment" ></textarea>
+              <input type="submit" value="ارسال" className="btn" />
+            </form>
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 };
