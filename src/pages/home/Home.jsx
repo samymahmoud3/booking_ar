@@ -32,10 +32,10 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <div className="home" id="home">
       <Header />
 
-      <div className="features">
+      <div className="features" id="choose-us">
         <h2 className="title">لماذا تختارنا</h2>
         <div className="items">
           { choosingData.map((item, index) => (
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="typeOfCars carousel_section">
+      <section className="typeOfCars carousel_section" id="car-types">
         <Filter
           categories={ carTypes.categories }
           active={ active }
@@ -85,7 +85,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="reviews carousel_section">
+      <section className="reviews carousel_section" id="reviews">
         <Filter
           categories={ carTypes.categories }
           active={ active }
@@ -129,7 +129,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="accordions_section">
+      <section className="accordions_section" id="faq">
         <div className="triangle" />
         <div className="info">
           <h3>التعليمات</h3>
@@ -142,7 +142,7 @@ const Home = () => {
         <Accordion data={ accordionsData } />
       </section>
 
-      <section className="contact_section">
+      <section className="contact_section" id="contact-us">
         <div className="container">
           <div className="info">
             <h3>اتصل بنا</h3>
