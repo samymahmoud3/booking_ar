@@ -178,8 +178,33 @@
                 height: 52px;
                 border-radius: 10px;
                 width: 330px;
-              }
-              // end time range
+              }// end time range
+
+              // start time one round
+              .oneRoundTime {
+                display: flex;
+                width: 328px;
+                border: none;
+                background-color: #F4F6F9;
+                border-radius: 10px;
+                padding-right: 5px;
+
+                .rc-time-picker-input {
+                  direction: ltr;
+                  border: none;
+                  width: 311px;
+                  text-align: right;
+                  background-color: #F4F6F9;
+                  height: 52px;
+                  border-radius: 10px;
+
+                  &:focus {
+                    border: none;
+                    outline: none;
+                  }
+
+                }
+              }//end time one round
 
               // start date range
               .rs-input-group {
@@ -197,7 +222,32 @@
                 padding-left: 0px;
                 text-align: right;
                 width: 290px;
-              } //end date range
+              }//end date range
+
+              // start one date round
+              .oneRoundDate {
+                position: relative;
+                width: fit-content;
+                border: none;
+                display: flex;
+                align-items: center;
+                background-color: #F4F6F9;
+                width: 320px;
+                border-radius: 10px;
+                padding-right: 5px;
+
+
+                #date-input {
+                  border: none;
+                  outline: none;
+                  margin-right: 5px;
+                  font-size: 9px;
+                  width: 306px;
+                  background-color: #F4F6F9;
+                  border-radius: 10px;
+                  height: 52px;
+                }
+              } // end one round date
             }
           }
 

@@ -1,10 +1,13 @@
 import CarCategory from '../carCategory/CarCategory';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { persons, places } from '../../data';
 import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite-rtl.css';
 import TimeRange from '../rangeDate/RangeDate';
+import DatePicker from "react-datepicker";
+import TimePicker from 'rc-time-picker';
+import 'rc-time-picker/assets/index.css';
+import { persons, places } from '../../data';
 import './heroSection.scss';
 
 const HeroSection = () => {
@@ -15,6 +18,27 @@ const HeroSection = () => {
   const handleSelectCat = (index) => {
     setSelectedCat(index);
   };
+
+  // radio buttons
+  const [round, setRound] = useState("oneRound");
+  const handleChangeRounds = (event) => {
+    const value = event.target.value;
+    setRound(value);
+  }; //end
+
+  // one round date
+  const [selectedDate, setSelectedDate] = useState(null);
+  // Handle the date change event
+  const handleDate = (date) => {
+    setSelectedDate(date);
+  }; //end
+
+  // one round time
+  const format = 'h:mm a';
+  function onChangeOneTime(value) {
+    console.log(value && value.format(format));
+  }
+  // end
 
 
   return (
@@ -45,11 +69,11 @@ const HeroSection = () => {
           <div className='content'>
             <div className='methods'>
               <div className="radio">
-                <input id="radio-1" name="radio" type="radio" />
+                <input id="radio-1" name="radio" type="radio" value="oneRound" onChange={ handleChangeRounds } checked={ round === "oneRound" } />
                 <label htmlFor="radio-1" className="radio-label">ذهاب فقط</label>
               </div>
               <div className="radio">
-                <input id="radio-2" name="radio" type="radio" />
+                <input id="radio-2" name="radio" type="radio" value="towRound" onChange={ handleChangeRounds } checked={ round === "towRound" } />
                 <label htmlFor="radio-2" className="radio-label">ذهاب و عودة</label>
               </div>
             </div>
@@ -91,11 +115,35 @@ const HeroSection = () => {
               }
               <div className='box'>
                 <div className='title'>متى تاريخ الحجز؟ <span>*</span></div>
-                <DateRangePicker placeholder= 'يوم/ شهر/ سنه  - يوم/ شهر/ سنه ' />
+                { round === "oneRound" ?
+                  <div className='oneRoundDate' style={ { border: "none" } }>
+                    <label htmlFor='date-input'><img src='/calender.svg' alt='calender' /></label>
+                    <DatePicker id="date-input"
+                      selected={ selectedDate }
+                      onChange={ handleDate }
+                      dateFormat="yyyy/MM/dd"
+                      placeholderText="يوم / شهر / سنه "
+                    />
+                  </div>
+                  : <DateRangePicker placeholder='يوم/ شهر/ سنه  - يوم/ شهر/ سنه ' />
+                }
               </div>
               <div className='box'>
                 <div className='title'>الوقت<span>*</span></div>
-                <TimeRange />
+                { round === "oneRound"
+                  ?
+                  <div className="oneRoundTime">
+                    <img src='./clock.svg' alt='clock' />
+                    <TimePicker
+                      placeholder='حدد الوقت الوصول'
+                      showSecond={ false }
+                      onChange={ onChangeOneTime }
+                      format={ format }
+                      use12Hours
+                    />
+                  </div>
+                  : <TimeRange />
+                }
               </div>
               <div className='box'>
                 <div className='title'>الركّاب <span>*</span></div>
@@ -126,7 +174,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <Link className='btn link' to='/booking' style={{textDecoration:"none", color:"#ffffff"}} >
+          <Link className='btn link' to='/booking' style={ { textDecoration: "none", color: "#ffffff" } } >
             <div className='bttn'>حجز</div>
           </Link>
         </div>
