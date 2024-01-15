@@ -10,7 +10,7 @@ body {
   font-family: 'Tajawal', sans-serif;
 }
 
-.link {
+.link{
   text-decoration: none;
   color: inherit;
 }
@@ -76,3 +76,80 @@ body {
       }
     }
   }
+
+  
+
+.group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  .icon1 {
+    position: absolute;
+    right: 3px;
+  }
+
+  .icon2 {
+    position: absolute;
+    left: 1px;
+  }
+
+  input {  
+    font-size: 11px;
+    font-weight: 500;
+    padding: 10px 15px 10px 5px;
+    display: block;
+    width: 169px;
+    border: none;
+    border-bottom: 2px solid #D9D9D9;
+
+    &::-webkit-calendar-picker-indicator {
+  display:none !important;
+}
+
+    &:focus {
+      outline: none;
+
+      /* active state */
+      ~ {
+        label {
+          display: none;
+        }
+      }
+    }
+
+    &:valid {
+      ~ {
+        label {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .show-bkg {
+    background-color: #F4F6F9;
+    border-radius: 10px;
+    height: 54px;
+    width: 330px;
+  }
+
+  .show-label {
+    top: 20px;
+  }
+
+  /* LABEL */
+  label {
+    color: #999;
+    font-size: 9px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    right: 18px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+}

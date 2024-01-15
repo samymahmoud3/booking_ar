@@ -1,0 +1,623 @@
+@import '../../styles/variables.scss';
+
+.booking {
+  padding-bottom: 124px;
+  box-shadow: 6px 6px 16px 0px rgba(0, 0, 0, 0.4);
+
+  .react-tel-input .form-control {
+    width: 255px;
+    height: 52px;
+    border: none;
+    background-color: #F4F6F9;
+    text-align: right;
+    margin-right: 84px;
+    padding-right: 15px;
+    border-radius: 10px;
+  }
+
+  .container {
+    width: 85.5%;
+    margin: auto;
+
+    .features {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(308px, 1fr));
+      align-items: center;
+      padding-top: 10px;
+      gap: 10px;
+      margin-bottom: 76px;
+
+      .feature {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 43px;
+          height: 53px;
+        }
+
+        .description {
+          margin-right: 10px;
+
+
+          h3 {
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 400;
+          }
+
+          p {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 400;
+            color: #787878;
+          }
+        }
+      }
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      align-items: start;
+      gap: 30px;
+
+      .information {
+        width: 754px;
+        border-radius: 20px;
+
+        .info_div {
+          width: 100%;
+          padding: 45px 25px;
+          border-radius: 20px;
+          background: #ffffff;
+          box-shadow: 0px 5px 13px #666666;
+
+          h3 {
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #1A202C;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 30px;
+          }
+        }
+
+        .booking_info {
+
+          .radio_buttons {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+
+            div:not(:last-child) {
+              margin-left: 20px;
+            }
+
+            .radio {
+              display: flex;
+              align-items: center;
+
+              input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+                width: 18px;
+                height: 18px;
+
+                +.radio-label {
+                  font-size: 18px;
+                  font-weight: 500;
+
+                  &:before {
+                    content: '';
+                    background: #FFFFFF;
+                    border-radius: 100%;
+                    border: 1.5px solid #A59C9C;
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                    position: relative;
+                    top: 2px;
+                    vertical-align: top;
+                    cursor: pointer;
+                    text-align: center;
+                    transition: all 250ms ease;
+                    margin-left: 6px;
+                  }
+                }
+
+                &:checked {
+                  +.radio-label {
+                    &:before {
+                      background-color: $yellow-color;
+                      box-shadow: inset 0 0 0 4px #FFFFFF;
+                    }
+                  }
+                }
+
+                &:focus {
+                  +.radio-label {
+                    &:before {
+                      outline: none;
+                      border-color: $yellow-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .booking_inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+
+            .box {
+
+              .title {
+                font-weight: 500;
+                margin-bottom: 5px;
+                margin-right: 10px;
+
+                span {
+                  font-size: 24px;
+                  line-height: 28px;
+                  font-weight: 700;
+                  color: #C9B979;
+                }
+              }
+
+              // start time range
+              #react-time-range {
+                background-color: #F4F6F9;
+                padding: 15px 5px;
+                height: 52px;
+                border-radius: 10px;
+                width: 330px;
+              }
+              // end time range
+
+              // start date range
+              .rs-input-group {
+                border-radius: 10px;
+                border: none;
+                background-color: #F4F6F9;
+                direction: ltr;
+              }
+
+              .rs-picker-daterange>.rs-input-group.rs-input-group-inside .rs-input {
+                border-radius: 10px;
+                border: none;
+                background-color: #F4F6F9;
+                height: 54px;
+                padding-left: 0px;
+                text-align: right;
+                width: 290px;
+              } //end date range
+            }
+          }
+
+          .categories {
+            padding-left: 100px;
+
+            .title {
+              font-size: 15px;
+              font-weight: 400;
+              margin-bottom: 8px;
+              margin-top: 8px;
+
+              span {
+                font-size: 24px;
+                font-weight: 500;
+                color: #C9B979;
+              }
+            }
+
+            .category {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
+              grid-gap: 15px;
+            }
+          }
+        }
+
+        .addition_info {
+
+          .attach_files {
+
+            p {
+              font-size: 16px;
+              line-height: 16px;
+              font-weight: 500;
+              color: #9094A0;
+              margin-bottom: 16px;
+
+              span {
+                font-size: 36px;
+                line-height: 43px;
+                font-weight: 700;
+                color: #C9B979;
+              }
+            }
+
+            .content {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .upload_file {
+                width: 247px;
+                height: 269px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #FAFCFE;
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='13' ry='13' stroke='%23E0E5F2FF' stroke-width='3' stroke-dasharray='14' stroke-dashoffset='9' stroke-linecap='round'/%3e%3c/svg%3e");
+                border-radius: 13px;
+
+                h2 {
+                  font-size: 20px;
+                  line-height: 32px;
+                  font-weight: 700;
+                  margin-bottom: 12px;
+                  color: $yellow-color;
+                }
+
+                p {
+                  font-size: 12px;
+                  line-height: 20px;
+                  font-weight: 500;
+                  color: #8F9BBA;
+                }
+              }
+
+              .addition_options {
+                width: 420px;
+
+                h2 {
+                  font-size: 15px;
+                  line-height: 18px;
+                  font-weight: 700;
+                  color: #010101;
+                  margin-bottom: 18px;
+
+                  span {
+                    font-size: 24px;
+                    list-style: 28px;
+                    font-weight: 700;
+                    color: #C9B979;
+                    margin-right: 5px;
+                  }
+                }
+
+                .checkbox_inputs {
+
+                  .checkbox {
+                    display: flex;
+                    align-items: center;
+
+                    /* The container */
+                    .container {
+                      display: block;
+                      position: relative;
+                      margin-bottom: 15px;
+                      margin-right: 0;
+                      cursor: pointer;
+                      -webkit-user-select: none;
+                      -moz-user-select: none;
+                      -ms-user-select: none;
+                      user-select: none;
+                      font-size: 12px;
+                      line-height: 21px;
+                      font-weight: 500;
+                      color: #212529;
+
+                      .text {
+                        color: #9094A0;
+                      }
+                    }
+
+                    /* Hide the browser's default checkbox */
+                    .container input {
+                      position: absolute;
+                      opacity: 0;
+                      cursor: pointer;
+                      height: 0;
+                      width: 0;
+                    }
+
+                    /* Create a custom checkbox */
+                    .checkmark {
+                      position: absolute;
+                      top: 10px;
+                      left: 50px;
+                      height: 25px;
+                      width: 25px;
+                      border: 1.7px solid #8D9094;
+                      border-radius: 3px;
+                      background-color: #fff;
+                    }
+
+                    /* On mouse-over, add a grey background color */
+                    .container:hover input~.checkmark {
+                      background-color: #ccc;
+                    }
+
+                    /* When the checkbox is checked, add a blue background */
+                    .container input:checked~.checkmark {
+                      background-color: $yellow-color;
+                    }
+
+                    /* Create the checkmark/indicator (hidden when not checked) */
+                    .checkmark:after {
+                      content: "";
+                      position: absolute;
+                      display: none;
+                    }
+
+                    /* Show the checkmark when checked */
+                    .container input:checked~.checkmark:after {
+                      display: block;
+                    }
+
+                    /* Style the checkmark/indicator */
+                    .container .checkmark:after {
+                      left: 9px;
+                      top: 5px;
+                      width: 5px;
+                      height: 10px;
+                      border: solid white;
+                      border-width: 0 3px 3px 0;
+                      -webkit-transform: rotate(45deg);
+                      -ms-transform: rotate(45deg);
+                      transform: rotate(45deg);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .notes {
+            margin-top: 40px;
+
+            h3 {
+              font-size: 15px;
+              line-height: 18px;
+              font-weight: 700;
+              margin-bottom: 8px;
+              color: #010101;
+            }
+
+            textarea {
+              width: 100%;
+              height: 151px;
+              padding: 18.5px 20px 16.5px 157px;
+              background-color: #F4F6F9;
+              border-radius: 10px;
+              border: none;
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+        }
+
+        .customer_info {
+
+          .inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
+            gap: 22px;
+
+            .number_code {
+              .react-tel-input {
+                width: 338px;
+              }
+
+              .react-tel-input .selected-flag .arrow {
+                left: -57px;
+              }
+
+              .react-tel-input .flag-dropdown {
+                border-radius: 10px;
+                height: 52px;
+                border: none;
+                background-color: #F4F6F9;
+              }
+
+              .react-tel-input .selected-flag {
+                width: 75px;
+                height: 52px;
+                border: none;
+                background-color: #F4F6F9;
+                border-radius: 10px;
+
+              }
+
+              .react-tel-input .selected-flag .flag {
+                right: 10px;
+
+              }
+            }
+          }
+        }
+      }
+
+      .payment_options {
+        box-shadow: 0 0 0;
+
+        .options {
+          width: 100%;
+          gap: 14px;
+          display: flex;
+          align-items: center;
+
+          .option {
+            position: relative;
+            width: fit-content;
+            height: 105px;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 13px #666666;
+            text-align: center;
+
+            h4 {
+              font-size: 16px;
+              line-height: 24px;
+              font-weight: 500;
+              color: #1A202C;
+              padding-bottom: 15px;
+              border-bottom: 1.5px solid #DDDFE1;
+            }
+
+            p {
+              padding-top: 16px;
+              font-size: 14px;
+              line-height: 21px;
+              font-weight: 400;
+              color: $yellow-color;
+            }
+
+            .question_mark {
+              position: absolute;
+              bottom: -5px;
+              left: -5px;
+            }
+          }
+        }
+      }
+
+      .payment_info {
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          h4 {
+            font-size: 18px;
+            line-height: 27px;
+            font-weight: 700;
+            color: $yellow-color;
+          }
+
+          p {
+            font-size: 24px;
+            line-height: 36px;
+            font-weight: 700;
+            color: $yellow-color;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 8px;
+
+            h4 {
+              font-size: 18px;
+              line-height: 27px;
+              font-weight: 500;
+              color: #1A202C;
+            }
+
+            p {
+              font-size: 24px;
+              line-height: 36px;
+              font-weight: 500;
+              color: #9094A0;
+            }
+          }
+        }
+      }
+
+      .card_info {
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+
+          .cards {
+            img {
+              &:not(:last-child) {
+                margin-left: 12px;
+              }
+            }
+          }
+        }
+
+        .inputs {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
+          gap: 22px;
+
+          #date-input {
+            width: 338px;
+          }
+        }
+
+        .pay_btn {
+          width: 153px;
+          height: 52px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 32px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .booking_map {
+      width: 448px;
+      height: 436px;
+      border-radius: 20px;
+      border: 2px solid #E2CE7F;
+      background-color: rgb(0, 0, 0);
+    }
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: 338px;
+
+    label {
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #010101;
+
+      span {
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 700;
+        color: #C9B979;
+      }
+    }
+
+    input {
+      padding: 18.5px 20px 16.5px 157px;
+      border-radius: 10px;
+      border: none;
+      background-color: #F4F6F9;
+      text-align: right;
+      font-size: 14px;
+      line-height: 16.8px;
+      font-weight: 500;
+
+      &:focus {
+        outline: none;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+  }
+}

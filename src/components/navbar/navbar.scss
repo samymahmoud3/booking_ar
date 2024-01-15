@@ -24,6 +24,8 @@
       font-size: 16px;
       font-weight: 500;
       line-height: 19.2px;
+      text-decoration: none;
+      color: $main-color;
     
       &:not(:last-child) {
         padding-left: 1rem;
@@ -49,5 +51,7 @@
     align-items: center;
     margin-top: 17px;
     margin-bottom: 17px;
+    text-decoration: none;
+    color: $light-color;
   }
 }

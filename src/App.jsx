@@ -1,8 +1,9 @@
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
-import './styles/global.scss';
 import Navbar from "./components/navbar/Navbar";
+import Booking from "./pages/booking/Booking";
+import './styles/global.scss';
 
 function App() {
   const Layout = () => {
@@ -25,6 +26,10 @@ function App() {
         {
           path: '/',
           element: <Home />
+        },
+        {
+          path: '/booking',
+          element: <Booking />
         },
         {
           path: '/footer',

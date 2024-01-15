@@ -15,26 +15,26 @@ const Footer = () => {
         <div className="sections">
           <h2>الاقسام</h2>
           <div className="links">
-            <HashLink className="link" smooth to="/#home">الرئيسية</HashLink>
-            <HashLink className="link" smooth to="/#choose-us">لماذا تختارنا</HashLink>
-            <HashLink className="link" smooth to="/#car-types">انواع سيارتنا</HashLink>
-            <HashLink className="link" smooth to="/#reviews">تقييمات العملاء</HashLink>
-            <HashLink className="link" smooth to="/#faq">الاسئلة الشائعة</HashLink>
-            <HashLink className="link" smooth to="/#contact-us">تواصل معنا</HashLink>
-            <HashLink className="link" smooth to="/#">اسعارنا</HashLink>
+            <HashLink className="link" smooth="true" to="/#home">الرئيسية</HashLink>
+            <HashLink className="link" smooth="true" to="/#choose-us">لماذا تختارنا</HashLink>
+            <HashLink className="link" smooth="true" to="/#car-types">انواع سيارتنا</HashLink>
+            <HashLink className="link" smooth="true" to="/#reviews">تقييمات العملاء</HashLink>
+            <HashLink className="link" smooth="true" to="/#faq">الاسئلة الشائعة</HashLink>
+            <HashLink className="link" smooth="true" to="/#contact-us">تواصل معنا</HashLink>
+            <HashLink className="link" smooth="true" to="/#">اسعارنا</HashLink>
           </div>
         </div>
         <div className="quick-links">
           <h2>روابط سريعة</h2>
           <div className="links">
-            <Link className="link" smooth to="/">برنامج الولاء و المكافات</Link>
-            <Link className="link" smooth to="/">لوكالات السفر و السياحة</Link>
-            <Link className="link" smooth to="/">الشروط و الاحكام</Link>
-            <Link className="link" smooth to="/">سياسة الخصوصية</Link>
-            <Link className="link" smooth to="/">كن شريكا</Link>
-            <Link className="link" smooth to="/">مدونتنا</Link>
-            <Link className="link" smooth to="/">الفنادق</Link>
-            <Link className="link" smooth to="/">العروض</Link>
+            <Link className="link" smooth="true" to="/">برنامج الولاء و المكافات</Link>
+            <Link className="link" smooth="true" to="/">لوكالات السفر و السياحة</Link>
+            <Link className="link" smooth="true" to="/">الشروط و الاحكام</Link>
+            <Link className="link" smooth="true" to="/">سياسة الخصوصية</Link>
+            <Link className="link" smooth="true" to="/">كن شريكا</Link>
+            <Link className="link" smooth="true" to="/">مدونتنا</Link>
+            <Link className="link" smooth="true" to="/">الفنادق</Link>
+            <Link className="link" smooth="true" to="/">العروض</Link>
           </div>
         </div>
         <div className="social-media">

@@ -8,14 +8,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image:  url('/hero-bg.webp');
+  background-image: url('/hero-bg.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
+
+
   .description {
     margin: 106px 300px 32px 300px;
     text-align: center;
+
     h2 {
       font-size: 28px;
       font-weight: 700;
@@ -35,10 +38,10 @@
       height: 56px;
       display: flex;
       align-items: center;
-      background: rgba( 255, 255, 255, 0.15 );
-      backdrop-filter: blur( 0px );
-      -webkit-backdrop-filter: blur( 0px );
-      border-radius: 20px 20px 0 0;        
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      border-radius: 20px 20px 0 0;
 
       div {
         display: flex;
@@ -62,18 +65,6 @@
       }
 
       .secondActive {
-        background-color: $light-color;
-
-        path {
-          fill: $yellow-color;
-        }
-
-        p {
-          color: $yellow-color;
-        }
-      }
-
-      .thirdActive {
         background-color: $light-color;
         border-radius: 20px 0 0 0;
 
@@ -171,7 +162,7 @@
           grid-template-columns: repeat(5, 1fr);
           gap: 29px;
 
-          .box{
+          .box {
             position: relative;
 
             .title {
@@ -184,10 +175,6 @@
                 color: #C9B979;
               }
             }
-            
-            // &:not(:first-child) {
-            // margin-right: 24px;
-            // }
 
             &:not(:last-child)::after {
               position: absolute;
@@ -197,6 +184,46 @@
               background-color: #E6E6E6;
               left: -10px;
               top: 20px;
+            }
+
+            .rs-input-group {
+              border-radius: 0px;
+              border: none;
+              background-color: transparent;
+              direction: ltr;
+              border-bottom: 2px solid #D9D9D9;
+              color: #9094A0;
+              font-size: 9px;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+
+            .rs-picker-daterange>.rs-input-group.rs-input-group-inside .rs-input {
+              border-radius: 0px;
+              height: 34px;
+              padding-left: 0px;
+              text-align: right;
+              width: 169px;
+              font-size: 9px;
+              background-color: transparent;
+              color: #9094A0;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+
+            .rs-input-group.rs-input-group-inside .rs-input-group-addon {
+              padding: 0;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
             }
           }
         }
@@ -224,12 +251,12 @@
         }
       }
 
-      .btn {
+      .link {
         width: 160px;
         text-align: center;
         margin-right: 36px;
 
-        .link {
+        .bttn {
           font-size: 18px;
           font-weight: 700;
         }

@@ -1,0 +1,31 @@
+#react-time-range {
+  padding: 5px;
+  display: flex;
+  background-color: transparent;
+  padding: 0;
+  border-bottom: 2px solid #D9D9D9;
+  height: 36px;
+}
+
+#react-time-range .component {
+  display: flex !important;
+  height: 0px;
+  align-items: center;
+  overflow: hidden  !important;
+  padding: 10px 0 10px 0px !important;
+  color: #9094A0;
+  font-size: 11px;
+}
+
+#react-time-range select {
+  border: none !important;
+  background-color: transparent !important;
+  &:focus {
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+#react-time-range .component .label {
+  font-size: 9px;
+}
