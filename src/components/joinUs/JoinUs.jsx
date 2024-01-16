@@ -1,6 +1,6 @@
 import { joinUsData, specialData } from "../../data";
 import FeatureItem from "../featureItem/FeatureItem";
-import "./JoinUs.scss";
+import "./joinUs.scss";
 
 const JoinUs = () => {
   return (
