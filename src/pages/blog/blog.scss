@@ -1,0 +1,34 @@
+
+.blog {
+
+  .blog_details {
+    width: 74%;
+    margin: 0 auto;
+    margin-top: 56px;
+
+    .container {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      h2 {
+        font-size: 36px;
+        line-height: 48px;
+        font-weight: 700;
+        color: #1A202C;
+        margin-top: 45px;
+      }
+
+      p {
+        font-size: 28px;
+        line-height: 80px;
+        font-weight: 500;
+        margin: 32px 0;
+        color: #718096;
+      }
+    }
+  }
+}

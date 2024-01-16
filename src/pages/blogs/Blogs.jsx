@@ -62,7 +62,7 @@ const Blogs = () => {
                     <img src='/calender.svg' alt='calender' />
                     { blog.date }
                   </Typography>
-                  <Link to={`/blogs/blog`} style={ { fontSize: "10px", lineHeight: "12px", fontWeight: 700, color: "#BBA664", textDecoration: "none" } } >
+                  <Link to={`/blogs/${blog.id}`} style={ { fontSize: "10px", lineHeight: "12px", fontWeight: 700, color: "#BBA664", textDecoration: "none" } } >
                     اقرأ المزيد
                     <img src='/double-arrow.svg' alt='double-arrow' />
                   </Link>

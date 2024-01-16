@@ -1,0 +1,101 @@
+import { useRef, useState } from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea, CardActions } from '@mui/material';
+import Filter from '../../components/filter/Filter';
+import { blogsData } from '../../data';
+import { ArrowBack, ArrowForward } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+import './blog.scss';
+
+const Blog = () => {
+  const [active, setActive] = useState(blogsData.categories[0].category);
+  const carouselRef = useRef(null);
+
+  const handleScroll = (direction) => {
+    const { current } = carouselRef;
+    if (direction === "left") {
+      current.scrollLeft -= 302;
+    } else {
+      current.scrollLeft += 302;
+    }
+  };
+
+  return (
+    <div className="blog">
+      <section className='blog_details'>
+        <div className='container'>
+          <img src='/blog-details.webp' alt='blog-details' />
+          <h2>مفاهيم ادارة منصات السوشيال ميديا  ادارة منصات</h2>
+          <p>
+            عمل تحليل شامل و دراسة السوق و المنافسين و نقاط قوتهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و المنافسين و نقاط قوتهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم  و ضعفهم و المنافسين و نقاط قوتهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم  و ضعفهم 
+          </p>
+          <p style={{textAlign:"left"}}>10 أبريل 2023</p>
+        </div>
+      </section>
+      <section >
+        <div className='blogs_filter' style={ { marginTop: '64px' } }>
+          <Filter
+            categories={ blogsData.categories }
+            active={ active }
+            setActive={ setActive }
+            title="باقى مدوناتنا"
+            paragraph="Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar "
+            show={ false }
+          />
+        </div>
+        <div className='carousel_section' style={ { backgroundColor: "#ffffff", paddingTop: "0px" } }>
+          <div className='carousel' ref={ carouselRef } style={ { width: "89%" } }>
+            <div className='inner-carousel'>
+              { blogsData.blogs.map((blog) => (
+                active === blog.category &&
+                <Card sx={ { width: "284px", borderRadius: "16px", marginLeft: "32px", marginBottom: "10px" } } key={ blog.id }>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      image={ `/${blog.image}` }
+                      alt={ blog.title }
+                    />
+                    <CardContent sx={ { border: "none", padding: "16px" } } className='card'>
+                      <Typography gutterBottom sx={ { fontSize: "18px", lineHeight: "21px", fontWeight: 700 } } variant="h5" component="div">
+                        { blog.title }
+                      </Typography>
+                      <Typography variant="body2" sx={ { fontSize: "14px", lineHeight: "24px", fontWeight: 400, color: "#808082" } } >
+                        { blog.description }
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions sx={ { display: "flex", justifyContent: "space-between" } }>
+                    <Typography variant="body2" sx={ { fontSize: "10px", lineHeight: "12px", fontWeight: 400, color: "#757B82", display: "flex", alignItems: "center", gap: "5px" } }>
+                      <img src='/calender.svg' alt='calender' />
+                      { blog.date }
+                    </Typography>
+                    <Link to={ `/blogs/${blog.id}` } style={ { fontSize: "10px", lineHeight: "12px", fontWeight: 700, color: "#BBA664", textDecoration: "none" } } >
+                      اقرأ المزيد
+                      <img src='/double-arrow.svg' alt='double-arrow' />
+                    </Link>
+                  </CardActions>
+                </Card>
+              )) }
+            </div>
+          </div>
+          <div className="icons">
+            <ArrowForward className="next icon"
+              onClick={ () => handleScroll("left") }
+              sx={ { color: "#111928", fontSize: "52px" } }
+            />
+            <ArrowBack className="prev icon"
+              onClick={ () => handleScroll("right") }
+              sx={ { color: "#111928", fontSize: "52px" } }
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+};
+
+export default Blog
