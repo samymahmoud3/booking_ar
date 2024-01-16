@@ -28,7 +28,7 @@ const Footer = () => {
           <h2>روابط سريعة</h2>
           <div className="links">
             <Link className="link" smooth="true" to="/">برنامج الولاء و المكافات</Link>
-            <Link className="link" smooth="true" to="/">لوكالات السفر و السياحة</Link>
+            <Link className="link" to="/travel-partners">لوكالات السفر و السياحة</Link>
             <Link className="link" smooth="true" to="/">الشروط و الاحكام</Link>
             <Link className="link" smooth="true" to="/">سياسة الخصوصية</Link>
             <Link className="link" to="/partner">كن شريكا</Link>

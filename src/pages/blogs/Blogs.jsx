@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions } from '@mui/material';
 import Filter from '../../components/filter/Filter';
 import { blogsData } from '../../data';
-import './blogs.scss';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 

@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss';
+
+.travel_partners {
+
+  .work_features {
+    padding: 72px 104px;
+    background-color: #FCFAF5;
+
+    .title {
+      margin-bottom: 48px;
+      font-size: 36px;
+      line-height: 46px;
+      font-weight: 700;
+      color: $yellow-color;
+      text-align: center;
+    }
+
+    .feature {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+
+      .text {
+        max-width: 565px;
+
+        h2 {
+          font-size: 78px;
+          line-height: 117px;
+          font-weight: 900;
+          color: $yellow-color;
+        }
+
+        h3 {
+          font-size: 24px;
+          line-height: 28px;
+          font-weight: 700;
+          color: $main-color;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 30px;
+          font-weight: 400;
+          color: #464C63;
+        }
+      }
+
+      .image {
+        max-width: 550px;
+      }
+    }
+  }
+}
