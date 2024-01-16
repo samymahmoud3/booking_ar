@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Booking from "./pages/booking/Booking";
 import './styles/global.scss';
+import Blogs from "./pages/blogs/Blogs";
 
 function App() {
   const Layout = () => {
@@ -30,6 +31,10 @@ function App() {
         {
           path: '/booking',
           element: <Booking />
+        },
+        {
+          path: '/blogs',
+          element: <Blogs />
         },
         {
           path: '/footer',
