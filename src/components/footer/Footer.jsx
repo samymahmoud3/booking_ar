@@ -31,7 +31,7 @@ const Footer = () => {
             <Link className="link" smooth="true" to="/">لوكالات السفر و السياحة</Link>
             <Link className="link" smooth="true" to="/">الشروط و الاحكام</Link>
             <Link className="link" smooth="true" to="/">سياسة الخصوصية</Link>
-            <Link className="link" smooth="true" to="/">كن شريكا</Link>
+            <Link className="link" to="/partner">كن شريكا</Link>
             <Link className="link" to="/blogs">مدونتنا</Link>
             <Link className="link" smooth="true" to="/">الفنادق</Link>
             <Link className="link" smooth="true" to="/">العروض</Link>

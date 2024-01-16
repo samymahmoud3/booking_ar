@@ -6,6 +6,7 @@ import Booking from "./pages/booking/Booking";
 import './styles/global.scss';
 import Blogs from "./pages/blogs/Blogs";
 import Blog from "./pages/blog/Blog";
+import Partner from "./pages/partner/Partner";
 
 function App() {
   const Layout = () => {
@@ -34,6 +35,10 @@ function App() {
           element: <Booking />
         },
         {
+          path: '/partner',
+          element: <Partner />
+        },
+        {
           path: '/blogs',
           element: <Blogs />
         },
@@ -41,6 +46,7 @@ function App() {
           path: '/blogs/:id',
           element: <Blog />
         },
+
         {
           path: '/footer',
           element: <Footer />

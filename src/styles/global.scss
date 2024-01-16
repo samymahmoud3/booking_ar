@@ -153,3 +153,77 @@ body {
     -webkit-transition: 0.2s ease all;
   }
 }
+
+/* start partner hero */
+.partner_hero {
+  width: 100%;
+  min-height: 640px;
+  background-image: url('/partner-hero.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+
+  .hero_content {
+    display: flex;
+    justify-content: space-between;
+    color: $light-color;
+    width: 85.5%;
+    margin: auto;
+
+    .right_div {
+      max-width: 358px;
+
+      h1 {
+        font-size: 36px;
+        line-height: 43px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 24px;
+      }
+
+      .btn {
+        width: 182px;
+        height: 60px;
+        border-radius: 9;
+        padding: 8px;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: $light-color;
+      }
+    }
+
+    .left_div {
+      max-width: 363px;
+
+      div {
+        &:not(:last-child) {
+          margin-bottom: 32px;
+        }
+        h2 {
+          font-size: 24px;
+          line-height: 28px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 19px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+/* end partner hero */
