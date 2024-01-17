@@ -9,6 +9,7 @@ import Blog from "./pages/blog/Blog";
 import Partner from "./pages/partner/Partner";
 import TravelPartners from "./pages/travelPartners/TravelPartners";
 import PartnerDetails from "./pages/partnerDetails/PartnerDetails";
+import Registration from "./pages/registration/Registration";
 
 function App() {
   const Layout = () => {
@@ -56,7 +57,10 @@ function App() {
           path: '/blogs/:id',
           element: <Blog />
         },
-
+        {
+          path: '/registration',
+          element: <Registration />
+        },
         {
           path: '/footer',
           element: <Footer />
