@@ -11,6 +11,7 @@ import PartnerDetails from "./pages/partnerDetails/PartnerDetails";
 import Registration from "./pages/registration/Registration";
 import Login from "./pages/login/Login";
 import './styles/global.scss';
+import Prices from "./pages/prices/Prices";
 
 function App() {
   const Layout = () => {
@@ -65,6 +66,10 @@ function App() {
         {
           path: '/login',
           element: <Login />
+        },
+        {
+          path: '/prices',
+          element: <Prices />
         },
         {
           path: '/footer',

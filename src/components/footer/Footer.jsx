@@ -21,7 +21,7 @@ const Footer = () => {
             <HashLink className="link" smooth="true" to="/#reviews">تقييمات العملاء</HashLink>
             <HashLink className="link" smooth="true" to="/#faq">الاسئلة الشائعة</HashLink>
             <HashLink className="link" smooth="true" to="/#contact-us">تواصل معنا</HashLink>
-            <HashLink className="link" smooth="true" to="/#">اسعارنا</HashLink>
+            <Link className="link" to="/prices">اسعارنا</Link>
           </div>
         </div>
         <div className="quick-links">
