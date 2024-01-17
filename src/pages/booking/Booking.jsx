@@ -283,7 +283,7 @@ const Booking = () => {
                   <input type='text' id='fullName' placeholder='ادخل اسمك' required />
                 </div>
                 <div className='input' >
-                  <label htmlFor='fullName'>رقم الواتساب<span>*</span></label>
+                  <label htmlFor='phone'>رقم الواتساب<span>*</span></label>
                   <div>
                     <PhoneInput
                       id="phone"

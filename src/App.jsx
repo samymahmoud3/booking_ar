@@ -3,13 +3,14 @@ import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Booking from "./pages/booking/Booking";
-import './styles/global.scss';
 import Blogs from "./pages/blogs/Blogs";
 import Blog from "./pages/blog/Blog";
 import Partner from "./pages/partner/Partner";
 import TravelPartners from "./pages/travelPartners/TravelPartners";
 import PartnerDetails from "./pages/partnerDetails/PartnerDetails";
 import Registration from "./pages/registration/Registration";
+import Login from "./pages/login/Login";
+import './styles/global.scss';
 
 function App() {
   const Layout = () => {
@@ -60,6 +61,10 @@ function App() {
         {
           path: '/registration',
           element: <Registration />
+        },
+        {
+          path: '/login',
+          element: <Login />
         },
         {
           path: '/footer',

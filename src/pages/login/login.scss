@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-.registration {
+.login_form {
   width: 100%;
   margin: 88px auto;
   display: flex;
@@ -45,7 +45,7 @@
         padding-right: 16px;
         background-color: #F4F6F9;
 
-        &:not(:last-child) {
+        &:first-child {
             margin-bottom: 30px;
         }
 
@@ -61,40 +61,19 @@
             outline: none;
           }
         }
-      }
+      } 
 
-      // number input
-      .react-tel-input .form-control {
-        margin-right: 75px;
-        height: 52px;
-        padding: 0;
-        text-align: right;
-        border: none;
-        border-radius: 8px;
-        padding-right: 16px;
-        background-color: #F4F6F9;
+      .password_recovery {
+        width: 100%;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: $yellow-color;
+        cursor: pointer;
       }
-
-      .react-tel-input .flag-dropdown { 
-        border: none;
-        border-radius: 8px;
-        background-color: #F4F6F9;
-      }
-
-      .react-tel-input .selected-flag {
-        width: 60px;
-        border: none;
-          border-radius: 8px;
-          background-color: #F4F6F9;
-      }
-
-      .react-tel-input .selected-flag .flag {
-        right: 10px;
-      }
-
-      .react-tel-input .selected-flag .arrow {
-        left: -30px;
-      } // end number input
 
       .btn {
         width: 375px;
@@ -104,11 +83,11 @@
         line-height: 24px;
         font-weight: 400;
         color: $light-color;
-        margin-top: 15px;
+        margin-top: 45px;
       }
     }
 
-    .back_login {
+    .back_link {
       display: flex;
       font-size: 14px;
       line-height: 16px;
@@ -119,7 +98,7 @@
         color: #8B8D97;
       }
 
-      .log {
+      .link {
         color: $yellow-color;
         cursor: pointer;
         text-decoration: none;
