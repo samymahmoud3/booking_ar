@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import './accordion.scss';
 
-const Accordion = ({ data }) => {
+const Accordion = (prop) => {
   const [accordionItems, setAccordionItems] = useState([]);
+  const { data } = prop;
 
   useEffect(() => {
     let accordion = [];
@@ -61,5 +63,8 @@ const Accordion = ({ data }) => {
     </div>
   );
 };
+Accordion.prototype = {
+  prop: PropTypes.node
+}
 
 export default Accordion;

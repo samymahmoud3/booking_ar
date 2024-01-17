@@ -8,6 +8,7 @@ import Blogs from "./pages/blogs/Blogs";
 import Blog from "./pages/blog/Blog";
 import Partner from "./pages/partner/Partner";
 import TravelPartners from "./pages/travelPartners/TravelPartners";
+import PartnerDetails from "./pages/partnerDetails/PartnerDetails";
 
 function App() {
   const Layout = () => {
@@ -42,6 +43,10 @@ function App() {
         {
           path: '/partner',
           element: <Partner />
+        },
+        {
+          path: '/partner-details',
+          element: <PartnerDetails />
         },
         {
           path: '/blogs',

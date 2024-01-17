@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import './carCategory.scss'
 
-const CarCategory = ({ category, select }) => {
+const CarCategory = (prop) => {
   return (
-    <div className={ `boxCategory ${select}` } >
-      <p>{ category }</p>
+    <div className={ `boxCategory ${prop.select}` } >
+      <p>{ prop.category }</p>
       <div>
         <img className='car' src="/car.jpg" alt="car" />
         <div className="num">
@@ -14,5 +15,8 @@ const CarCategory = ({ category, select }) => {
     </div>
   )
 };
+CarCategory.prototype = {
+  prop: PropTypes.node
+}
 
 export default CarCategory

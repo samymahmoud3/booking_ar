@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './filter.scss';
 
 const Filter = ({title, paragraph, categories, setActive, active, show  }) => {
@@ -18,6 +19,18 @@ const Filter = ({title, paragraph, categories, setActive, active, show  }) => {
       }
     </div>
   )
+}
+
+Filter.propTypes = {
+  title: PropTypes.string,
+  paragraph: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    category: PropTypes.string
+  })),
+  setActive: PropTypes.func,
+  active: PropTypes.string,
+  show: PropTypes.bool
 }
 
 export default Filter

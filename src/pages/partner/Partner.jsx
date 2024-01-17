@@ -9,7 +9,7 @@ const Partner = () => {
           <div className="right_div">
             <h1>البرنامج التابع الي شركاء السفر</h1>
             <p>كن شريكا لنا فى مدينتك و ابدا اليوم فى تحقيق مكاسب لك معنا</p>
-            <Link to="/register" className="btn">انضم الينا</Link>
+            <Link to="/partner-details" className="btn">انضم الينا</Link>
           </div>
           <div className="left_div">
             <div>
