@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite-rtl.css';
-import TimeRange from '../rangeDate/RangeDate';
 import DatePicker from "react-datepicker";
+import { TimeRng } from '../rangeTime/RangeTime';
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import { persons, places } from '../../data';
@@ -142,7 +142,7 @@ const HeroSection = () => {
                       use12Hours
                     />
                   </div>
-                  : <TimeRange />
+                  : <TimeRng />
                 }
               </div>
               <div className='box'>

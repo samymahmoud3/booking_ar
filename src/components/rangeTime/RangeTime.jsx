@@ -1,9 +1,9 @@
-import './rangeDate.scss';
+import './rangeTime.scss';
 import  { useState } from "react";
 import moment from "moment";
 import TimeRange from "react-time-range";
 
-function Time() {
+export function TimeRng() {
   const [startTime, setStartTime] = useState(moment());
   const [endTime, setEndTime] = useState(moment());
 
@@ -33,4 +33,3 @@ function Time() {
   </>
   );
 }
-export default Time;

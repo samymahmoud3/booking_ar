@@ -153,46 +153,46 @@ const Booking = () => {
                 <div className='box'>
                   <div className='title'> الوقت <span>*</span></div>
                   { round === "oneRound"
-                  ?
-                  <div className="oneRoundTime">
-                    <img src='./clock.svg' alt='clock' />
-                    <TimePicker
-                      placeholder='حدد الوقت الوصول'
-                      showSecond={ false }
-                      onChange={ onChangeOneTime }
-                      format={ format }
-                      use12Hours
+                    ?
+                    <div className="oneRoundTime">
+                      <img src='./clock.svg' alt='clock' />
+                      <TimePicker
+                        placeholder='حدد الوقت الوصول'
+                        showSecond={ false }
+                        onChange={ onChangeOneTime }
+                        format={ format }
+                        use12Hours
+                      />
+                    </div>
+                    : <TimeRange
+                      onStartTimeChange={ handleStartTimeChange }
+                      onEndTimeChange={ handleEndTimeChange }
+                      startMoment={ startTime }
+                      endMoment={ endTime }
+                      onChange={ handleChangeTime }
+                      showErrors={ false }
+                      startLabel="حدد وقت الوصول"
+                      endLabel=" حدد وقت الرجوع"
                     />
-                  </div>
-                  : <TimeRange
-                    onStartTimeChange={ handleStartTimeChange }
-                    onEndTimeChange={ handleEndTimeChange }
-                    startMoment={ startTime }
-                    endMoment={ endTime }
-                    onChange={ handleChangeTime }
-                    showErrors={ false }
-                    startLabel="حدد وقت الوصول"
-                    endLabel=" حدد وقت الرجوع"
-                  />
-                }
+                  }
                   
                 </div>
                 <div className='box'>
                   <div className='title'>متى تاريخ الحجز؟ <span>*</span></div>
                   { round === "oneRound" ?
-                  <div className='oneRoundDate'>
+                    <div className='oneRoundDate'>
                       <label htmlFor='date-input'>
                         <img src='/calender.svg' alt='calender' />
                       </label>
-                    <DatePicker id="date-input"
-                      selected={ selectedDateOne }
-                      onChange={ handleDateOne }
-                      dateFormat="yyyy/MM/dd"
-                      placeholderText="يوم / شهر / سنه "
-                    />
-                  </div>
-                  :<DateRangePicker placeholder={ ['يوم/ شهر/ سنه  - يوم/ شهر/ سنه '] } />
-                }
+                      <DatePicker id="date-input"
+                        selected={ selectedDateOne }
+                        onChange={ handleDateOne }
+                        dateFormat="yyyy/MM/dd"
+                        placeholderText="يوم / شهر / سنه "
+                      />
+                    </div>
+                    : <DateRangePicker placeholder={ ['يوم/ شهر/ سنه  - يوم/ شهر/ سنه '] } />
+                  }
                 </div>
                 <div className='box'>
                   <div className='title'>الركّاب <span>*</span></div>
@@ -282,14 +282,16 @@ const Booking = () => {
                   <label htmlFor='fullName'>الاسم بالكامل<span>*</span></label>
                   <input type='text' id='fullName' placeholder='ادخل اسمك' required />
                 </div>
-                <div className='input'>
+                <div className='input' >
                   <label htmlFor='fullName'>رقم الواتساب<span>*</span></label>
-                  <div className='number_code'>
+                  <div>
                     <PhoneInput
-                      country={ phone }
-                      placeholder='رقم الجوال'
+                      id="phone"
+                      country={ "eg" }
+                      placeholder="رقم الجوال"
                       onChange={ (value) => setPhone(value) }
                       value={phone}
+                      required
                     />
                   </div>
                 </div>
