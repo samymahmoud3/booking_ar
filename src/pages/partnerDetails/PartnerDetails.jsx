@@ -62,9 +62,9 @@ const Step1 = ({ onNext }) => {
           <input type='text' id='fullName' placeholder='ادخل اسمك' onChange={ (e) => setSelectName(e.target.value) } />
         </div>
         <div className="input">
-          <label onClick={ (e) => setActiveLang(!activeLang) }>اللغة<span>*</span></label>
+          <label onClick={ (e) => { setActiveLang(!activeLang); e.preventDefault(); } }>اللغة<span>*</span></label>
           <div className="step-dropdown">
-            <div className="dropdown-btn" onClick={ (e) => setActiveLang(!activeLang) }>
+            <div className="dropdown-btn" onClick={ (e) => { setActiveLang(!activeLang); e.preventDefault(); } }>
               <span>اختر لغتك</span>
               <img src="/arrow-down.svg" alt="arrow down" />
             </div>
@@ -78,6 +78,7 @@ const Step1 = ({ onNext }) => {
                       onClick={ (e) => {
                         setSelectLang(lang);
                         setActiveLang(false);
+                        e.preventDefault();
                       } }
                     >
                       { lang }
@@ -123,7 +124,7 @@ const Step1 = ({ onNext }) => {
         <div className="input">
           <label onClick={ (e) => { setActiveYear(!activeYear); e.preventDefault(); } }>سنه صناعه السياره<span>*</span></label>
           <div className="step-dropdown">
-            <div className="dropdown-btn" onClick={ (e) => setActiveYear(!activeYear) }>
+            <div className="dropdown-btn" onClick={ (e) => { setActiveYear(!activeYear); e.preventDefault();} }>
               <span>ادخل سنه صناعه السياره</span>
               <img src="/arrow-down.svg" alt="arrow down" />
             </div>

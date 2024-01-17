@@ -17,7 +17,7 @@ const Booking = () => {
   const [selected, setSelected] = useState(null);
   const [selectedOption, setSelectedOption] = useState('option1');
   const [selectedDate, setSelectedDate] = useState(null);
-  const [phone, setPhone] = useState('US');
+  const [phone, setPhone] = useState('+20');
 
   // start timeRang
   const [startTime, setStartTime] = useState(moment());
@@ -289,6 +289,7 @@ const Booking = () => {
                       country={ phone }
                       placeholder='رقم الجوال'
                       onChange={ (value) => setPhone(value) }
+                      value={phone}
                     />
                   </div>
                 </div>
