@@ -279,7 +279,6 @@ export const joinUsData = [
   }
 ]
 
-
 export const specialData = [
   {
     icon: 'wide-range.svg',
@@ -316,5 +315,38 @@ export const specialData = [
     iconName: "خدمات اضافية",
     title: "خدمات اضافية",
     description: 'خدمات الاستقبال و الترحيب، توفير مقعدللطفل/دعَامة ساندة، مياه مجانية واتصالاتهاتفية مجانية لعملائنا',
+  },
+]
+
+export const packagesData = [
+  {
+    category: 'اقتصادية',
+    price: 200,
+    image: 'package-img.jpg',
+    places: ['مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة']
+  },
+  {
+    category: 'اقتصادية',
+    price: 200,
+    image: 'package-img.jpg',
+    places: ['مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة']
+  },
+  {
+    category: 'اقتصادية',
+    price: 200,
+    image: 'package-img.jpg',
+    places: ['مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة']
+  },
+  {
+    category: 'اقتصادية',
+    price: 200,
+    image: 'package-img.jpg',
+    places: ['مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة']
+  },
+  {
+    category: 'اقتصادية',
+    price: 200,
+    image: 'package-img.jpg',
+    places: ['مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة']
   },
 ]

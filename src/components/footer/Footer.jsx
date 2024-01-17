@@ -34,7 +34,7 @@ const Footer = () => {
             <Link className="link" to="/partner">كن شريكا</Link>
             <Link className="link" to="/blogs">مدونتنا</Link>
             <Link className="link" smooth="true" to="/">الفنادق</Link>
-            <Link className="link" smooth="true" to="/">العروض</Link>
+            <Link className="link" to="/packages">الباقات</Link>
           </div>
         </div>
         <div className="social-media">
