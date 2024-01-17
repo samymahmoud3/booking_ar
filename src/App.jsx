@@ -13,6 +13,7 @@ import Login from "./pages/login/Login";
 import './styles/global.scss';
 import Prices from "./pages/prices/Prices";
 import Packages from "./pages/packages/Packages";
+import ReligiousLandmarks from "./pages/religiousLandmarks/ReligiousLandmarks";
 
 function App() {
   const Layout = () => {
@@ -75,6 +76,10 @@ function App() {
         {
           path: '/packages',
           element: <Packages />
+        },
+        {
+          path: '/religious-landmarks',
+          element: <ReligiousLandmarks />
         },
         {
           path: '/footer',

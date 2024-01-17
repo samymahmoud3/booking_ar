@@ -350,3 +350,75 @@ export const packagesData = [
     places: ['مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة','مطار مكة']
   },
 ]
+
+export const religiousData = {
+  places: [
+    {
+      id: 1,
+      place: "مكة",
+    },
+    {
+      id: 2,
+      place: "المدينة",
+    },
+  ],
+
+  packages: [
+    {
+      id:1,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'مكة'
+    },
+    {
+      id:2,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'مكة'
+    },
+    {
+      id:3,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'مكة'
+    },
+    {
+      id:4,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'مكة'
+    },
+    {
+      id:5,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'مكة'
+    },
+    {
+      id:6,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'المدينة'
+    },
+    {
+      id:7,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'المدينة'
+    },
+    {
+      id:8,
+      category: 'اقتصادية',
+      price: 200,
+      image: 'package-img.jpg',
+      place: 'المدينة'
+    },
+  ]
+};
