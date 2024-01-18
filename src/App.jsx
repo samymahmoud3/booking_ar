@@ -14,6 +14,7 @@ import './styles/global.scss';
 import Prices from "./pages/prices/Prices";
 import Packages from "./pages/packages/Packages";
 import ReligiousLandmarks from "./pages/religiousLandmarks/ReligiousLandmarks";
+import BookPackage from "./pages/bookPackage/BookPackage";
 
 function App() {
   const Layout = () => {
@@ -76,6 +77,10 @@ function App() {
         {
           path: '/packages',
           element: <Packages />
+        },
+        {
+          path: '/book-package',
+          element: <BookPackage />
         },
         {
           path: '/religious-landmarks',

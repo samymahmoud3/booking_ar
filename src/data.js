@@ -163,7 +163,7 @@ export const paymentOptions = [
   },
   {
     id: 2,
-    title: "الدفع عند الوصول",
+    title: "الدفع النقدى",
     description: "أدفع 25% الآن و 75% عند الوصول",
   },
   {
