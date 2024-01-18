@@ -30,7 +30,7 @@ const Footer = () => {
             <Link className="link" to="/loyalty-rewards">برنامج الولاء و المكافات</Link>
             <Link className="link" to="/travel-partners">لوكالات السفر و السياحة</Link>
             <Link className="link" to="/partner">كن شريكا</Link>
-            <Link className="link" smooth="true" to="/">الشروط و الاحكام</Link>
+            <Link className="link" to="/terms-conditions">الشروط و الاحكام</Link>
             <Link className="link" smooth="true" to="/">سياسة الخصوصية</Link>
             <Link className="link" smooth="true" to="/">معلومات عنا</Link>
             <Link className="link" to="/blogs">مدونتنا</Link>

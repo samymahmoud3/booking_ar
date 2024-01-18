@@ -18,6 +18,7 @@ import BookPackage from "./pages/bookPackage/BookPackage";
 import BookHotel from "./pages/bookHotel/BookHotel";
 import LandmarkBooking from "./pages/landmarkBooking/LandmarkBooking";
 import LoyaltyRewards from "./pages/loyaltyRewards/LoyaltyRewards";
+import Terms from "./pages/terms/Terms";
 
 function App() {
   const Layout = () => {
@@ -100,6 +101,10 @@ function App() {
         {
           path: '/loyalty-rewards',
           element: <LoyaltyRewards />
+        },
+        {
+          path: '/terms-conditions',
+          element: <Terms />
         },
         {
           path: '/footer',
