@@ -19,6 +19,7 @@ import BookHotel from "./pages/bookHotel/BookHotel";
 import LandmarkBooking from "./pages/landmarkBooking/LandmarkBooking";
 import LoyaltyRewards from "./pages/loyaltyRewards/LoyaltyRewards";
 import Terms from "./pages/terms/Terms";
+import Policy from "./pages/privacyPolicy/Policy";
 
 function App() {
   const Layout = () => {
@@ -105,6 +106,10 @@ function App() {
         {
           path: '/terms-conditions',
           element: <Terms />
+        },
+        {
+          path: '/privacy-policy',
+          element: <Policy />
         },
         {
           path: '/footer',

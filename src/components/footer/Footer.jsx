@@ -31,7 +31,7 @@ const Footer = () => {
             <Link className="link" to="/travel-partners">لوكالات السفر و السياحة</Link>
             <Link className="link" to="/partner">كن شريكا</Link>
             <Link className="link" to="/terms-conditions">الشروط و الاحكام</Link>
-            <Link className="link" smooth="true" to="/">سياسة الخصوصية</Link>
+            <Link className="link" to="/privacy-policy">سياسة الخصوصية</Link>
             <Link className="link" smooth="true" to="/">معلومات عنا</Link>
             <Link className="link" to="/blogs">مدونتنا</Link>
             <Link className="link" to="/book-hotel">الفنادق</Link>
