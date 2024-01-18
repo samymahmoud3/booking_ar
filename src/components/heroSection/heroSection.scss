@@ -209,6 +209,9 @@
                 background-color: transparent; 
                 border: none; 
                 height: 24px;
+                font-size: 9px !important;
+                outline: 0 !important;
+                box-shadow: 0 0 0 !important;
               }
 
               .css-y2ad0l-InputComponent {
@@ -217,13 +220,13 @@
                 background: transparent;
                 padding: 0;
                 width: 100%; 
-                font-size: 9px;
+                font-size: 9px !important;
                 color: #9094A0;
               }
 
               .css-ufeubi-ReactDropdownSelect:focus, .css-ufeubi-ReactDropdownSelect:focus-within {
-                outline: 0;
-                box-shadow: 0 0 0;
+                outline: 0 !important;
+                box-shadow: 0 0 0 !important;
               }
             } // end input search
 
