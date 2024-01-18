@@ -20,6 +20,7 @@ import LandmarkBooking from "./pages/landmarkBooking/LandmarkBooking";
 import LoyaltyRewards from "./pages/loyaltyRewards/LoyaltyRewards";
 import Terms from "./pages/terms/Terms";
 import Policy from "./pages/privacyPolicy/Policy";
+import AboutUs from "./pages/aboutUs/AboutUs";
 
 function App() {
   const Layout = () => {
@@ -110,6 +111,10 @@ function App() {
         {
           path: '/privacy-policy',
           element: <Policy />
+        },
+        {
+          path: '/about-us',
+          element: <AboutUs />
         },
         {
           path: '/footer',
