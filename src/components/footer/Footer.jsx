@@ -33,7 +33,7 @@ const Footer = () => {
             <Link className="link" smooth="true" to="/">سياسة الخصوصية</Link>
             <Link className="link" to="/partner">كن شريكا</Link>
             <Link className="link" to="/blogs">مدونتنا</Link>
-            <Link className="link" smooth="true" to="/">الفنادق</Link>
+            <Link className="link" to="/book-hotel">الفنادق</Link>
             <Link className="link" to="/packages">الباقات</Link>
           </div>
         </div>
