@@ -10,9 +10,9 @@ import './bookHotel.scss';
 const BookHotel = () => {
   const [phone, setPhone] = useState('+20');
   const options = [
-    { name: "ريفيرا " },
-    { name: "بلازا"},
-    { name: "ماجيك "},
+    { name: "ريفيرا" },
+    { name: "بلازا" },
+    { name: "ماجيك " },
   ]
 
   // Handle the  date change event
@@ -48,22 +48,19 @@ const BookHotel = () => {
               <label htmlFor='email'>البريد الالكترونى<span>*</span></label>
               <input type='email' id='email' placeholder='ادخل بريدك الالكترونى' required />
             </div>
-            <div className='input-dropdown' style={ { maxWidth: "333px" } }>
-              <label
-                style={ { fontSize: "15px", fontWeight: "700", lineHeight: "18px", color: "#010101" } } >
-                اسم الفندق
-                <span style={ { fontSize: "24px", fontWeight: "700", lineHeight: "28px", color: "#C9B979" } }>*</span>
-              </label>
-              <Select
-                style={ { width: "333px", backgroundColor: "#F4F6F9", borderRadius: "10px", border: "none", padding: "16px 19px 16px 5px", marginTop: "5px" } }
-                options={ options }
-                direction='rtl'
-                placeholder='ادخل اسم الفندق'
-                labelField='name'
-                valueField='name'
-                color='#9094A0'
-              // onChange={ (value) => console.log(value.map(e=>e.name)) }
-              />
+            <div className='dropdown-box'>
+              <label className='title'>اسم الفندق <span>*</span></label>
+              <div className='input-dropdown'>
+                <Select className='select-input'
+                  options={ options }
+                  direction='rtl'
+                  placeholder='ادخل اسم الفندق'
+                  labelField='name'
+                  valueField='name'
+                  color='#9094A0'
+                // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                />
+              </div>
             </div>
             <div className='input' >
               <label >تاريخ الحجز<span>*</span></label>

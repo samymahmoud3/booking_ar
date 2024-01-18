@@ -2,15 +2,16 @@ import { useState } from 'react';
 import CarCategory from '../../components/carCategory/CarCategory';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { paymentOptions, persons, places } from '../../data';
+import { paymentOptions} from '../../data';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite-rtl.css';
 import TimeRange from "react-time-range";
-import TimePicker from 'rc-time-picker';
-import 'rc-time-picker/assets/index.css';
 import moment from "moment";
+import { TimePicker,InputNumber} from 'antd';
+import { ExpandMore, PermIdentity } from '@mui/icons-material';
+import Select from 'react-dropdown-select';
 import './booking.scss';
 
 const Booking = () => {
@@ -18,6 +19,12 @@ const Booking = () => {
   const [selectedOption, setSelectedOption] = useState('option1');
   const [selectedDate, setSelectedDate] = useState(null);
   const [phone, setPhone] = useState('+20');
+
+  const options = [
+    { name: "مكة" },
+    { name: "المدينة" },
+    { name: "الرياض" },
+  ]
 
   // start timeRang
   const [startTime, setStartTime] = useState(moment());
@@ -55,11 +62,12 @@ const Booking = () => {
     setRound(value);
   }; //end
 
-  // one round time
-  const format = 'h:mm a';
-  function onChangeOneTime(value) {
-    console.log(value && value.format(format));
-  }
+  // one round time picker
+  /** 
+    const onChangeTime = (time, timeString) => {
+    console.log(time, timeString);
+    };
+  */
   // end
 
   // one round date
@@ -120,49 +128,49 @@ const Booking = () => {
               <div className='booking_inputs'>
                 <div className='box'>
                   <div className='title'>من <span>*</span></div>
-                  <div className="group">
-                    <img className='icon1' src='/arrow-left.svg' alt="arrow-left" />
-                    <div>
-                      <input className='show-bkg' list='data' type='text' required />
-                      <datalist id='data'>
-                        { places.map((option) => (
-                          <option value={ option } key={ option } />
-                        )) }
-                      </datalist>
-                      <label className='show-label'>ادخل اسم المطار او الفندق او العنوان...</label>
-                    </div>
-                    <img className='icon2' src="/arrow-down.svg" alt="arrow-down" />
+                  <div className='input-dropdown'>
+                    <img src='/arrow-left.svg' />
+                    <Select className='select-input'
+                      options={ options }
+                      direction='rtl'
+                      placeholder='ادخل اسم المطار او الفندق او العنوان'
+                      labelField='name'
+                      valueField='name'
+                      color='#9094A0'
+                    // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                    />
                   </div>
                 </div>
                 <div className='box'>
                   <div className='title'>إلى <span>*</span></div>
-                  <div className="group">
-                    <img className='icon1' src='/location.svg' alt="location" />
-                    <div>
-                      <input className='show-bkg' list='data' type='text' required />
-                      <datalist id='data'>
-                        { places.map((option) => (
-                          <option value={ option } key={ option } />
-                        )) }
-                      </datalist>
-                      <label className='show-label'>ادخل اسم المطار او الفندق او العنوان...</label>
-                    </div>
-                    <img className='icon2' src="/arrow-down.svg" alt="arrow-down" />
+                  <div className='input-dropdown'>
+                    <img src='/location.svg' />
+                    <Select className='select-input'
+                      options={ options }
+                      direction='rtl'
+                      placeholder='ادخل اسم المطار او الفندق او العنوان'
+                      labelField='name'
+                      valueField='name'
+                      color='#9094A0'
+                    // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                    />
                   </div>
                 </div>
                 <div className='box'>
-                  <div className='title'> الوقت <span>*</span></div>
-                  { round === "oneRound"
-                    ?
-                    <div className="oneRoundTime">
-                      <img src='./clock.svg' alt='clock' />
-                      <TimePicker
-                        placeholder='حدد الوقت الوصول'
-                        showSecond={ false }
-                        onChange={ onChangeOneTime }
-                        format={ format }
-                        use12Hours
-                      />
+                  <div className='title' >الوقت<span>*</span></div>
+                  { round === "oneRound" ?
+                    <div className='time-box' style={ { width: "328px" } }>
+                      <div className='time-field'>
+                        <img src='/clock.svg' alt='clock' />
+                        <TimePicker
+                          className='time-input'
+                          use12Hours
+                          format="h:mm a"
+                          variant="borderless"
+                          placeholder='حدد وقت الوصول'
+                          suffixIcon={ <ExpandMore /> }
+                        />
+                      </div>
                     </div>
                     : <TimeRange
                       onStartTimeChange={ handleStartTimeChange }
@@ -196,19 +204,13 @@ const Booking = () => {
                 </div>
                 <div className='box'>
                   <div className='title'>الركّاب <span>*</span></div>
-                  <div className="group">
-                    <img className='icon1' src='/user.svg' alt="user" />
-                    <div>
-                      <input className='show-bkg' list='numbers' type='text' required />
-                      <datalist id='numbers'>
-                        { persons.map((option) => (
-                          <option value={ option } key={ option } />
-                        )) }
-                      </datalist>
-                      <label className='show-label'>عدد الركاب</label>
-                    </div>
-                    <img className='icon2' src="/arrow-down.svg" alt="arrow-down" />
-                  </div>
+                  <InputNumber className='number-input'
+                    style={ { backgroundColor: "#F4F6F9", width: "327px", height: "52px", padding: "16px 0px 0 0" } }
+                    variant="borderless"
+                    placeholder='ادخل عدد الركاب'
+                    addonBefore={ <PermIdentity  sx={ {fontSize:'15px', color: "#9094A0",padding:"1px 0 0 0" } } /> }
+                    min={ 1 }
+                  />
                 </div>
               </div>
               <div className='categories'>
@@ -290,7 +292,7 @@ const Booking = () => {
                       country={ "eg" }
                       placeholder="رقم الجوال"
                       onChange={ (value) => setPhone(value) }
-                      value={phone}
+                      value={ phone }
                       required
                     />
                   </div>

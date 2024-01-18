@@ -39,14 +39,19 @@
       .inputs {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
-        gap: 25px; 
+        gap: 25px;
 
         .input {
           width: 333px;
+
           input {
+            font-size: 13px;
+
             &::placeholder {
               color: #9094A0;
             }
+
+            width: 100%;
           }
         }
 
@@ -83,7 +88,51 @@
         .react-tel-input .selected-flag .arrow {
           left: -30px;
         }
+
         // end phone input
+
+        // start input search
+        .dropdown-box {
+          .title {
+            font-size: 15px;
+            line-height: 18px;
+            font-weight: 700;
+            color: #010101;
+
+            span {
+              font-size: 24px;
+              line-height: 28px;
+              font-weight: 700;
+              color: #C9B979;
+            }
+          }
+
+          .input-dropdown {
+            max-width: 333px;
+            height: 52px;
+            background-color: #F4F6F9;
+            border-radius: 10px;
+            margin-top: 10px;
+
+            .select-input {
+              width: 333px;
+              background-color: #F4F6F9;
+              border: none;
+              padding: 0px 20px 0px 10px;
+              border-radius: 10px;
+              height: 52px;
+              z-index: 10;
+            }
+
+            .css-ufeubi-ReactDropdownSelect:focus,
+            .css-ufeubi-ReactDropdownSelect:focus-within {
+              outline: 0;
+              box-shadow: 0 0 0;
+            }
+          }
+        } //end dropdown search
+
+        
       }
     }
 

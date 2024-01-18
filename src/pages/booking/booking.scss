@@ -160,6 +160,57 @@
                 }
               }
 
+              // start input search place
+              .input-dropdown {
+                max-width: 333px;
+                height: 52px;
+                display: flex;
+                align-items: center;
+                background-color: #F4F6F9;
+                border-radius: 10px;
+                padding-right: 5px;
+
+                .select-input {
+                  width: 309px;
+                  background-color: transparent;
+                  border: none;
+                  height: 24px;
+                }
+
+                .css-y2ad0l-InputComponent {
+                  border: none;
+                  margin-left: 5px;
+                  background: transparent;
+                  padding: 0;
+                  width: 100%;
+                  font-size: 9px;
+                  color: #9094A0;
+                }
+
+                .css-ufeubi-ReactDropdownSelect:focus,
+                .css-ufeubi-ReactDropdownSelect:focus-within {
+                  outline: 0;
+                  box-shadow: 0 0 0;
+                }
+
+                .css-8ohgsk-DropDown {
+                  width: 320px;
+                }
+              } // end input place
+
+              // number input
+              .number-input {
+                border-radius: 10px;
+
+                :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input:placeholder-shown {
+                  font-size: 12px;
+                }
+
+                :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input {
+                  padding: 3px;
+                }
+              } //end number input 
+
               // start time range
               #react-time-range {
                 background-color: #F4F6F9;
@@ -167,33 +218,34 @@
                 height: 52px;
                 border-radius: 10px;
                 width: 330px;
-              }// end time range
+              }
+
+              // end time range
 
               // start time one round
-              .oneRoundTime {
-                display: flex;
-                width: 328px;
-                border: none;
-                background-color: #F4F6F9;
-                border-radius: 10px;
-                padding-right: 5px;
+              .time-box {
+                max-width: 328px;
 
-                .rc-time-picker-input {
-                  direction: ltr;
-                  border: none;
-                  width: 311px;
-                  text-align: right;
+                .time-field {
+                  display: flex;
                   background-color: #F4F6F9;
-                  height: 52px;
+                  padding-right: 5px;
                   border-radius: 10px;
 
-                  &:focus {
-                    border: none;
-                    outline: none;
+                  .time-input {
+                    width: 325px;
+                    background-color: #F4F6F9;
+                    height: 52px;
+                    padding-right: 5px;
                   }
 
+                  :where(.css-dev-only-do-not-override-zl9ks2).ant-picker .ant-picker-input>input:placeholder-shown {
+                    font-size: 10px;
+                  }
                 }
-              }//end time one round
+              }
+
+              //end time one round
 
               // start date range
               .rs-input-group {
@@ -211,7 +263,9 @@
                 padding-left: 0px;
                 text-align: right;
                 width: 290px;
-              }//end date range
+              }
+
+              //end date range
 
               // start one date round
               .oneRoundDate {
@@ -236,7 +290,9 @@
                   border-radius: 10px;
                   height: 52px;
                 }
-              } // end one round date
+              }
+
+              // end one round date
             }
           }
 
@@ -467,27 +523,29 @@
               padding-right: 16px;
               background-color: #F4F6F9;
             }
-          
-            .react-tel-input .flag-dropdown { 
+
+            .react-tel-input .flag-dropdown {
               border: none;
               border-radius: 8px;
               background-color: #F4F6F9;
             }
-          
+
             .react-tel-input .selected-flag {
               width: 60px;
               border: none;
-                border-radius: 8px;
-                background-color: #F4F6F9;
+              border-radius: 8px;
+              background-color: #F4F6F9;
             }
-          
+
             .react-tel-input .selected-flag .flag {
               right: 10px;
             }
-          
+
             .react-tel-input .selected-flag .arrow {
               left: -30px;
-            } // end number input
+            }
+
+            // end number input
           }
         }
       }

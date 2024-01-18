@@ -182,7 +182,7 @@ const Step1 = ({ onNext }) => {
           </div>
         </div>
       </div>
-      <div className="stepper_btn btn" onClick={ onNext }>التالى</div>
+      <button className="stepper_btn btn" onClick={ onNext }>التالى</button>
     </div>
   );
 };
@@ -240,7 +240,7 @@ const Step2 = ({ onNext }) => {
           </div>
         </div>
       </div>
-      <div className="stepper_btn btn" onClick={ onNext }>التالى</div>
+      <button className="stepper_btn btn" onClick={ onNext }>التالى</button>
     </div>
   );
 };
@@ -286,7 +286,7 @@ const Step3 = ({ onNext }) => {
         </div>
       </div>
       <div>
-        <div className="stepper_btn btn" onClick={onNext}>ارسال طلب</div>
+        <button className="stepper_btn btn" onClick={onNext}>ارسال طلب</button>
       </div>
     </div>
   );

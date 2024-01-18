@@ -151,10 +151,6 @@ export const accordionsData = [
   }
 ];
 
-export const places = ["الرياض", "مكة", "المدينة المنورة"];
-
-export const persons = ["1", "2", "3", "4", "5"];
-
 export const paymentOptions = [
   {
     id: 1,

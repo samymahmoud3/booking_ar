@@ -27,9 +27,9 @@ const BookPackage = () => {
   };
 
   // time picker
-  // const onChange = (time, timeString) => {
-  // console.log(time, timeString);
-  // };
+  const onChangeTime = (time, timeString) => {
+    console.log(time, timeString);
+  };
 
   return (
     <div className='book-package'>
@@ -73,10 +73,11 @@ const BookPackage = () => {
                   <label >الوقت<span>*</span></label>
                   <TimePicker style={ { backgroundColor: "#F4F6F9", height: "52px", paddingRight: "20px" } }
                     use12Hours
-                    format="h:mm a"
+                    format="h:mm A"
                     variant="borderless"
                     placeholder='اكتب الوقت'
                     suffixIcon={ <ExpandMore /> }
+                    onChange={ onChangeTime }
                   />
                 </div>
                 <div className='input'>

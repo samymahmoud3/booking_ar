@@ -13,8 +13,8 @@ const LandmarkBooking = () => {
   const [phone, setPhone] = useState('+20');
   const options = [
     { name: "مكة" },
-    { name: "المدينة"},
-    { name: "الرياض"},
+    { name: "المدينة" },
+    { name: "الرياض" },
   ]
 
   // Handle the  payment option 
@@ -33,9 +33,9 @@ const LandmarkBooking = () => {
   };
 
   // time picker
-  // const onChange = (time, timeString) => {
-  // console.log(time, timeString);
-  // };
+  const onChangeTime = (time, timeString) => {
+    console.log(time, timeString);
+  };
 
   return (
     <div className='book-package'>
@@ -64,22 +64,19 @@ const LandmarkBooking = () => {
               <label htmlFor='email'>البريد الالكترونى<span>*</span></label>
               <input type='email' id='email' placeholder='ادخل بريدك الالكترونى' required />
             </div>
-            <div className='input-dropdown' style={ { maxWidth: "333px" } }>
-              <label
-                style={ { fontSize: "15px", fontWeight: "700", lineHeight: "18px", color: "#010101" } } >
-                من 
-                <span style={ { fontSize: "24px", fontWeight: "700", lineHeight: "28px", color: "#C9B979" } }>*</span>
-              </label>
-              <Select
-                style={ { maxWidth: "333px", backgroundColor: "#F4F6F9", borderRadius: "10px", border: "none", padding: "16px 19px 16px 5px", marginTop: "5px" } }
-                options={ options }
-                direction='rtl'
-                placeholder='اكتب العنوان'
-                labelField='name'
-                valueField='name'
-                color='#9094A0'
-              // onChange={ (value) => console.log(value.map(e=>e.name)) }
-              />
+            <div className='dropdown-box'>
+              <label className='title'>من<span>*</span></label>
+              <div className='input-dropdown'>
+                <Select className='select-input'
+                  options={ options }
+                  direction='rtl'
+                  placeholder='اكتب العنوان'
+                  labelField='name'
+                  valueField='name'
+                  color='#9094A0'
+                // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                />
+              </div>
             </div>
             { selected === "الدفع عند الوصول" &&
               <>
@@ -92,7 +89,7 @@ const LandmarkBooking = () => {
                     placeholderText="23/01/2024"
                   />
                 </div>
-              <div className='input' style={ { maxWidth: "333px" } }>
+                <div className='input' style={ { maxWidth: "333px" } }>
                   <label >الوقت<span>*</span></label>
                   <TimePicker style={ { backgroundColor: "#F4F6F9", height: "52px", paddingRight: "20px" } }
                     use12Hours
@@ -100,6 +97,7 @@ const LandmarkBooking = () => {
                     variant="borderless"
                     placeholder='اكتب الوقت'
                     suffixIcon={ <ExpandMore /> }
+                    onChange={ onChangeTime }
                   />
                 </div>
                 <div className='input'>

@@ -5,15 +5,21 @@ import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite-rtl.css';
 import DatePicker from "react-datepicker";
 import { TimeRng } from '../rangeTime/RangeTime';
-import TimePicker from 'rc-time-picker';
-import 'rc-time-picker/assets/index.css';
-import { persons, places } from '../../data';
+import { TimePicker,InputNumber} from 'antd';
+import { ExpandMore, PermIdentity } from '@mui/icons-material';
+import Select from 'react-dropdown-select';
 import './heroSection.scss';
 
 const HeroSection = () => {
   const [active, setActive] = useState("bookNow");
   const [selectedCat, setSelectedCat] = useState(null);
   const categories = ["اقتصادية", "عائلية", "فاخرة", "VIP", "VVIP"];
+
+  const options = [
+    { name: "مكة" },
+    { name: "المدينة" },
+    { name: "الرياض" },
+  ]
 
   const handleSelectCat = (index) => {
     setSelectedCat(index);
@@ -33,11 +39,10 @@ const HeroSection = () => {
     setSelectedDate(date);
   }; //end
 
-  // one round time
-  const format = 'h:mm a';
-  function onChangeOneTime(value) {
-    console.log(value && value.format(format));
-  }
+  // one round time picker
+  const onChangeTime = (time, timeString) => {
+    console.log(time, timeString);
+  };
   // end
 
 
@@ -81,35 +86,33 @@ const HeroSection = () => {
             <div className='details'>
               <div className='box'>
                 <div className='title'>من <span>*</span></div>
-                <div className="group">
-                  <img className='icon1' src='/arrow-left.svg' alt="arrow-left" />
-                  <div>
-                    <input list='data' type='text' required />
-                    <datalist id='data'>
-                      { places.map((option) => (
-                        <option value={ option } key={ option } />
-                      )) }
-                    </datalist>
-                    <label>ادخل اسم المطار او الفندق او العنوان...</label>
-                  </div>
-                  <img className='icon2' src="/arrow-down.svg" alt="arrow-down" />
+                <div className='input-dropdown'>
+                  <img src='/arrow-left.svg' />
+                  <Select className='select-input'
+                    options={ options }
+                    direction='rtl'
+                    placeholder='ادخل اسم المطار او الفندق او العنوان'
+                    labelField='name'
+                    valueField='name'
+                    color='#9094A0'
+                  // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                  />
                 </div>
               </div>
               { active === "bookNow" &&
                 <div className='box'>
                   <div className='title'>إلى <span>*</span></div>
-                  <div className="group">
-                    <img className='icon1' src='/location.svg' alt="location" />
-                    <div>
-                      <input list='data' type='text' required />
-                      <datalist id='data'>
-                        { places.map((option) => (
-                          <option value={ option } key={ option } />
-                        )) }
-                      </datalist>
-                      <label>ادخل اسم المطار او الفندق او العنوان...</label>
-                    </div>
-                    <img className='icon2' src="/arrow-down.svg" alt="arrow-down" />
+                  <div className='input-dropdown'>
+                    <img src='/location.svg' />
+                    <Select className='select-input'
+                      options={ options }
+                      direction='rtl'
+                      placeholder='ادخل اسم المطار او الفندق او العنوان'
+                      labelField='name'
+                      valueField='name'
+                      color='#9094A0'
+                    // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                    />
                   </div>
                 </div>
               }
@@ -130,36 +133,31 @@ const HeroSection = () => {
               </div>
               <div className='box'>
                 <div className='title'>الوقت<span>*</span></div>
-                { round === "oneRound"
-                  ?
-                  <div className="oneRoundTime">
-                    <img src='./clock.svg' alt='clock' />
+                { round === "oneRound" ?
+                  <div className='time-field'>
+                    <img src='/clock.svg' alt='clock' />
                     <TimePicker
-                      placeholder='حدد الوقت الوصول'
-                      showSecond={ false }
-                      onChange={ onChangeOneTime }
-                      format={ format }
+                      className='time-input'
                       use12Hours
+                      format="h:mm A"
+                      variant="borderless"
+                      placeholder='حدد وقت الوصول'
+                      suffixIcon={ <ExpandMore /> }
+                      onChange={ onChangeTime }
                     />
                   </div>
                   : <TimeRng />
                 }
               </div>
-              <div className='box'>
+              <div className='box number-box'>
                 <div className='title'>الركّاب <span>*</span></div>
-                <div className="group">
-                  <img className='icon1' src='/user.svg' alt="user" />
-                  <div>
-                    <input list='numbers' type='text' required />
-                    <datalist id='numbers'>
-                      { persons.map((option) => (
-                        <option value={ option } key={ option } />
-                      )) }
-                    </datalist>
-                    <label>عدد الركاب</label>
-                  </div>
-                  <img className='icon2' src="/arrow-down.svg" alt="arrow-down" />
-                </div>
+                <InputNumber className='number-input'
+                  style={ { backgroundColor: "transparent", width: "169px", height: "24px", borderBottom:"2px solid #D9D9D9" } }
+                  variant="borderless"
+                  placeholder='عدد الركاب'
+                  min={ 1 }
+                  addonBefore={ <PermIdentity  sx={ {fontSize:'18px', color: "#9094A0" } } /> }
+                />
               </div>
             </div>
 
