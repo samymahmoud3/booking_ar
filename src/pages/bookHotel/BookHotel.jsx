@@ -10,9 +10,9 @@ import './bookHotel.scss';
 const BookHotel = () => {
   const [phone, setPhone] = useState('+20');
   const options = [
-    { label: "ريفيرا ", value: 1 },
-    { label: "بلازا", value: 2 },
-    { label: "ماجيك ", value: 3 },
+    { name: "ريفيرا " },
+    { name: "بلازا"},
+    { name: "ماجيك "},
   ]
 
   // Handle the  date change event
@@ -59,10 +59,10 @@ const BookHotel = () => {
                 options={ options }
                 direction='rtl'
                 placeholder='ادخل اسم الفندق'
-                labelField='label'
-                valueField='value'
+                labelField='name'
+                valueField='name'
                 color='#9094A0'
-              // onChange={ (value) => console.log(value.map(d=>d.label)) }
+              // onChange={ (value) => console.log(value.map(e=>e.name)) }
               />
             </div>
             <div className='input' >

@@ -16,6 +16,7 @@ import Packages from "./pages/packages/Packages";
 import ReligiousLandmarks from "./pages/religiousLandmarks/ReligiousLandmarks";
 import BookPackage from "./pages/bookPackage/BookPackage";
 import BookHotel from "./pages/bookHotel/BookHotel";
+import LandmarkBooking from "./pages/landmarkBooking/LandmarkBooking";
 
 function App() {
   const Layout = () => {
@@ -86,6 +87,10 @@ function App() {
         {
           path: '/religious-landmarks',
           element: <ReligiousLandmarks />
+        },
+        {
+          path: '/book-package-religious-landmarks',
+          element: <LandmarkBooking />
         },
         {
           path: '/book-hotel',
