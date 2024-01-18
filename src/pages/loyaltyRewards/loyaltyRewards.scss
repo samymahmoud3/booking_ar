@@ -1,0 +1,37 @@
+
+.loyalty-rewards {
+
+  .container {
+    max-width: 1265px;
+    margin: 64px auto 222px auto;
+
+    h1 {
+      font-size: 36px;
+      line-height: 46px; 
+      font-weight: 700; 
+      color: #BBA664;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 24px; 
+      font-weight: 500; 
+      color: #718096;
+      text-align: right;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      span {
+        font-size: 24px;
+        line-height: 24px; 
+        font-weight: 700; 
+        color: #BBA664;
+        margin-left: 10px;
+      }
+    }
+  }
+}
