@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import CarCategory from '../../components/carCategory/CarCategory';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -19,13 +19,17 @@ const Booking = () => {
   const [selectedOption, setSelectedOption] = useState('option1');
   const [selectedDate, setSelectedDate] = useState(null);
   const [phone, setPhone] = useState('+20');
-
   const options = [
     { name: "مكة" },
     { name: "المدينة" },
     { name: "الرياض" },
   ]
 
+  // handle upload files
+  const fileInputRef = useRef(null);
+  const handleFileInput = () => {
+    fileInputRef.current.click();
+  }
   
   // Handle the  payment option 
   const [paymentOption, setPaymentOption] = useState(paymentOptions[0].title);
@@ -235,7 +239,8 @@ const Booking = () => {
                   <span>*</span>يرجى ارفاق حجز الطيران او رقم الرحلة ( لمتابعه السائق موعد الوصول)
                 </p>
                 <div className='content'>
-                  <div className='upload_file'>
+                  <input ref={fileInputRef} type='file' style={{display:"none"}} />
+                  <div className='upload_file' onClick={handleFileInput}>
                     <img src='/upload.svg' alt='upload file' />
                     <h2>Upload Files</h2>
                     <p>PNG, JPG and GIF files are allowed</p>

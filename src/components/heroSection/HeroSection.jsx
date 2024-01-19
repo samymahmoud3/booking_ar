@@ -144,6 +144,7 @@ const HeroSection = () => {
                       placeholder='حدد وقت الوصول'
                       suffixIcon={ <ExpandMore /> }
                       onChange={ onChangeTime }
+                      size="small"
                     />
                   </div>
                   : <TimeRng />

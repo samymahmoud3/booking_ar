@@ -42,30 +42,37 @@ h2 {
       align-items: center;
       justify-content: center;
 
-      h3 {
-        font-size: 16px;
-        line-height: 16px;
-        font-weight: 500;
-        margin-bottom: 8px;
-        color: #000000;
-        text-align: center;
-        width: fit-content;
+      .header {
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        span {
-          font-size: 36px;
-          line-height: 43px;
-          font-weight: 400;
-          color: #C9B979;
+        h3 {
+          font-size: 16px;
+          line-height: 16px;
+          font-weight: 500;
+          margin-bottom: 8px;
+          color: #000000;
+          text-align: center;
+          width: fit-content;
+
+          span {
+            font-size: 36px;
+            line-height: 43px;
+            font-weight: 400;
+            color: #C9B979;
+          }
         }
-      }
 
-      p {
-        font-size: 14px;
-        line-height: 18px;
-        font-weight: 400;
-        color: #9094A0;
-        margin-bottom: 16px;
-      }
+        p {
+          font-size: 14px;
+          line-height: 18px;
+          font-weight: 400;
+          color: #9094A0;
+          margin-bottom: 16px;
+        }
+      }  
 
       .upload_file {
         width: 247px;
@@ -77,6 +84,7 @@ h2 {
         background-color: #FAFCFE;
         background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='13' ry='13' stroke='%23E0E5F2FF' stroke-width='3' stroke-dasharray='14' stroke-dashoffset='9' stroke-linecap='round'/%3e%3c/svg%3e");
         border-radius: 13px;
+        cursor: pointer;
 
         h2 {
           font-size: 20px;
