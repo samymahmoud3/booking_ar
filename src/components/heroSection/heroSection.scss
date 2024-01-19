@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .heroSection {
   width: 100%;
@@ -19,11 +20,40 @@
     margin: 106px 300px 32px 300px;
     text-align: center;
 
+    @include xl {
+      margin: 106px 200px 32px 200px;
+    }
+
+    @include lg {
+      margin: 156px 100px 32px 100px;
+    }
+
+    @include md {
+      margin: 156px 50px 32px 50px;
+    }
+
+    @include sm {
+      margin: 156px 0px 32px 0px;
+    }
+
     h2 {
       font-size: 28px;
       font-weight: 700;
       line-height: 45px;
       color: $light-color;
+
+      @include xl {
+        font-size: 25px;
+      }
+
+      @include md {
+        font-size: 20px;
+      }
+
+      @include sm {
+        font-size: 16px;
+        font-weight: 500;
+      }
     }
   }
 
@@ -32,6 +62,29 @@
     margin-bottom: 30px;
     margin-left: 104px;
     margin-right: 104px;
+
+    @include xl {
+      margin-left: 70px;
+      margin-right: 70px;
+    }
+
+    @include lg {
+      margin-left: 55px;
+      margin-right: 55px;
+    }
+
+    @include lg {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @include sm {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
 
     .type {
       width: fit-content;
@@ -43,17 +96,30 @@
       -webkit-backdrop-filter: blur(0px);
       border-radius: 20px 20px 0 0;
 
+      @include sm {
+        height: 48px;
+      }
+
       div {
         display: flex;
         align-items: center;
         padding: 12px 20px;
         cursor: pointer;
         height: 57px;
+
+        @include sm {
+          height: 48px;
+        }
+
       }
 
       .firstActive {
         background-color: $light-color;
         border-radius: 0px 20px 0 0;
+
+        @include sm {
+          height: 48px;
+        }
 
         path {
           fill: $yellow-color;
@@ -67,6 +133,10 @@
       .secondActive {
         background-color: $light-color;
         border-radius: 20px 0 0 0;
+
+        @include sm {
+          height: 48px;
+        }
 
         path {
           fill: $yellow-color;
@@ -82,7 +152,15 @@
         line-height: 19px;
         color: $light-color;
         margin-right: 8px;
+
+        @include sm {
+          font-weight: 400;
+          line-height: 16;
+        }
+
       }
+
+
     }
 
     .info {
@@ -92,8 +170,18 @@
       display: flex;
       align-items: end;
 
+      @include lg {
+        flex-direction: column;
+        align-items: center;
+      }
+
 
       .content {
+
+        @include md {
+          width: 100%;
+        }
+
 
         .methods {
           display: flex;
@@ -164,7 +252,21 @@
 
           .box {
             position: relative;
-            width: fit-content;
+            width: 189px;
+
+            @include md {
+              width: 200px;
+            }
+
+            @include smd {
+              width: 290px;
+            }
+
+            @include sm {
+              width: 280px;
+            }
+
+
 
             .title {
               font-weight: 500;
@@ -194,6 +296,18 @@
               display: flex;
               align-items: center;
 
+              @include md {
+                max-width: 200px;
+              }
+
+              @include smd {
+                max-width: 290px;
+              }
+
+              @include sm {
+                width: 280px;
+              }
+
               &::after {
                 position: absolute;
                 content: "";
@@ -203,11 +317,11 @@
                 right: 0;
                 background-color: #D9D9D9;
               }
-              
+
               .select-input {
-                max-width: 169px; 
-                background-color: transparent; 
-                border: none; 
+                width: 169px;
+                background-color: transparent;
+                border: none;
                 height: 24px;
                 font-size: 9px !important;
                 font-weight: 300 !important;
@@ -215,14 +329,40 @@
                 box-shadow: 0 0 0 !important;
                 color: #9094A0 !important;
                 padding: 0 1px 0 0px !important;
+
+                @include md {
+                  width: 200px;
+                }
+
+                @include smd {
+                  width: 290px;
+                }
+
+                @include sm {
+                  width: 270px !important;
+                }
               }
-            } // end input search
+            }
+
+            // end input search
 
             .number-field {
               position: relative;
               width: 169px;
               display: flex;
               align-items: center;
+
+              @include md {
+                width: 200px;
+              }
+
+              @include smd {
+                width: 290px;
+              }
+
+              @include sm {
+                width: 100%;
+              }
 
               &::after {
                 position: absolute;
@@ -233,7 +373,7 @@
                 right: 0;
                 background-color: #D9D9D9;
               }
-            
+
               .number-input {
                 margin-top: 4px;
                 border: none;
@@ -242,6 +382,18 @@
                 background-color: transparent;
                 width: 169px;
                 padding: 0px 0 6px 0 !important;
+
+                @include md {
+                  width: 200px;
+                }
+
+                @include smd {
+                  width: 290px;
+                }
+
+                @include sm {
+                  width: 100%;
+                }
 
                 :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input:placeholder-shown {
                   font-size: 9px;
@@ -267,6 +419,18 @@
                 outline: none;
                 border: none;
               }
+
+              @include md {
+                width: 200px;
+              }
+
+              @include smd {
+                width: 290px;
+              }
+
+              @include sm {
+                width: 100%;
+              }
             }
 
             .rs-picker-daterange>.rs-input-group.rs-input-group-inside .rs-input {
@@ -283,6 +447,18 @@
                 outline: none;
                 border: none;
               }
+
+              @include md {
+                width: 200px;
+              }
+
+              @include smd {
+                width: 290px;
+              }
+
+              @include sm {
+                width: 320px;
+              }
             }
 
             .rs-input-group.rs-input-group-inside .rs-input-group-addon {
@@ -292,15 +468,27 @@
                 outline: none;
                 border: none;
               }
-            } //end date range
+            }
+
+            //end date range
 
             .oneRoundDate {
               position: relative;
-              width: fit-content;
+              width: 169px;
               border-bottom: 2px solid #D9D9D9;
               display: flex;
               align-items: center;
               margin-top: 7px;
+
+              @include md {
+                width: 200px;
+              }
+
+              @include smd {
+                max-width: 290px;
+              }
+
+              
 
               #date-input {
                 border: none;
@@ -308,6 +496,18 @@
                 margin-right: 5px;
                 font-size: 9px;
                 width: 159px;
+
+                @include md {
+                  width: 200px;
+                }
+
+                @include smd {
+                  max-width: 290px;
+                }
+
+                @include sm {
+                  width: 250px !important;
+                }
               }
 
               &::after {
@@ -318,16 +518,32 @@
                 width: 100%;
                 height: 2px;
                 background-color: #D9D9D9;
+
+                @include sm {
+                width: 280px;
+              }
               }
             }
 
             // start time one round
             .time-field {
               position: relative;
-              display: flex; 
+              display: flex;
               background-color: transparent;
               margin-top: 5px;
               width: 169px;
+
+              @include md {
+                width: 200px;
+              }
+
+              @include smd {
+                width: 290px;
+              }
+
+              @include sm {
+                width: 100%;
+              }
 
               &::after {
                 position: absolute;
@@ -338,15 +554,18 @@
                 right: 0;
                 background-color: #D9D9D9;
               }
+
               .time-input {
                 width: 100%;
-                background-color: transparent; 
+                background-color: transparent;
                 height: 24px !important;
                 padding: 0px !important;
                 font-size: 9px !important;
                 font-weight: 200 !important;
               }
-            }//end time one round
+            }
+
+            //end time one round
           }
         }
 
@@ -369,6 +588,30 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
             grid-gap: 5px;
+
+            @include smd {
+
+              display: flex;
+              flex-direction: column;
+              grid-gap: 10px;
+            }
+
+            @include sm {
+              display: flex;
+              flex-direction: column;
+              grid-gap: 10px;
+            }
+
+            .boxCategory {
+              @include smd {
+                width: 300px;
+              }
+
+              @include sm {
+                width: 100%;
+              }
+            }
+
           }
         }
       }
@@ -377,6 +620,16 @@
         width: 160px;
         text-align: center;
         margin-right: 36px;
+
+        @include lg {
+          margin-top: 40px;
+        }
+
+        @include sm {
+          width: 100%;
+          margin-right: 10px;
+          margin-left: 10px;
+        }
 
         .bttn {
           font-size: 18px;

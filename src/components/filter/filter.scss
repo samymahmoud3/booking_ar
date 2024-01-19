@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 .filter_container {
 
       .title {
@@ -7,6 +8,10 @@
         line-height: 46px;
         color: $yellow-color;
         text-align: center;
+
+        @include sm {
+          font-size: 29px;
+        }
       }
 
       p {
@@ -31,6 +36,30 @@
           padding: 12px 30px;
           color: #637381;
           cursor: pointer;
+
+          @include lg {
+            padding: 2px 5px;
+            width: 90px;
+            text-align: center;
+          }
+
+          @include md {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 16px;
+            padding: 2px 5px;
+            width: 70px;
+            text-align: center;
+          }
+
+          @include smd {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 16px;
+            padding: 2px 5px;
+            width: 60px;
+            text-align: center;
+          }
         }
 
         .active_btn {

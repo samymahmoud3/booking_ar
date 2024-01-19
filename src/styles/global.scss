@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './responsive.scss';
 
 * {
   margin: 0;
@@ -40,11 +41,18 @@ body {
       }
 
       .item {
+        @include sm {
+          width: 273px;
+        }
 
         img {
           width: 352px;
           height: 202px;
           pointer-events: none;
+
+          @include sm {
+            width: 100%;
+          }
         }
 
         p {
@@ -73,6 +81,13 @@ body {
 
       .next {
         margin-left: 32px;
+      }
+
+      .next, .prev {
+        @include sm { 
+          width: 36px;
+          height: 36px;
+        }
       }
     }
   }

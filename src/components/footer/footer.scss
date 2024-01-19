@@ -1,10 +1,17 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .footer {
   padding: 71px 109px 41px 109px;
   background-color: #5C5C5C;
 
+  @include lg {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .container {
+
     display: grid;
     grid-template-columns: 3fr 2fr 2fr 1fr;
     grid-template-rows: 1fr auto;
@@ -13,6 +20,18 @@
       "copyright copyright copyright copyright";
     justify-items: start;
     gap: 1rem;
+
+    @include xl {
+      grid-template-columns: 2fr 2fr 3fr 1fr;
+    }
+
+    @include lg {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6rem;
+      width: 100%;
+      justify-content: start;
+    }
 
     h2 {
       font-size: 24px;
@@ -42,6 +61,14 @@
     .description {
       grid-area: description;
       width: 341px;
+
+      @include xl {
+        width: 200px;
+      }
+
+      @include lg {
+        width: 200px;
+      }
 
       p {
         font-size: 18px;

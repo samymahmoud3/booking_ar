@@ -1,9 +1,15 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .home {
+  overflow: hidden;
 
   .features {
     margin: 80px 104px;
+
+    @include sm {
+      margin: 80px 20px;
+    }
 
     .title {
       font-size: 36px;
@@ -12,12 +18,26 @@
       margin-bottom: 48px;
       text-align: center;
       color: $yellow-color;
+
+      @include sm {
+        font-size: 32px;
+      }
+    }
+
+    .carousel {
+      @include sm {
+        width: 95%;
+      }
     }
 
     .items {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
       gap: 38px;
+
+      @include sm {
+        grid-template-columns: repeat(auto-fill, minmax(273px, 1fr));
+      }
 
       .item {
         place-self: center;
@@ -44,6 +64,11 @@
       border-radius: 12px;
       background: #ffffff;
       box-shadow: 2px 2px 12px #bdbdbd, -2px -2px 12px #ffffff;
+
+      @include sm {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
 
       .quotes {
         width: 56px;
@@ -125,12 +150,24 @@
         line-height: 48px;
         text-align: center;
         margin: 12px 0;
+
+        @include smd {
+          font-weight: 500;
+          line-height: 39px;
+          font-size: 33px;
+        }
       }
 
       p {
         font-size: 16px;
         font-weight: 400;
         line-height: 24px;
+
+        @include smd {
+          line-height: 20px;
+          font-size: 14px;
+          padding: 0 30px;
+        }
       }
     }
   }
@@ -145,11 +182,27 @@
       padding-top: 55px;
       display: flex;
 
+      @include xl {
+        width: 88%;
+      }
+
+      @include lg {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      }
+
+      @include md {
+        width: 95%;
+      }
+
 
       .info {
         text-align: right;
         margin-left: 79px;
-        width: 505px;
+        max-width: 505px;
+
+
 
         h3 {
           font-size: 18px;
@@ -212,14 +265,19 @@
       .form_container {
         position: relative;
         padding: 54px 20px 20px 45px;
-        width: 541px;
+        max-width: 541px;
         z-index: 1;
+
 
         .circle_shape {
           position: absolute;
           top: 0;
           left: 0;
           z-index: -1;
+
+          @include sm {
+            display: none;
+          }
         }
 
         .dotted-shape1 {
@@ -244,6 +302,11 @@
           flex-direction: column;
           gap: 25px;
           z-index: 10;
+
+          @include sm {
+            padding: 10px;
+            width: 320px;
+          }
 
           input {
             padding: 12px 16px 12px 20px;
