@@ -122,12 +122,9 @@
               border-radius: 10px;
               height: 52px;
               z-index: 10;
-            }
-
-            .css-ufeubi-ReactDropdownSelect:focus,
-            .css-ufeubi-ReactDropdownSelect:focus-within {
-              outline: 0;
-              box-shadow: 0 0 0;
+              outline: 0 !important;
+              box-shadow: 0 0 0 !important;
+              color: #9094A0 !important;
             }
           }
         } //end dropdown search

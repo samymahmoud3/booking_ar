@@ -11,7 +11,7 @@
       padding: 45px 25px;
       border-radius: 20px;
       background: #ffffff;
-      box-shadow: 0px 5px 13px #666666;
+      box-shadow: 0px 0px 8px rgba($color: #000000, $alpha: 0.2);
 
       &:nth-child(2) {
         box-shadow: 0 0 0;
@@ -110,12 +110,8 @@
               padding: 0px 20px 0px 10px;
               border-radius: 10px;
               height: 52px;
-            }
-
-            .css-ufeubi-ReactDropdownSelect:focus,
-            .css-ufeubi-ReactDropdownSelect:focus-within {
-              outline: 0;
-              box-shadow: 0 0 0;
+              outline: 0 !important;
+              box-shadow: 0 0 0 !important;
             }
           }
         } //end dropdown search
@@ -129,6 +125,7 @@
 
     .payment_options {
       box-shadow: 0 0 0;
+      padding: 0;
 
       .options {
         width: 100%;
@@ -142,7 +139,7 @@
           height: 105px;
           padding: 16px;
           border-radius: 12px;
-          box-shadow: 0px 5px 13px #666666;
+          box-shadow: 0px 0px 8px rgba($color: #000000, $alpha: 0.2);
           text-align: center;
           cursor: pointer;
 

@@ -6,7 +6,7 @@ import 'rsuite/dist/rsuite-rtl.css';
 import DatePicker from "react-datepicker";
 import { TimeRng } from '../rangeTime/RangeTime';
 import { TimePicker,InputNumber} from 'antd';
-import { ExpandMore, PermIdentity } from '@mui/icons-material';
+import { ExpandMore } from '@mui/icons-material';
 import Select from 'react-dropdown-select';
 import './heroSection.scss';
 
@@ -151,13 +151,13 @@ const HeroSection = () => {
               </div>
               <div className='box number-box'>
                 <div className='title'>الركّاب <span>*</span></div>
-                <InputNumber className='number-input'
-                  style={ { backgroundColor: "transparent", width: "169px", height: "24px", borderBottom:"2px solid #D9D9D9" } }
-                  variant="borderless"
-                  placeholder='عدد الركاب'
-                  min={ 1 }
-                  addonBefore={ <PermIdentity  sx={ {fontSize:'18px', color: "#9094A0" } } /> }
-                />
+                <div className='number-field'>
+                  <img src='/user.svg' alt='user' />
+                  <InputNumber className='number-input'
+                    variant="borderless"
+                    placeholder='عدد الركاب'
+                    min={ 1 }
+                  /></div>
               </div>
             </div>
 

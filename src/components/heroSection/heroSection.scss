@@ -158,8 +158,8 @@
 
         .details {
           margin-top: 24px;
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
+          display: flex;
+          flex-wrap: wrap;
           gap: 20px;
 
           .box {
@@ -177,13 +177,13 @@
               }
             }
 
-            &:not(:last-child)::after {
+            &::after {
               position: absolute;
               content: '';
               width: 1px;
               height: 27px;
               background-color: #E6E6E6;
-              left: -10px;
+              left: -6px;
               top: 20px;
             }
 
@@ -205,40 +205,52 @@
               }
               
               .select-input {
-                width: 169px; 
+                max-width: 159px; 
                 background-color: transparent; 
                 border: none; 
                 height: 24px;
-                font-size: 9px !important;
-                // outline: 0 !important;
-                // box-shadow: 0 0 0 !important;
-              }
-
-              .css-y2ad0l-InputComponent {
-                border: none;
-                margin-left: 5px;
-                background: transparent;
-                padding: 0;
-                width: 100%; 
-                // font-size: 9px !important;
-                color: #9094A0;
-              }
-
-              .css-ufeubi-ReactDropdownSelect:focus, .css-ufeubi-ReactDropdownSelect:focus-within {
+                font-size: 8px !important;
+                font-weight: 400 !important;
                 outline: 0 !important;
                 box-shadow: 0 0 0 !important;
+                color: #9094A0 !important;
+                padding: 0 3px 0 10px !important;
+                
               }
             } // end input search
 
-            .number-input {
-              margin-top: 11px;
+            .number-field {
+              position: relative;
+              width: 169px;
+              display: flex;
+              align-items: center;
 
-              :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input:placeholder-shown {
-                font-size: 9px;
+              &::after {
+                position: absolute;
+                content: "";
+                height: 2px;
+                width: 100%;
+                bottom: -3px;
+                right: 0;
+                background-color: #D9D9D9;
               }
+            
+              .number-input {
+                margin-top: 4px;
+                border: none;
+                font-size: 10px !important;
+                border-radius: 0;
+                background-color: transparent;
+                width: 169px;
+                padding: 0px 0 6px 0 !important;
 
-              :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input {
-                padding: 0px;
+                :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input:placeholder-shown {
+                  font-size: 9px;
+                }
+
+                :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input {
+                  padding: 0px;
+                }
               }
             }
 

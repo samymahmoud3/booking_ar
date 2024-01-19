@@ -26,6 +26,10 @@ const Booking = () => {
     { name: "الرياض" },
   ]
 
+  
+  // Handle the  payment option 
+  const [paymentOption, setPaymentOption] = useState(paymentOptions[0].title);
+
   // start timeRang
   const [startTime, setStartTime] = useState(moment());
   const [endTime, setEndTime] = useState(moment());
@@ -208,7 +212,7 @@ const Booking = () => {
                     style={ { backgroundColor: "#F4F6F9", width: "327px", height: "52px", padding: "16px 0px 0 0" } }
                     variant="borderless"
                     placeholder='ادخل عدد الركاب'
-                    addonBefore={ <PermIdentity  sx={ {fontSize:'15px', color: "#9094A0",padding:"1px 0 0 0" } } /> }
+                    addonBefore={ <PermIdentity sx={ { fontSize: '15px', color: "#9094A0", padding: "1px 0 0 0" } } /> }
                     min={ 1 }
                   />
                 </div>
@@ -308,10 +312,10 @@ const Booking = () => {
               <div className='options'>
                 {
                   paymentOptions.map((option, index) => (
-                    <div className={ `option ${selected === index ? "selected" : ""}` } key={ index } onClick={ () => handleSelect(index) }>
+                    <div className={ `option ${paymentOption === option.title ? "selected" : ""}` } key={ index } onClick={ () => setPaymentOption(option.title) }>
                       <h4>{ option.title }</h4>
                       <p>{ option.description }</p>
-                      { selected === index &&
+                      { paymentOption === option.title &&
                         <img className='question_mark' src='/question-mark.svg' alt='question mark' />
                       }
                     </div>
@@ -338,41 +342,47 @@ const Booking = () => {
                 <p>400.00 $</p>
               </div>
             </div>
-            <div className='info_div card_info'>
-              <div className='title'>
-                <h3>معلومات البطاقه</h3>
-                <div className='cards'>
-                  <img src='/mastercard.svg' alt='mastercard' />
-                  <img src='/visa.svg' alt='visa' />
+            {
+              paymentOption != "الدفع عند الوصول" ?
+                <div className='info_div card_info'>
+                  <div className='title'>
+                    <h3>معلومات البطاقه</h3>
+                    <div className='cards'>
+                      <img src='/mastercard.svg' alt='mastercard' />
+                      <img src='/visa.svg' alt='visa' />
+                    </div>
+                  </div>
+                  <div className='inputs'>
+                    <div className='input'>
+                      <label htmlFor='cardName'>الاسم على بطاقة الائتمان<span>*</span></label>
+                      <input type='text' id='cardName' placeholder='ادخل اسم صاحب البطاقة' required />
+                    </div>
+                    <div className='input'>
+                      <label htmlFor='cardNumber'>رقم بطاقة الائتمان<span>*</span></label>
+                      <input type='tel' id='cardNumber' placeholder='ادخل رقم بطاقة الائتمان' required />
+                    </div>
+                    <div className='input'>
+                      <label htmlFor='expireDate'>تاريخ الصلاحية<span>*</span></label>
+                      <DatePicker id="date-input"
+                        selected={ selectedDate }
+                        onChange={ handleChange }
+                        dateFormat="dd/MM/yyyy"
+                        placeholderText="23/01/2024"
+                      />
+                    </div>
+                    <div className='input'>
+                      <label htmlFor='pass'>CVV<span>*</span></label>
+                      <input type='tel' id='pass' placeholder='223' required />
+                    </div>
+                  </div>
+                  <div className='pay_btn btn'>
+                    دفع
+                  </div>
                 </div>
-              </div>
-              <div className='inputs'>
-                <div className='input'>
-                  <label htmlFor='cardName'>الاسم على بطاقة الائتمان<span>*</span></label>
-                  <input type='text' id='cardName' placeholder='ادخل اسم صاحب البطاقة' required />
+                : <div className='btn'>
+                  حجز
                 </div>
-                <div className='input'>
-                  <label htmlFor='cardNumber'>رقم بطاقة الائتمان<span>*</span></label>
-                  <input type='tel' id='cardNumber' placeholder='ادخل رقم بطاقة الائتمان' required />
-                </div>
-                <div className='input'>
-                  <label htmlFor='expireDate'>تاريخ الصلاحية<span>*</span></label>
-                  <DatePicker id="date-input"
-                    selected={ selectedDate }
-                    onChange={ handleChange }
-                    dateFormat="dd/MM/yyyy"
-                    placeholderText="23/01/2024"
-                  />
-                </div>
-                <div className='input'>
-                  <label htmlFor='pass'>CVV<span>*</span></label>
-                  <input type='tel' id='pass' placeholder='223' required />
-                </div>
-              </div>
-              <div className='pay_btn btn'>
-                دفع
-              </div>
-            </div>
+            }
           </div>
 
           <div className='booking_map'>map</div>
