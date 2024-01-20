@@ -46,15 +46,31 @@
   }
 
   .typeOfCars {
+    
+    .carousel {
+      @include lg {
+        width: 100% !important;
+      }
+    }
     .item {
       width: 352px;
       height: 260px;
       margin-left: 50px;
+
+      @include sm {
+        margin-left: 10px;
+      }
     }
   }
 
   .reviews {
     background-color: $light-color;
+
+    .carousel {
+      @include lg {
+        width: 100% !important;
+      }
+    }
 
     .item {
       position: relative;
@@ -183,7 +199,7 @@
       display: flex;
 
       @include xl {
-        width: 88%;
+        width: 90%;
       }
 
       @include lg {
@@ -193,7 +209,7 @@
       }
 
       @include md {
-        width: 95%;
+        width: 99%;
       }
 
 
@@ -201,6 +217,10 @@
         text-align: right;
         margin-left: 79px;
         max-width: 505px;
+
+        @include xl {
+        max-width: 100%;
+      }
 
 
 
@@ -268,6 +288,11 @@
         max-width: 541px;
         z-index: 1;
 
+        @include xl {
+        width: 100%;
+        // padding: 50px 20px;
+      }
+
 
         .circle_shape {
           position: absolute;
@@ -285,6 +310,10 @@
           top: 125px;
           left: 10px;
           z-index: -1;
+
+          @include sm {
+            display: none;
+          }
         }
 
         .dotted-shape2 {
@@ -292,6 +321,10 @@
           right: 0;
           bottom: 0;
           z-index: -1;
+
+          @include sm {
+            display: none;
+          }
         }
 
         .contact_form {
@@ -302,6 +335,10 @@
           flex-direction: column;
           gap: 25px;
           z-index: 10;
+
+          @include xl {
+        width: 100%;
+      }
 
           @include sm {
             padding: 10px;

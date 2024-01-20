@@ -1,21 +1,43 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .booking {
   padding-bottom: 124px;
   box-shadow: 6px 6px 16px 0px rgba(0, 0, 0, 0.4);
 
+  @include lg {
+    box-shadow: 0 0 0 0;
+  }
+
   .container {
     width: 85.5%;
     margin: auto;
 
+    @include xl {
+      width: 100%;
+    }
+
+
+
     .features {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(308px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       align-items: center;
       padding-top: 10px;
       gap: 10px;
       margin-bottom: 76px;
+
+      @include xl {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 70px;
+      }
+
+
+      @include lg {
+        margin-top: 100px;
+      }
 
       .feature {
         display: flex;
@@ -52,9 +74,18 @@
       align-items: start;
       gap: 30px;
 
+      @include xl {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
       .information {
         width: 754px;
         border-radius: 20px;
+
+        @include xl {
+          width: 95%;
+        }
 
         .info_div {
           width: 100%;
@@ -62,6 +93,10 @@
           border-radius: 20px;
           background: #ffffff;
           box-shadow: 0px 0px 8px rgba($color: #000000, $alpha: 0.2);
+
+          @include sm {
+            padding: 45px 15px;
+          }
 
           h3 {
             font-size: 20px;
@@ -147,6 +182,10 @@
 
             .box {
 
+              @include sm {
+                max-width: 326px !important;
+              }
+
               .title {
                 font-weight: 500;
                 margin-bottom: 5px;
@@ -182,7 +221,9 @@
                   box-shadow: 0 0 0 !important;
                   color: #9094A0 !important;
                 }
-              } // end input place
+              }
+
+              // end input place
 
               // number input
               .number-input {
@@ -195,7 +236,9 @@
                 :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input {
                   padding: 3px;
                 }
-              } //end number input 
+              }
+
+              //end number input 
 
               // start time range
               #react-time-range {
@@ -302,6 +345,19 @@
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
               grid-gap: 15px;
+
+              @include sm {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+                grid-gap: 5px;
+
+              }
+
+              .item {
+                @include sm {
+                  max-width: 320px;
+                }
+              }
             }
           }
         }
@@ -326,12 +382,18 @@
             }
 
             .content {
-              display: flex;
+              display: grid;
+              grid-template-columns: auto auto;
               align-items: center;
               justify-content: space-between;
 
+              @include md {
+                display: flex;
+                flex-direction: column;
+              }
+
               .upload_file {
-                width: 247px;
+                width: 240px;
                 height: 269px;
                 display: flex;
                 flex-direction: column;
@@ -360,6 +422,10 @@
 
               .addition_options {
                 width: 420px;
+
+                @include md {
+                  width: 100%;
+                }
 
                 h2 {
                   font-size: 15px;
@@ -398,6 +464,11 @@
                       line-height: 21px;
                       font-weight: 500;
                       color: #212529;
+
+                      @include sm {
+                        font-weight: 400;
+                        font-size: 11px;
+                      }
 
                       .text {
                         color: #9094A0;
@@ -567,6 +638,10 @@
             box-shadow: 0px 0px 8px rgba($color: #000000, $alpha: 0.2);
             text-align: center;
 
+            @include sm {
+              width: 116px;
+            }
+
             h4 {
               font-size: 16px;
               line-height: 24px;
@@ -574,6 +649,14 @@
               color: #1A202C;
               padding-bottom: 15px;
               border-bottom: 1.5px solid #DDDFE1;
+
+
+
+              @include sm {
+                font-size: 10px;
+                line-height: 15px;
+                height: 40px;
+              }
             }
 
             p {
@@ -582,6 +665,12 @@
               line-height: 21px;
               font-weight: 400;
               color: $yellow-color;
+
+              @include sm {
+                font-size: 8px;
+                line-height: 12px;
+
+              }
             }
 
             .question_mark {
@@ -667,6 +756,10 @@
       border-radius: 20px;
       border: 2px solid #E2CE7F;
       background-color: rgb(0, 0, 0);
+
+      @include xl {
+        width: 95%;
+      }
     }
   }
 

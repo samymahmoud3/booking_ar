@@ -225,7 +225,7 @@ const Booking = () => {
                 <div className="title">الفئة <span>*</span></div>
                 <div className='category'>
                   { categories.map((cat, index) => (
-                    <div key={ cat } onClick={ () => handleSelect(index) }>
+                    <div className='item' key={ cat } onClick={ () => handleSelect(index) }>
                       <CarCategory select={ selected === index ? "selected" : "" } category={ cat } />
                     </div>
                   )) }
@@ -260,7 +260,7 @@ const Booking = () => {
                           />
                           <span className="checkmark"></span>
                         </label>
-                        <span>مجانا</span>
+                        <span style={{width:"32px"}}>مجانا</span>
                       </div>
                       <div className="checkbox">
                         <label htmlFor="checkbox-2" className="container">
@@ -275,7 +275,7 @@ const Booking = () => {
                           />
                           <span className="checkmark"></span>
                         </label>
-                        <span>100 ريال</span>
+                        <span style={{width:"32px"}}>100 ريال</span>
                       </div>
                     </div>
                   </div>
