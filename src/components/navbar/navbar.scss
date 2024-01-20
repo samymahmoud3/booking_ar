@@ -26,7 +26,7 @@
   }
 
   @include lg {
-    padding:  0;
+    padding: 0;
     height: 0;
     width: 0px;
   }
@@ -66,6 +66,11 @@
       line-height: 19.2px;
       text-decoration: none;
       color: $main-color;
+
+      &:hover {
+        color: $yellow-color;
+        transition: all 0.5s ease;
+      }
 
       @include xl {
         font-weight: 400;
@@ -126,6 +131,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       .link {
         margin: 25px;
         font-size: 1.6rem;
