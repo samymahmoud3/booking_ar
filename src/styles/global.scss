@@ -11,7 +11,7 @@ body {
   font-family: 'Tajawal', sans-serif;
 }
 
-.link{
+.link {
   text-decoration: none;
   color: inherit;
 }
@@ -25,72 +25,73 @@ body {
 }
 
 .carousel_section {
-    background-color: #FCFAF5;
-    height: fit-content;
-    padding-top: 64px;
-    padding-bottom: 64px;
+  background-color: #FCFAF5;
+  height: fit-content;
+  padding-top: 64px;
+  padding-bottom: 64px;
 
-    .carousel {
-      overflow: hidden;
-      margin: 50px auto;
+  .carousel {
+    overflow: hidden;
+    margin: 50px auto;
 
-      .inner-carousel {
-        display: flex;
-        width: fit-content;
-        margin: 0 auto;
-      }
-
-      .item {
-        @include sm {
-          width: 273px;
-        }
-
-        img {
-          width: 352px;
-          height: 202px;
-          pointer-events: none;
-
-          @include sm {
-            width: 100%;
-          }
-        }
-
-        p {
-          font-size: 22px;
-          font-weight: 700;
-          line-height: 26.4px;
-          text-align: center;
-        }
-      }
+    .inner-carousel {
+      display: flex;
+      width: fit-content;
+      margin: 0 auto;
     }
 
-    .icons {
-      text-align: center;
+    .item {
+      @include sm {
+        width: 273px;
+      }
 
-      .icon {
-        border-radius: 100%;
-        background-color: $light-color;
-        cursor: pointer;
-        padding: 10px;
+      img {
+        width: 352px;
+        height: 202px;
+        pointer-events: none;
 
-        &:hover {
-          background-color: $yellow-color;
-          color: $light-color;
+        @include sm {
+          width: 100%;
         }
       }
 
-      .next {
-        margin-left: 32px;
-      }
-
-      .next, .prev {
-        @include sm { 
-          width: 36px;
-          height: 36px;
-        }
+      p {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 26.4px;
+        text-align: center;
       }
     }
   }
+
+  .icons {
+    text-align: center;
+
+    .icon {
+      border-radius: 100%;
+      background-color: $light-color;
+      cursor: pointer;
+      padding: 10px;
+
+      &:hover {
+        background-color: $yellow-color;
+        color: $light-color;
+      }
+    }
+
+    .next {
+      margin-left: 32px;
+    }
+
+    .next,
+    .prev {
+      @include sm {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}
 
 /* start partner hero */
 .partner_hero {
@@ -108,6 +109,19 @@ body {
     color: $light-color;
     width: 85.5%;
     margin: auto;
+    height: fit-content;
+
+    @include md {
+      width: 95%;
+    }
+
+    @include sm {
+      width: 90%;
+      flex-direction: column;
+      margin-top: 150px;
+      margin-bottom: 200px;
+      gap: 50px;
+    }
 
     .right_div {
       max-width: 358px;
@@ -116,6 +130,11 @@ body {
         font-size: 36px;
         line-height: 43px;
         font-weight: 700;
+
+        @include md {
+          font-size: 30px;
+          line-height: 40px;
+        }
       }
 
       p {
@@ -139,6 +158,11 @@ body {
         justify-content: center;
         text-decoration: none;
         color: $light-color;
+
+        @include sm {
+          width: 170px;
+          height: 52px;
+        }
       }
     }
 
@@ -149,6 +173,7 @@ body {
         &:not(:last-child) {
           margin-bottom: 32px;
         }
+
         h2 {
           font-size: 24px;
           line-height: 28px;
@@ -165,4 +190,5 @@ body {
     }
   }
 }
+
 /* end partner hero */

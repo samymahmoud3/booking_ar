@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .book-package {
 
@@ -12,6 +13,10 @@
       border-radius: 20px;
       background: #ffffff;
       box-shadow: 0px 0px 8px rgba($color: #000000, $alpha: 0.2);
+
+      @include sm {
+        padding: 45px 10px;
+      }
 
       &:nth-child(2) {
         box-shadow: 0 0 0;
@@ -38,6 +43,10 @@
         gap: 22px;
 
         .input {
+          @include sm {
+            width: 326px !important;
+          }
+
           input {
             &::placeholder {
               color: #9094A0;
@@ -78,6 +87,7 @@
         .react-tel-input .selected-flag .arrow {
           left: -30px;
         }
+
         // end number input
 
         // start input search
@@ -103,6 +113,10 @@
             border-radius: 10px;
             margin-top: 10px;
 
+            @include sm {
+              width: 326px !important;
+            }
+
             .select-input {
               width: 333px;
               background-color: #F4F6F9;
@@ -112,9 +126,15 @@
               height: 52px;
               outline: 0 !important;
               box-shadow: 0 0 0 !important;
+
+              @include sm {
+                width: 326px !important;
+              }
             }
           }
-        } //end dropdown search
+        }
+
+        //end dropdown search
       }
     }
 

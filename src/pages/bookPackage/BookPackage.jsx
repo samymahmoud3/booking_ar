@@ -5,7 +5,6 @@ import { paymentOptions} from '../../data';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { TimePicker, InputNumber } from 'antd';
-import { ExpandMore } from '@mui/icons-material';
 import './bookPackage.scss';
 
 const BookPackage = () => {
@@ -76,13 +75,14 @@ const BookPackage = () => {
                     format="h:mm A"
                     variant="borderless"
                     placeholder='اكتب الوقت'
-                    suffixIcon={ <ExpandMore /> }
+                    suffixIcon={ false }
                     onChange={ onChangeTime }
                   />
                 </div>
                 <div className='input'>
                   <label >الركاب<span>*</span></label>
-                  <InputNumber style={ { backgroundColor: "#F4F6F9", width: "330px", height: "52px", padding: "10px 10px 0 0" } }
+                <InputNumber className='persons-input'
+                  style={ { backgroundColor: "#F4F6F9", width: "333px", height: "52px", padding: "10px 10px 0 0" } }
                     variant="borderless"
                     placeholder='اكتب عدد الركاب'
                     min={ 1 }

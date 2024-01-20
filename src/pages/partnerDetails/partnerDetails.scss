@@ -1,8 +1,13 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .partner_details {
   padding-top: 80px;
   padding-bottom: 80px;
+
+  @include lg {
+    padding-top: 100px;
+  }
 }
 
 h2 {
@@ -11,29 +16,76 @@ h2 {
   font-weight: 700;
   color: #1A202C;
   margin-bottom: 40px;
+
+  @include smd {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
 .step1 {
-  max-width: 1152px;
+  width: 80%;
   margin: auto;
   text-align: center;
+
+  @include lg {
+    width: 87%;
+  }
+
+  @include md {
+    width: 95%;
+  }
 
   .step1_info {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
     gap: 22px;
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include smd {
+      grid-template-columns: repeat(auto-fill, minmax(358px, 1fr)) !important;
+    }
+
+    .input {
+      @include smd {
+        width: 358px !important;
+      }
+
+      .step-dropdown {
+        width: 100%;
+      }
+    }
   }
 }
 
 .step2 {
-  max-width: 1232px;
+  width: 80%;
   margin: auto;
   text-align: center;
+
+  @include lg {
+    width: 87%;
+  }
+
+  @include md {
+    width: 95%;
+  }
 
   .upload_items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(284px, 1fr));
     gap: 22px;
+
+    @include smd {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .item {
       max-width: 284px;
@@ -72,7 +124,7 @@ h2 {
           color: #9094A0;
           margin-bottom: 16px;
         }
-      }  
+      }
 
       .upload_file {
         width: 247px;
@@ -106,14 +158,47 @@ h2 {
 }
 
 .step3 {
-  max-width: 1232px;
+  width: 80%;
   margin: auto;
   text-align: center;
+
+  @include lg {
+    width: 87%;
+  }
+
+  @include md {
+    width: 95%;
+    margin: 10px;
+  }
 
   .step3_info {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
     gap: 22px;
+
+    @include md {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include smd {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(358px, 1fr));
+
+    }
+
+    .input {
+
+
+      @include smd {
+        width: 358px !important;
+      }
+
+      .step-dropdown {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -129,6 +214,10 @@ h2 {
   margin: auto;
   margin-top: 40px;
   cursor: pointer;
+
+  @include sm {
+    width: 358px;
+  }
 }
 
 .input {

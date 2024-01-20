@@ -5,7 +5,6 @@ import { paymentOptions} from '../../data';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { TimePicker, InputNumber } from 'antd';
-import { ExpandMore } from '@mui/icons-material';
 import Select from 'react-dropdown-select';
 import './landmarkBooking.scss';
 
@@ -96,7 +95,7 @@ const LandmarkBooking = () => {
                     format="h:mm a"
                     variant="borderless"
                     placeholder='اكتب الوقت'
-                    suffixIcon={ <ExpandMore /> }
+                    suffixIcon={ false }
                     onChange={ onChangeTime }
                   />
                 </div>

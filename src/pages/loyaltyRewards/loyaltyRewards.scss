@@ -1,9 +1,11 @@
+@import '../../styles/responsive.scss';
 
 .loyalty-rewards {
 
   .container {
     max-width: 1265px;
-    margin: 64px auto 222px auto;
+    margin: 94px auto 222px auto;
+    padding: 0px 40px;
 
     h1 {
       font-size: 36px;

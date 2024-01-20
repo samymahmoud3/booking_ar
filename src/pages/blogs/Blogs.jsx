@@ -23,7 +23,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className='blogs'>
+    <div className='blogs' style={{paddingTop:"25px"}}>
       <div className='blogs_filter' style={ { marginTop: '64px' } }>
         <Filter
           categories={ blogsData.categories }

@@ -217,6 +217,7 @@
         text-align: right;
         margin-left: 79px;
         max-width: 505px;
+        padding: 0 10px;
 
         @include xl {
         max-width: 100%;
@@ -335,6 +336,7 @@
           flex-direction: column;
           gap: 25px;
           z-index: 10;
+          width: 470px;
 
           @include xl {
         width: 100%;

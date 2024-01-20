@@ -16,7 +16,7 @@ const JoinUs = () => {
                 iconName={ item.iconName }
                 title={ item.title }
                 description={ item.description }
-                width="400px"
+                width="333px"
                 color="#000000"
               />
             ))

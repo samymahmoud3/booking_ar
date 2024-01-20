@@ -694,6 +694,11 @@
             line-height: 27px;
             font-weight: 700;
             color: $yellow-color;
+
+            @include sm {
+              font-size: 14px;
+              line-height: 21px;
+            }
           }
 
           p {
@@ -701,6 +706,11 @@
             line-height: 36px;
             font-weight: 700;
             color: $yellow-color;
+
+            @include sm {
+              font-size: 18px;
+              line-height: 27px;
+            }
           }
 
           &:not(:last-child) {
@@ -711,6 +721,11 @@
               line-height: 27px;
               font-weight: 500;
               color: #1A202C;
+
+              @include sm {
+                font-size: 16px;
+                line-height: 24px;
+              }
             }
 
             p {

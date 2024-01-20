@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .book-package {
 
@@ -6,12 +7,24 @@
     max-width: 754px;
     margin: 56px auto;
 
+    @include lg {
+      padding-top: 30px;
+    }
+
+    @include sm {
+      width: 95%;
+    }
+
     .info_div {
       width: 100%;
       padding: 45px 25px;
       border-radius: 20px;
       background: #ffffff;
       box-shadow: 0px 5px 13px #666666;
+
+      @include sm {
+        padding: 45px 10px;
+      }
 
       &:nth-child(2) {
         box-shadow: 0 0 0;
@@ -37,7 +50,18 @@
         grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
         gap: 22px;
 
+        @include sm {
+          display: flex;
+          flex-direction: column;
+        }
+
         .input {
+
+          @include sm {
+            flex-basis: 326px !important;
+            width: 326px;
+          }
+
           input {
             &::placeholder {
               color: #9094A0;
@@ -56,6 +80,10 @@
           border-radius: 8px;
           padding-right: 16px;
           background-color: #F4F6F9;
+
+          @include sm {
+            width: 250px !important;
+          }
         }
 
         .react-tel-input .flag-dropdown {
@@ -80,11 +108,21 @@
         }
 
         // end number input
+
+        .persons-input {
+          @include sm {
+            width: 326px !important;
+          }
+        }
       }
     }
 
     #date-input {
-      width: 330px;
+      width: 333px !important;
+
+      @include sm {
+        width: 326px !important;
+      }
     }
 
 
@@ -107,6 +145,10 @@
           text-align: center;
           cursor: pointer;
 
+          @include sm {
+            width: 116px !important;
+          }
+
           h4 {
             font-size: 14px;
             line-height: 24px;
@@ -114,6 +156,12 @@
             color: #1A202C;
             padding-bottom: 15px;
             border-bottom: 1.5px solid #DDDFE1;
+
+            @include sm {
+              font-size: 10px !important;
+              line-height: 15px !important;
+              height: 40px !important;
+            }
           }
 
           p {
@@ -122,6 +170,11 @@
             line-height: 21px;
             font-weight: 400;
             color: $yellow-color;
+
+            @include sm {
+              font-size: 8px !important;
+              line-height: 12px !important;
+            }
           }
 
           .question_mark {
@@ -145,6 +198,11 @@
           line-height: 27px;
           font-weight: 700;
           color: $yellow-color;
+
+          @include sm {
+            font-size: 14px !important;
+            line-height: 21px !important;
+          }
         }
 
         p {
@@ -152,6 +210,11 @@
           line-height: 36px;
           font-weight: 700;
           color: $yellow-color;
+
+          @include sm {
+            font-size: 18px !important;
+            line-height: 27px !important;
+          }
         }
 
         &:not(:last-child) {
@@ -162,6 +225,11 @@
             line-height: 27px;
             font-weight: 500;
             color: #1A202C;
+
+            @include sm {
+              font-size: 16px !important;
+              line-height: 24px !important;
+            }
           }
 
           p {
@@ -195,8 +263,18 @@
         grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
         gap: 22px;
 
+        .input {
+          @include sm {
+            width: 326px !important;
+          }
+        }
+
         #date-input {
-          width: 338px;
+          width: 338px !important;
+
+          @include sm {
+            width: 326px !important;
+          }
         }
       }
 
