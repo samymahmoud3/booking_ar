@@ -5,9 +5,14 @@
   padding: 71px 109px 41px 109px;
   background-color: #5C5C5C;
 
-  @include lg {
-    padding-left: 40px;
-    padding-right: 40px;
+  @include xl {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+   @include md {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .container {
@@ -22,15 +27,21 @@
     gap: 1rem;
 
     @include xl {
-      grid-template-columns: 2fr 2fr 3fr 1fr;
+      grid-template-columns: 2fr 2fr 3fr 2fr;
     }
 
     @include lg {
       display: flex;
       flex-wrap: wrap;
-      gap: 6rem;
+      gap: 1.5rem;
       width: 100%;
       justify-content: start;
+    }
+
+    @include smd {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
     }
 
     h2 {
@@ -39,6 +50,12 @@
       font-weight: 700;
       margin-bottom: 28px;
       color: $yellow-color;
+
+      @include smd {
+        font-weight: 600;
+        line-height: 21px;
+        width: 100%;
+      }
     }
 
     .links {
@@ -51,6 +68,13 @@
         font-weight: 400;
         color: $light-color;
         text-decoration: none;
+
+        @include smd {
+          font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+        width: 100%;
+      }
 
         &:not(:last-child) {
           margin-bottom: 10px;
