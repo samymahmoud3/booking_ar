@@ -8,7 +8,7 @@ import { TimePicker, InputNumber } from 'antd';
 import './bookPackage.scss';
 
 const BookPackage = () => {
-  const [phone, setPhone] = useState('+20');
+  const [phone, setPhone] = useState('');
 
   // Handle the  payment option 
   const [selected, setSelected] = useState("الدفع عند الوصول");
@@ -45,7 +45,7 @@ const BookPackage = () => {
               <div>
                 <PhoneInput
                   id="phone"
-                  country={ "eg" }
+                  country={ "sa" }
                   placeholder="رقم الجوال"
                   onChange={ (value) => setPhone(value) }
                   value={ phone }

@@ -1,4 +1,3 @@
-// import  { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Link } from "react-router-dom";
@@ -27,7 +26,7 @@ const Registration = () => {
           <div style={{marginBottom: "30px"}}>
             <PhoneInput
               id="phone"
-              country={ "eg" }
+              country={ "sa" }
               placeholder="رقم الجوال"
               required
             />

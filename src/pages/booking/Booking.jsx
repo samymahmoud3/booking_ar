@@ -302,7 +302,7 @@ const Booking = () => {
                   <div>
                     <PhoneInput
                       id="phone"
-                      country={ "eg" }
+                      country={ "sa" }
                       placeholder="رقم الجوال"
                       onChange={ (value) => setPhone(value) }
                       value={ phone }

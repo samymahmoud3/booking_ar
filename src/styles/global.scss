@@ -31,8 +31,15 @@ body {
   padding-bottom: 64px;
 
   .carousel {
-    overflow: hidden;
+    overflow-x: scroll;
     margin: 50px auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .inner-carousel {
       display: flex;

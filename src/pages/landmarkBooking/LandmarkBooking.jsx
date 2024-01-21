@@ -9,7 +9,7 @@ import Select from 'react-dropdown-select';
 import './landmarkBooking.scss';
 
 const LandmarkBooking = () => {
-  const [phone, setPhone] = useState('+20');
+  const [phone, setPhone] = useState('');
   const options = [
     { name: "مكة" },
     { name: "المدينة" },
@@ -51,7 +51,7 @@ const LandmarkBooking = () => {
               <div>
                 <PhoneInput
                   id="phone"
-                  country={ "eg" }
+                  country={ "sa" }
                   placeholder="رقم الجوال"
                   onChange={ (value) => setPhone(value) }
                   value={ phone }
