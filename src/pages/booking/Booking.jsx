@@ -13,6 +13,10 @@ import { TimePicker,InputNumber} from 'antd';
 import { ExpandMore, PermIdentity } from '@mui/icons-material';
 import Select from 'react-dropdown-select';
 import './booking.scss';
+import Map from '../../components/map/Map';
+
+import { ChakraProvider, theme } from '@chakra-ui/react'
+
 
 const Booking = () => {
   const [selected, setSelected] = useState(null);
@@ -390,7 +394,11 @@ const Booking = () => {
             }
           </div>
 
-          <div className='booking_map'>map</div>
+          <div className='booking_map'>
+            <ChakraProvider theme={theme}>
+     <Map />
+    </ChakraProvider>
+            </div>
 
         </div>
       </div>

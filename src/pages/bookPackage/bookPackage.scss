@@ -145,6 +145,10 @@
           text-align: center;
           cursor: pointer;
 
+           @include md {
+              padding: 6px !important;
+            }
+
           @include sm {
             width: 116px !important;
           }
@@ -156,6 +160,10 @@
             color: #1A202C;
             padding-bottom: 15px;
             border-bottom: 1.5px solid #DDDFE1;
+
+             @include md {
+                font-size: 14px !important;
+              }
 
             @include sm {
               font-size: 10px !important;
@@ -171,7 +179,11 @@
             font-weight: 400;
             color: $yellow-color;
 
-            @include sm {
+            @include md {
+                font-size: 12px !important;
+              }
+
+            @include sm{
               font-size: 8px !important;
               line-height: 12px !important;
             }
