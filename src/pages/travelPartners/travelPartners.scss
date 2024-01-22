@@ -3,6 +3,12 @@
 
 .travel_partners {
 
+  .partner_hero {
+    background-image:
+    linear-gradient( to top, rgba(158, 153, 153, 0.2), rgba(0, 0, 0, 0.8)),
+    url('/bg-mobile.jpg');  
+  }
+
   .work_features {
     padding: 72px 74px;
     background-color: #FCFAF5;

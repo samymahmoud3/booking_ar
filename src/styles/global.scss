@@ -110,6 +110,12 @@ body {
   background-size: cover;
   display: flex;
 
+  @include smd {
+    background-image:
+    linear-gradient( to top, rgba(158, 153, 153, 0.2), rgba(0, 0, 0, 0.8)),
+    url('/bg-mobile.jpg'); 
+  }
+
   .hero_content {
     display: flex;
     justify-content: space-between;
@@ -122,7 +128,7 @@ body {
       width: 95%;
     }
 
-    @include sm {
+    @include smd {
       width: 90%;
       flex-direction: column;
       margin-top: 150px;
