@@ -1,42 +1,48 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import CarCategory from '../../components/carCategory/CarCategory';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { paymentOptions} from '../../data';
+import { paymentOptions } from '../../data';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite-rtl.css';
 import TimeRange from "react-time-range";
 import moment from "moment";
-import { TimePicker,InputNumber} from 'antd';
+import { TimePicker, InputNumber } from 'antd';
 import { ExpandMore, PermIdentity } from '@mui/icons-material';
 import Select from 'react-dropdown-select';
 import './booking.scss';
-import Map from '../../components/map/Map';
 
-import { ChakraProvider, theme } from '@chakra-ui/react'
+import {
+  useJsApiLoader,
+  GoogleMap,
+  Marker,
+  DirectionsRenderer,
+} from '@react-google-maps/api'
+
+const center = { lat: 23.885, lng: 45.0792 }
 
 
 const Booking = () => {
   const [selected, setSelected] = useState(null);
-  const [selectedOption, setSelectedOption] = useState('option1');
+  const [selectedOption, setSelectedOption] = useState('option1'); // check box options
+  const [paymentOption, setPaymentOption] = useState(paymentOptions[0].title);
   const [selectedDate, setSelectedDate] = useState(null);
   const [phone, setPhone] = useState('+20');
+
   const options = [
     { name: "مكة" },
     { name: "المدينة" },
     { name: "الرياض" },
   ]
+  const categories = ["اقتصادية", "عائلية", "فاخرة", "VIP", "VVIP"]
 
   // handle upload files
   const fileInputRef = useRef(null);
   const handleFileInput = () => {
     fileInputRef.current.click();
   }
-  
-  // Handle the  payment option 
-  const [paymentOption, setPaymentOption] = useState(paymentOptions[0].title);
 
   // start timeRang
   const [startTime, setStartTime] = useState(moment());
@@ -52,8 +58,7 @@ const Booking = () => {
   };
   //end
 
-  const categories = ["اقتصادية", "عائلية", "فاخرة", "VIP", "VVIP"];
-
+  // addition options check box
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   }
@@ -89,6 +94,85 @@ const Booking = () => {
     setSelectedDateOne(date);
   }; //end
 
+  // map
+  const [originValue, setOriginValue] = useState("");
+  const [destinationValue, setDestinationValue] = useState("");
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: "AIzaSyASgAbuH64TxCFi1thH0LEl_kIhNorkP3Q",
+    libraries: ['places'],
+  })
+
+  const [directionsResponse, setDirectionsResponse] = useState(null)
+
+  // async function calculateRoute() {
+  //   // eslint-disable-next-line no-undef
+  //   let directionsService = new google.maps.DirectionsService()
+  //   let results = await directionsService.route({
+  //     origin: originValue,
+  //     destination: destinationValue,
+  //     // eslint-disable-next-line no-undef
+  //     travelMode: google.maps.TravelMode.DRIVING,
+  //   })
+  //   setDirectionsResponse(results)
+  // }
+
+async function calculateRoute() {
+  if (!isLoaded || !window.google || !window.google.maps) {
+    return;
+  }
+
+  let geocoder = new window.google.maps.Geocoder();
+  let originLatLng, destinationLatLng;
+
+  // Geocode origin
+  try {
+    const originResult = await geocodeAddress(geocoder, originValue);
+    originLatLng = originResult.geometry.location.toJSON();
+  } catch (error) {
+    console.error("Error geocoding origin address:", error.message);
+    return;
+  }
+
+  // Geocode destination
+  try {
+    const destinationResult = await geocodeAddress(geocoder, destinationValue);
+    destinationLatLng = destinationResult.geometry.location.toJSON();
+  } catch (error) {
+    console.error("Error geocoding destination address:", error.message);
+    return;
+  }
+
+  // Continue with the directions request using the geocoded coordinates
+  let directionsService = new window.google.maps.DirectionsService();
+  let results = await directionsService.route({
+    origin: originLatLng,
+    destination: destinationLatLng,
+    travelMode: window.google.maps.TravelMode.DRIVING,
+  });
+
+  setDirectionsResponse(results);
+}
+
+async function geocodeAddress(geocoder, address) {
+  return new Promise((resolve, reject) => {
+    geocoder.geocode({ address: address }, (results, status) => {
+      if (status === "OK" && results.length > 0) {
+        resolve(results[0]);
+      } else {
+        reject(new Error(`Geocoding error: ${status}`));
+      }
+    });
+  });
+}
+
+  useEffect(() => {
+    calculateRoute();
+  }, [originValue, destinationValue]);
+
+  if (!isLoaded) {
+    return;
+  }
 
   return (
     <div className='booking'>
@@ -149,7 +233,7 @@ const Booking = () => {
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
-                    // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                      onChange={ (value) => (value.map(e => setDestinationValue(e.name))) }
                     />
                   </div>
                 </div>
@@ -164,7 +248,7 @@ const Booking = () => {
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
-                    // onChange={ (value) => console.log(value.map(e=>e.name)) }
+                      onChange={ (value) => (value.map(e => setOriginValue(e.name))) }
                     />
                   </div>
                 </div>
@@ -195,7 +279,7 @@ const Booking = () => {
                       endLabel=" حدد وقت الرجوع"
                     />
                   }
-                  
+
                 </div>
                 <div className='box'>
                   <div className='title'>متى تاريخ الحجز؟ <span>*</span></div>
@@ -243,8 +327,8 @@ const Booking = () => {
                   <span>*</span>يرجى ارفاق حجز الطيران او رقم الرحلة ( لمتابعه السائق موعد الوصول)
                 </p>
                 <div className='content'>
-                  <input ref={fileInputRef} type='file' style={{display:"none"}} />
-                  <div className='upload_file' onClick={handleFileInput}>
+                  <input ref={ fileInputRef } type='file' style={ { display: "none" } } />
+                  <div className='upload_file' onClick={ handleFileInput }>
                     <img src='/upload.svg' alt='upload file' />
                     <h2>Upload Files</h2>
                     <p>PNG, JPG and GIF files are allowed</p>
@@ -264,7 +348,7 @@ const Booking = () => {
                           />
                           <span className="checkmark"></span>
                         </label>
-                        <span style={{width:"32px"}}>مجانا</span>
+                        <span style={ { width: "32px" } }>مجانا</span>
                       </div>
                       <div className="checkbox">
                         <label htmlFor="checkbox-2" className="container">
@@ -279,7 +363,7 @@ const Booking = () => {
                           />
                           <span className="checkmark"></span>
                         </label>
-                        <span style={{width:"32px"}}>100 ريال</span>
+                        <span style={ { width: "32px" } }>100 ريال</span>
                       </div>
                     </div>
                   </div>
@@ -393,12 +477,25 @@ const Booking = () => {
                 </div>
             }
           </div>
-
-          <div className='booking_map'>
-            <ChakraProvider theme={theme}>
-     <Map />
-    </ChakraProvider>
-            </div>
+          {/* map */}
+          <div className='booking_map' style={ { position: "relative" } }>
+            <GoogleMap
+              center={ center }
+              zoom={ 5 }
+              mapContainerStyle={ { width: '100%', height: '100%' } }
+              options={ {
+                zoomControl: false,
+                streetViewControl: false,
+                mapTypeControl: false,
+                fullscreenControl: false,
+              } }
+            >
+              <Marker position={ center } />
+              { directionsResponse && (
+                <DirectionsRenderer directions={ directionsResponse } />
+              ) }
+            </GoogleMap>
+          </div>
 
         </div>
       </div>
