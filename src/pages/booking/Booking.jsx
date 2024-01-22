@@ -29,7 +29,7 @@ const Booking = () => {
   const [selectedOption, setSelectedOption] = useState('option1'); // check box options
   const [paymentOption, setPaymentOption] = useState(paymentOptions[0].title);
   const [selectedDate, setSelectedDate] = useState(null);
-  const [phone, setPhone] = useState('+20');
+  const [phone, setPhone] = useState('');
 
   const options = [
     { name: "مكة" },
