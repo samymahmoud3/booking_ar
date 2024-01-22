@@ -95,7 +95,7 @@ const Booking = () => {
   }; //end
 
   // map
-  const [originValue, setOriginValue] = useState("");
+  const [originValue, setOriginValue] = useState(" ");
   const [destinationValue, setDestinationValue] = useState("");
 
   const { isLoaded } = useJsApiLoader({
@@ -104,18 +104,6 @@ const Booking = () => {
   })
 
   const [directionsResponse, setDirectionsResponse] = useState(null)
-
-  // async function calculateRoute() {
-  //   // eslint-disable-next-line no-undef
-  //   let directionsService = new google.maps.DirectionsService()
-  //   let results = await directionsService.route({
-  //     origin: originValue,
-  //     destination: destinationValue,
-  //     // eslint-disable-next-line no-undef
-  //     travelMode: google.maps.TravelMode.DRIVING,
-  //   })
-  //   setDirectionsResponse(results)
-  // }
 
 async function calculateRoute() {
   if (!isLoaded || !window.google || !window.google.maps) {
@@ -147,7 +135,7 @@ async function calculateRoute() {
   let directionsService = new window.google.maps.DirectionsService();
   let results = await directionsService.route({
     origin: originLatLng,
-    destination: destinationLatLng,
+    destination:  destinationLatLng,
     travelMode: window.google.maps.TravelMode.DRIVING,
   });
 
@@ -168,7 +156,7 @@ async function geocodeAddress(geocoder, address) {
 
   useEffect(() => {
     calculateRoute();
-  }, [originValue, destinationValue]);
+  }, [destinationValue]);
 
   if (!isLoaded) {
     return;
@@ -233,7 +221,7 @@ async function geocodeAddress(geocoder, address) {
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
-                      onChange={ (value) => (value.map(e => setDestinationValue(e.name))) }
+                      onChange={ (value) => (value.map(e => setOriginValue(e.name))) }
                     />
                   </div>
                 </div>
@@ -248,7 +236,7 @@ async function geocodeAddress(geocoder, address) {
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
-                      onChange={ (value) => (value.map(e => setOriginValue(e.name))) }
+                      onChange={ (value) => (value.map(e => setDestinationValue(e.name))) }
                     />
                   </div>
                 </div>
@@ -484,10 +472,10 @@ async function geocodeAddress(geocoder, address) {
               zoom={ 5 }
               mapContainerStyle={ { width: '100%', height: '100%' } }
               options={ {
-                zoomControl: false,
-                streetViewControl: false,
-                mapTypeControl: false,
-                fullscreenControl: false,
+                zoomControl: true,
+                streetViewControl: true,
+                mapTypeControl: true,
+                fullscreenControl: true,
               } }
             >
               <Marker position={ center } />
