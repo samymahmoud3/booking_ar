@@ -85,13 +85,12 @@ const HeroSection = () => {
 
             <div className='details'>
               <div className='box'>
-                <div className='title'>من <span>*</span></div>
                 <div className='input-dropdown'>
-                  <img src='/arrow-left.svg' />
+                  <img src='/arrow-left.svg' style={{marginTop:"4px"}} /><span style={{fontSize:"10px"}}>من:</span>
                   <Select className='select-input'
                     options={ options }
                     direction='rtl'
-                    placeholder='ادخل اسم المطار او الفندق او العنوان'
+                    placeholder='ادخل اسم المطار او العنوان'
                     labelField='name'
                     valueField='name'
                     color='#9094A0'
@@ -101,13 +100,12 @@ const HeroSection = () => {
               </div>
               { active === "bookNow" &&
                 <div className='box'>
-                  <div className='title'>إلى <span>*</span></div>
                   <div className='input-dropdown'>
-                    <img src='/location.svg' />
+                    <img src='/location.svg' style={ { marginTop: "2px", marginLeft:"1px" } } /><span style={ { fontSize: "10px" } }>الى:</span>
                     <Select className='select-input'
                       options={ options }
                       direction='rtl'
-                      placeholder='ادخل اسم المطار او الفندق او العنوان'
+                      placeholder='ادخل اسم المطار او العنوان'
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
@@ -117,10 +115,12 @@ const HeroSection = () => {
                 </div>
               }
               <div className='box'>
-                <div className='title'>متى تاريخ الحجز؟ <span>*</span></div>
                 { round === "oneRound" ?
                   <div className='oneRoundDate' style={ { border: "none" } }>
-                    <label htmlFor='date-input'><img src='/calender.svg' alt='calender' /></label>
+                    <label htmlFor='date-input' style={ { marginTop: "4px", display: "flex" } }>
+                      <img src='/calender.svg' alt='calender' style={ { marginLeft: "1px" } } />
+                      <span style={ { fontSize: "8px", marginTop:"1px" } }>التاريخ:</span>
+                    </label>
                     <DatePicker id="date-input"
                       selected={ selectedDate }
                       onChange={ handleDate }
@@ -132,16 +132,15 @@ const HeroSection = () => {
                 }
               </div>
               <div className='box'>
-                <div className='title'>الوقت<span>*</span></div>
                 { round === "oneRound" ?
                   <div className='time-field'>
-                    <img src='/clock.svg' alt='clock' />
+                    <img src='/clock.svg' alt='clock' style={{marginTop: "5px", marginLeft:"2px"}} />
                     <TimePicker
                       className='time-input'
                       use12Hours
                       format="h:mm A"
                       variant="borderless"
-                      placeholder='حدد وقت الوصول'
+                      placeholder='حدد الوقت'
                       suffixIcon={ <ExpandMore /> }
                       onChange={ onChangeTime }
                       size="small"
@@ -151,7 +150,6 @@ const HeroSection = () => {
                 }
               </div>
               <div className='box number-box'>
-                <div className='title'>الركّاب <span>*</span></div>
                 <div className='number-field'>
                   <img src='/user.svg' alt='user' />
                   <InputNumber className='number-input'

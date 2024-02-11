@@ -19,7 +19,8 @@ export function TimeRng() {
     console.log("onChange event", event);
   };
 
-  return (<>
+  return (<div className='range-time'>
+    <img src='/clock.svg' alt='clock' />
     <TimeRange
       onStartTimeChange={handleStartTimeChange}
       onEndTimeChange={handleEndTimeChange}
@@ -30,6 +31,6 @@ export function TimeRng() {
       startLabel="الوصول"
       endLabel="الرجوع"
     />
-  </>
+  </div>
   );
 }

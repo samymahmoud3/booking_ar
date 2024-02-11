@@ -64,8 +64,8 @@
   .booking {
     height: fit-content;
     margin-bottom: 30px;
-    margin-left: 104px;
-    margin-right: 104px;
+    margin-left: 10px;
+    margin-right: 10px;
 
     @include xl {
       margin-left: 70px;
@@ -270,8 +270,6 @@
               width: 280px;
             }
 
-
-
             .title {
               font-weight: 500;
 
@@ -283,16 +281,7 @@
               }
             }
 
-            &::after {
-              position: absolute;
-              content: '';
-              width: 1px;
-              height: 27px;
-              background-color: #E6E6E6;
-              left: -8px;
-              top: 20px;
-            }
-
+            
             // start input search
             .input-dropdown {
               position: relative;
@@ -323,7 +312,7 @@
               }
 
               .select-input {
-                width: 169px;
+                width: 159px;
                 background-color: transparent;
                 border: none;
                 height: 24px;
@@ -332,18 +321,18 @@
                 outline: 0 !important;
                 box-shadow: 0 0 0 !important;
                 color: #9094A0 !important;
-                padding: 0 1px 0 0px !important;
+                padding: 3px 3px 0 0px !important;
 
                 @include md {
-                  width: 200px;
+                  width: 180px;
                 }
 
                 @include smd {
-                  width: 290px;
+                  width: 270px;
                 }
 
                 @include sm {
-                  width: 270px !important;
+                  width: 260px !important;
                 }
               }
             }
@@ -365,7 +354,7 @@
               }
 
               @include sm {
-                width: 100%;
+                width: 280px !important;
               }
 
               &::after {
@@ -404,8 +393,9 @@
                 }
 
                 :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input {
-                  padding: 0px;
+                  padding: 0 0 0 0 !important;
                 }
+                
               }
             }
 
@@ -535,7 +525,7 @@
               display: flex;
               background-color: transparent;
               margin-top: 5px;
-              width: 169px;
+              width: 179px;
 
               @include md {
                 width: 200px;
