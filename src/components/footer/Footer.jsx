@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import './footer.scss';
+import { useState } from 'react';
 
 const Footer = () => {
+  const [activeSections, setActiveSections] = useState(false);
+  const [activeMedia, setActiveMedia] = useState(false);
+  const [active, setActive] = useState(false);
+
   return (
     <footer className="footer">
       <div className="container">
@@ -13,8 +18,11 @@ const Footer = () => {
           </p>
         </div>
         <div className="sections">
-          <h2>الاقسام</h2>
-          <div className="links">
+          <div className='show-more'onClick={() => setActiveSections(!activeSections)}> 
+            <h2>الاقسام</h2>
+            <img src='expand.svg' alt=''  />
+          </div>
+          <div className={`links ${activeSections? 'show' : ''}`}>
             <HashLink className="link" smooth="true" to="/#home">الرئيسية</HashLink>
             <HashLink className="link" smooth="true" to="/#choose-us">لماذا تختارنا</HashLink>
             <HashLink className="link" smooth="true" to="/#car-types">انواع سيارتنا</HashLink>
@@ -25,8 +33,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="quick-links">
-          <h2>روابط سريعة</h2>
-          <div className="links">
+          <div className='show-more' onClick={ () => setActive(!active) } >
+            <h2>روابط سريعة</h2>
+            <img src='expand.svg' alt=''/>
+          </div>
+          <div className={`links ${active? 'show' : ''}`}>
             <Link className="link" to="/loyalty-rewards">برنامج الولاء و المكافات</Link>
             <Link className="link" to="/travel-partners">لوكالات السفر و السياحة</Link>
             <Link className="link" to="/partner">كن شريكا</Link>
@@ -39,8 +50,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="social-media">
-          <h2>تواصل معنا</h2>
-          <div className="links">
+          <div className='show-more' onClick={ () => setActiveMedia(!activeMedia) } >
+            <h2>تواصل معنا</h2>
+            <img src='expand.svg' alt=''/>
+          </div>
+          <div className={`links ${activeMedia? 'show' : ''}`}>
             <a className="link" href="https://facebook.com" target="_blank" rel="noreferrer" >
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <rect width="24" height="24" rx="5" fill="white" />
