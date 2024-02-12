@@ -43,11 +43,6 @@ export const carTypes = {
       id: 4,
       category: "فئة رجال الاعمال",
     },
-    {
-      id: 5,
-      category: "المشاوير الخاصه",
-    },
-
   ],
 
   cars: [
@@ -90,13 +85,13 @@ export const carTypes = {
     {
       id: 7,
       name: "Mercedes",
-      category: "المشاوير الخاصه",
+      category: "سيارة اقتصادية",
       image: "toyota-car.webp",
     },
     {
       id: 8,
       name: "Mercedes",
-      category: "المشاوير الخاصه",
+      category: "سيارة اقتصادية",
       image: "toyota-car.webp",
     },
   ]

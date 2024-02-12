@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -22,6 +22,20 @@ const Blog = () => {
       current.scrollLeft += 302;
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const { current } = carouselRef;
+      const maxScrollWidth = (current.scrollWidth - current.clientWidth);
+
+      handleScroll("left");
+      if (current.scrollLeft <= -(maxScrollWidth-1)) {
+        current.scrollLeft=0
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="blog">

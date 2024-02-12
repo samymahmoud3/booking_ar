@@ -1,12 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowBack, ArrowForward, Star } from "@mui/icons-material";
 import FeatureItem from "../../components/featureItem/FeatureItem";
 import Header from "../../components/heroSection/HeroSection";
 import { accordionsData, choosingData, reviews } from "../../data";
 import { carTypes } from "../../data";
 import Filter from "../../components/filter/Filter";
-import './home.scss';
 import Accordion from "../../components/accordion/Accordion";
+import './home.scss';
 
 const Home = () => {
   const [active, setActive] = useState(carTypes.categories[0].category);
@@ -30,6 +30,34 @@ const Home = () => {
       current.scrollLeft += 302;
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const { current } = carouselRef2;
+      const maxScrollWidth = (current.scrollWidth - current.clientWidth);
+
+      handleScrollReviews("left");
+      if (current.scrollLeft <= -(maxScrollWidth-1)) {
+        current.scrollLeft=0
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const { current } = carouselRef;
+      const maxScrollWidth = (current.scrollWidth - current.clientWidth);
+
+      handleScroll("left");
+      if (current.scrollLeft <= -(maxScrollWidth-1)) {
+        current.scrollLeft=0
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="home" id="home">
@@ -184,7 +212,7 @@ const Home = () => {
               <input type="text" placeholder="اسمك" />
               <input type="email" name="email" placeholder="بريدك الالكترونى" />
               <input type="tel" placeholder="رقم الواتس اب" />
-              <textarea type="text" placeholder="رسالتك مع ذكر نوع الخدمة و التواريخ المراد حجزها" className="comment" ></textarea>
+              <textarea type="text" placeholder="أكتب رسالتك مع ذكر نوع الخدمة و التواريخ المراد حجزها" className="comment" ></textarea>
               <input type="submit" value="ارسال" className="btn" />
             </form>
           </div>
