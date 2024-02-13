@@ -22,6 +22,7 @@
     grid-template-rows: 1fr auto;
     grid-template-areas:
       "description sections quick-links social-media"
+      "partners partners partners partners"
       "copyright copyright copyright copyright";
     justify-items: start;
     gap: 1rem;
@@ -157,6 +158,18 @@
           margin-right: 8px;
         }
       }
+    }
+
+    .partners {
+      grid-area: partners;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid #D4D2E3;
+      padding: 20px 0 0 0;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .copyright {

@@ -9,8 +9,8 @@ import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite-rtl.css';
 import TimeRange from "react-time-range";
 import moment from "moment";
-import { TimePicker, InputNumber } from 'antd';
-import { ExpandMore, PermIdentity } from '@mui/icons-material';
+import { TimePicker } from 'antd';
+import { ExpandMore } from '@mui/icons-material';
 import Select from 'react-dropdown-select';
 import './booking.scss';
 
@@ -36,6 +36,30 @@ const Booking = () => {
     { name: "المدينة" },
     { name: "الرياض" },
   ]
+
+  const personsOptions = [
+    { name: "1 راكب" },
+    { name: "2 ركّاب" },
+    { name: "3 ركّاب" },
+    { name: "4 ركّاب" },
+    { name: "5 ركّاب" },
+    { name: "6 ركّاب" },
+    { name: "7 ركّاب" },
+    { name: "8 ركّاب" },
+    { name: "9 ركّاب" },
+    { name: "10 ركّاب" },
+    { name: "11 ركّاب" },
+    { name: "12 ركّاب" },
+    { name: "13 ركّاب" },
+    { name: "14 ركّاب" },
+    { name: "15 ركّاب" },
+    { name: "16 ركّاب" },
+    { name: "17 ركّاب" },
+    { name: "18 ركّاب" },
+    { name: "19 ركّاب" },
+    { name: "20 ركّاب" },
+  ]
+
   const categories = ["اقتصادية", "عائلية", "فاخرة", "VIP", "VVIP"]
 
   // handle upload files
@@ -105,54 +129,54 @@ const Booking = () => {
 
   const [directionsResponse, setDirectionsResponse] = useState(null)
 
-async function calculateRoute() {
-  if (!isLoaded || !window.google || !window.google.maps) {
-    return;
-  }
+  async function calculateRoute() {
+    if (!isLoaded || !window.google || !window.google.maps) {
+      return;
+    }
 
-  let geocoder = new window.google.maps.Geocoder();
-  let originLatLng, destinationLatLng;
+    let geocoder = new window.google.maps.Geocoder();
+    let originLatLng, destinationLatLng;
 
-  // Geocode origin
-  try {
-    const originResult = await geocodeAddress(geocoder, originValue);
-    originLatLng = originResult.geometry.location.toJSON();
-  } catch (error) {
-    console.error("Error geocoding origin address:", error.message);
-    return;
-  }
+    // Geocode origin
+    try {
+      const originResult = await geocodeAddress(geocoder, originValue);
+      originLatLng = originResult.geometry.location.toJSON();
+    } catch (error) {
+      console.error("Error geocoding origin address:", error.message);
+      return;
+    }
 
-  // Geocode destination
-  try {
-    const destinationResult = await geocodeAddress(geocoder, destinationValue);
-    destinationLatLng = destinationResult.geometry.location.toJSON();
-  } catch (error) {
-    console.error("Error geocoding destination address:", error.message);
-    return;
-  }
+    // Geocode destination
+    try {
+      const destinationResult = await geocodeAddress(geocoder, destinationValue);
+      destinationLatLng = destinationResult.geometry.location.toJSON();
+    } catch (error) {
+      console.error("Error geocoding destination address:", error.message);
+      return;
+    }
 
-  // Continue with the directions request using the geocoded coordinates
-  let directionsService = new window.google.maps.DirectionsService();
-  let results = await directionsService.route({
-    origin: originLatLng,
-    destination:  destinationLatLng,
-    travelMode: window.google.maps.TravelMode.DRIVING,
-  });
-
-  setDirectionsResponse(results);
-}
-
-async function geocodeAddress(geocoder, address) {
-  return new Promise((resolve, reject) => {
-    geocoder.geocode({ address: address }, (results, status) => {
-      if (status === "OK" && results.length > 0) {
-        resolve(results[0]);
-      } else {
-        reject(new Error(`Geocoding error: ${status}`));
-      }
+    // Continue with the directions request using the geocoded coordinates
+    let directionsService = new window.google.maps.DirectionsService();
+    let results = await directionsService.route({
+      origin: originLatLng,
+      destination: destinationLatLng,
+      travelMode: window.google.maps.TravelMode.DRIVING,
     });
-  });
-}
+
+    setDirectionsResponse(results);
+  }
+
+  async function geocodeAddress(geocoder, address) {
+    return new Promise((resolve, reject) => {
+      geocoder.geocode({ address: address }, (results, status) => {
+        if (status === "OK" && results.length > 0) {
+          resolve(results[0]);
+        } else {
+          reject(new Error(`Geocoding error: ${status}`));
+        }
+      });
+    });
+  }
 
   useEffect(() => {
     calculateRoute();
@@ -165,33 +189,35 @@ async function geocodeAddress(geocoder, address) {
   return (
     <div className='booking'>
       <div className='container'>
-        <div className='features'>
-          <div className='feature'>
-            <img src='/free-cancellation.svg' alt='free cancellation' />
-            <div className='description'>
-              <h3>إلغاء مجاني</h3>
-              <p>ما يصل إلى 24 ساعة قبل الاستلام</p>
+        <div className='features-container'>
+          <div className='features'>
+            <div className='feature'>
+              <img src='/free-cancellation.svg' alt='free cancellation' />
+              <div className='description'>
+                <h3>إلغاء مجاني</h3>
+                <p>ما يصل إلى 24 ساعة قبل الاستلام</p>
+              </div>
             </div>
-          </div>
-          <div className='feature'>
-            <img src='/flight-tracking.svg' alt='flight tracking' />
-            <div className='description'>
-              <h3>تتبع الرحلة</h3>
-              <p>سيقوم السائق بمراقبة رحلتك</p>
+            <div className='feature'>
+              <img src='/flight-tracking.svg' alt='flight tracking' />
+              <div className='description'>
+                <h3>تتبع الرحلة</h3>
+                <p>سيقوم السائق بمراقبة رحلتك</p>
+              </div>
             </div>
-          </div>
-          <div className='feature'>
-            <img src='/professional-drivers.svg' alt='professional drivers' />
-            <div className='description'>
-              <h3>سائقون مرخصون</h3>
-              <p>أقصى قدر من الراحة والأمان</p>
+            <div className='feature'>
+              <img src='/professional-drivers.svg' alt='professional drivers' />
+              <div className='description'>
+                <h3>سائقون مرخصون</h3>
+                <p>أقصى قدر من الراحة والأمان</p>
+              </div>
             </div>
-          </div>
-          <div className='feature'>
-            <img src='/customer-service.svg' alt='customer service' />
-            <div className='description'>
-              <h3>دعم 24/7</h3>
-              <p>خدمة عملاء مخصصة</p>
+            <div className='feature'>
+              <img src='/customer-service.svg' alt='customer service' />
+              <div className='description'>
+                <h3>دعم 24/7</h3>
+                <p>خدمة عملاء مخصصة</p>
+              </div>
             </div>
           </div>
         </div>
@@ -213,11 +239,12 @@ async function geocodeAddress(geocoder, address) {
                 <div className='box'>
                   <div className='title'>من <span>*</span></div>
                   <div className='input-dropdown'>
-                    <img src='/arrow-left.svg' />
+                    <img src='/arrow-left.svg' style={ { marginTop: "4px" } } />
+                    <span style={ { fontSize: "10px" } }>من:</span>
                     <Select className='select-input'
                       options={ options }
                       direction='rtl'
-                      placeholder='ادخل اسم المطار او الفندق او العنوان'
+                      placeholder='المطار،الفندق،الأماكن الأخرى'
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
@@ -228,11 +255,12 @@ async function geocodeAddress(geocoder, address) {
                 <div className='box'>
                   <div className='title'>إلى <span>*</span></div>
                   <div className='input-dropdown'>
-                    <img src='/location.svg' />
+                    <img src='/location.svg' style={ { marginTop: "2px", marginLeft: "5px" } } />
+                    <span style={ { fontSize: "10px" } }>الى:</span>
                     <Select className='select-input'
                       options={ options }
                       direction='rtl'
-                      placeholder='ادخل اسم المطار او الفندق او العنوان'
+                      placeholder='المطار،الفندق،الأماكن الأخرى'
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
@@ -251,7 +279,7 @@ async function geocodeAddress(geocoder, address) {
                           use12Hours
                           format="h:mm a"
                           variant="borderless"
-                          placeholder='حدد وقت الوصول'
+                          placeholder='حدد الوقت '
                           suffixIcon={ <ExpandMore /> }
                         />
                       </div>
@@ -273,8 +301,9 @@ async function geocodeAddress(geocoder, address) {
                   <div className='title'>متى تاريخ الحجز؟ <span>*</span></div>
                   { round === "oneRound" ?
                     <div className='oneRoundDate'>
-                      <label htmlFor='date-input'>
-                        <img src='/calender.svg' alt='calender' />
+                      <label htmlFor='date-input' style={ { marginTop: "4px", display: "flex" } }>
+                        <img src='/calender.svg' alt='calender' style={ { marginLeft: "1px" } } />
+                        <span style={ { fontSize: "8px", marginTop: "1px" } }>التاريخ:</span>
                       </label>
                       <DatePicker id="date-input"
                         selected={ selectedDateOne }
@@ -288,13 +317,18 @@ async function geocodeAddress(geocoder, address) {
                 </div>
                 <div className='box'>
                   <div className='title'>الركّاب <span>*</span></div>
-                  <InputNumber className='number-input'
-                    style={ { backgroundColor: "#F4F6F9", width: "327px", height: "52px", padding: "16px 0px 0 0" } }
-                    variant="borderless"
-                    placeholder='ادخل عدد الركاب'
-                    addonBefore={ <PermIdentity sx={ { fontSize: '15px', color: "#9094A0", padding: "1px 0 0 0" } } /> }
-                    min={ 1 }
-                  />
+                  <div className='input-dropdown'>
+                    <img src='user.svg'/>
+                    <span style={ { fontSize: "10px" } }>العدد:</span>
+                    <Select className='select-input select-number'
+                      options={ personsOptions }
+                      direction='rtl'
+                      placeholder='عدد الركّاب'
+                      labelField='name'
+                      valueField='name'
+                      color='#9094A0'
+                    />
+                  </div>
                 </div>
               </div>
               <div className='categories'>
@@ -396,9 +430,6 @@ async function geocodeAddress(geocoder, address) {
                     <div className={ `option ${paymentOption === option.title ? "selected" : ""}` } key={ index } onClick={ () => setPaymentOption(option.title) }>
                       <h4>{ option.title }</h4>
                       <p>{ option.description }</p>
-                      { paymentOption === option.title &&
-                        <img className='question_mark' src='/question-mark.svg' alt='question mark' />
-                      }
                     </div>
                   ))
                 }
@@ -465,7 +496,7 @@ async function geocodeAddress(geocoder, address) {
                 </div>
             }
           </div>
-          {/* map */}
+          {/* map */ }
           <div className='booking_map' style={ { position: "relative" } }>
             <GoogleMap
               center={ center }

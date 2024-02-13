@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import './footer.scss';
 import { useState } from 'react';
+import './footer.scss';
+import { partners } from '../../data';
 
 const Footer = () => {
   const [activeSections, setActiveSections] = useState(false);
@@ -92,8 +93,15 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        <div className='partners'>
+          {
+            partners.map((item) => (
+              <img src={item.img} alt='' key={item.id} />
+            ))
+          }
+        </div>
         <div className="copyright">
-          <p>حقوق الطبع والنشر © 2022 كل الحقوق محفوظة</p>
+          <p>حقوق الطبع والنشر © 2024 كل الحقوق محفوظة</p>
         </div>
       </div>
     </footer>

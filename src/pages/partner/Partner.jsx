@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import JoinUs from "../../components/joinUs/JoinUs";
+import { partnerData } from "../../data";
 
 const Partner = () => {
   return (
@@ -27,7 +28,7 @@ const Partner = () => {
           </div>
         </div>
       </div>
-      <JoinUs />
+      <JoinUs joinUsData={partnerData} />
     </div>
   )
 }

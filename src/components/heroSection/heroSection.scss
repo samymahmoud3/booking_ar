@@ -16,11 +16,12 @@
 
   @include smd {
     background-image:
-    linear-gradient( to top, rgba(158, 153, 153, 0.2), rgba(0, 0, 0, 0.4)),
-    url('/bg-mobile.jpg'); 
+      linear-gradient(to top, rgba(158, 153, 153, 0.2), rgba(0, 0, 0, 0.4)),
+      url('/bg-mobile.jpg');
   }
 
   .description {
+    position: relative;
     margin: 106px 300px 32px 300px;
     text-align: center;
 
@@ -62,10 +63,11 @@
   }
 
   .booking {
+    position: relative;
     height: fit-content;
     margin-bottom: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 
     @include xl {
       margin-left: 70px;
@@ -113,8 +115,8 @@
 
         @include sm {
           height: 48px;
+          padding: 0 10px;
         }
-
       }
 
       .firstActive {
@@ -136,6 +138,22 @@
 
       .secondActive {
         background-color: $light-color;
+
+        @include sm {
+          height: 48px;
+        }
+
+        path {
+          fill: $yellow-color;
+        }
+
+        p {
+          color: $yellow-color;
+        }
+      }
+
+      .thirdActive {
+        background-color: $light-color;
         border-radius: 20px 0 0 0;
 
         @include sm {
@@ -155,16 +173,13 @@
         font-weight: 500;
         line-height: 19px;
         color: $light-color;
-        margin-right: 8px;
+        margin-right: 1px;
 
         @include sm {
           font-weight: 400;
-          line-height: 16;
+          line-height: 16px;
         }
-
       }
-
-
     }
 
     .info {
@@ -186,13 +201,15 @@
           width: 100%;
         }
 
-
         .methods {
-          display: flex;
-          align-items: center;
 
-          div:not(:last-child) {
-            margin-left: 20px;
+          .radio-container {
+            display: flex;
+            align-items: center;
+
+            div:not(:last-child) {
+              margin-left: 20px;
+            }
           }
 
           .radio {
@@ -281,7 +298,7 @@
               }
             }
 
-            
+
             // start input search
             .input-dropdown {
               position: relative;
@@ -395,7 +412,7 @@
                 :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input {
                   padding: 0 0 0 0 !important;
                 }
-                
+
               }
             }
 
@@ -482,7 +499,7 @@
                 width: 290px;
               }
 
-              
+
 
               #date-input {
                 border: none;
@@ -514,8 +531,8 @@
                 background-color: #D9D9D9;
 
                 @include sm {
-                width: 280px;
-              }
+                  width: 280px;
+                }
               }
             }
 
@@ -632,4 +649,36 @@
       }
     }
   }
+}
+
+.show-info {
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include sm {
+    justify-content: end;
+    align-items: start;
+  }
+}
+
+.hide {
+  top: -60px;
+  right: 0;
+  display: none;
+  position: absolute;
+  opacity: 0;
+  background-color: #FFFFFF;
+  height: fit-content;
+  width: fit-content;
+}
+
+.myDIV:hover+.hide {
+  opacity: 1;
+  color: $yellow-color;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  height: fit-content;
 }

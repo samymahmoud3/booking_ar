@@ -17,53 +17,65 @@
       width: 100%;
     }
 
-
-
-    .features {
+    .features-container {
+      overflow: hidden;
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      align-items: center;
-      padding-top: 10px;
-      gap: 10px;
-      margin-bottom: 76px;
 
-      @include xl {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 70px;
-      }
-
-
-      @include lg {
-        margin-top: 100px;
-      }
-
-      .feature {
+      .features {
         display: flex;
-        align-items: center;
+        margin-bottom: 40px;
+        animation: tickerh linear 33s infinite;
 
-        img {
-          width: 43px;
-          height: 53px;
+        @include smd {
+          animation: tickerh linear 20s infinite;
         }
 
-        .description {
-          margin-right: 10px;
+        &:hover {
+          /* Pause animation on hover */
+          animation-play-state: paused;
+        }
 
+        @include lg {
+          margin-top: 100px;
+        }
 
-          h3 {
-            font-size: 16px;
-            line-height: 18px;
-            font-weight: 400;
+        .feature {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          flex-shrink: 0;
+
+          img {
+            width: 43px;
+            height: 53px;
           }
 
-          p {
-            font-size: 13px;
-            line-height: 18px;
-            font-weight: 400;
-            color: #787878;
+          .description {
+            margin-right: 10px;
+
+            h3 {
+              font-size: 16px;
+              line-height: 18px;
+              font-weight: 400;
+            }
+
+            p {
+              font-size: 13px;
+              line-height: 18px;
+              font-weight: 400;
+              color: #787878;
+            }
           }
+        }
+      }
+
+      @keyframes tickerh {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(270%);
         }
       }
     }
@@ -178,7 +190,7 @@
           .booking_inputs {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 10px;
+            gap: 15px;
 
             .box {
 
@@ -190,6 +202,10 @@
                 font-weight: 500;
                 margin-bottom: 5px;
                 margin-right: 10px;
+
+                @include smd {
+                  display: none;
+                }
 
                 span {
                   font-size: 24px;
@@ -209,8 +225,12 @@
                 border-radius: 10px;
                 padding-right: 5px;
 
+                @include smd {
+                  width: 326px;
+                }
+
                 .select-input {
-                  width: 304px;
+                  width: 302px;
                   background-color: transparent;
                   border: none;
                   height: 52px;
@@ -220,6 +240,10 @@
                   outline: 0 !important;
                   box-shadow: 0 0 0 !important;
                   color: #9094A0 !important;
+                }
+
+                .select-number {
+                  width: 293px;
                 }
               }
 
@@ -236,6 +260,11 @@
                 :where(.css-dev-only-do-not-override-zl9ks2).ant-input-number .ant-input-number-input {
                   padding: 3px;
                 }
+
+                .ant-input-number-group .ant-input-number-group-addon {
+                  padding-left: 0 !important;
+                  padding-right: 5px !important;
+                }
               }
 
               //end number input 
@@ -247,6 +276,10 @@
                 height: 52px;
                 border-radius: 10px;
                 width: 330px;
+
+                @include smd {
+                  width: 326px;
+                }
               }
 
               // end time range
@@ -254,6 +287,10 @@
               // start time one round
               .time-box {
                 width: 333px !important;
+
+                @include smd {
+                  width: 326px !important;
+                }
 
                 .time-field {
                   display: flex;
@@ -266,10 +303,20 @@
                     background-color: #F4F6F9;
                     height: 52px;
                     padding-right: 5px;
+
+                    span {
+                      width: 11px;
+
+                      svg {
+                        width: 19px;
+                      }
+                    }
                   }
 
-                  :where(.css-dev-only-do-not-override-zl9ks2).ant-picker .ant-picker-input>input:placeholder-shown {
-                    font-size: 10px;
+                  .time-input input {
+                    font-size: 11px;
+                    color: #9094A0;
+                    padding: 0;
                   }
                 }
               }
@@ -282,6 +329,16 @@
                 border: none;
                 background-color: #F4F6F9;
                 direction: ltr;
+
+                input {
+                  padding: 0;
+                }
+
+                span {
+                  svg {
+                    width: 12px;
+                  }
+                }
               }
 
               .rs-picker-daterange>.rs-input-group.rs-input-group-inside .rs-input {
@@ -308,16 +365,24 @@
                 border-radius: 10px;
                 padding-right: 5px;
 
+                @include smd {
+                  width: 326px !important;
+                }
+
 
                 #date-input {
                   border: none;
                   outline: none;
                   margin-right: 5px;
                   font-size: 9px;
-                  width: 306px;
+                  width: 206px;
                   background-color: #F4F6F9;
                   border-radius: 10px;
                   height: 52px;
+
+                  @include smd {
+                    width: 200px !important;
+                  }
                 }
               }
 
@@ -637,6 +702,7 @@
             border-radius: 12px;
             box-shadow: 0px 0px 8px rgba($color: #000000, $alpha: 0.2);
             text-align: center;
+            cursor: pointer;
 
             @include md {
               padding: 6px;

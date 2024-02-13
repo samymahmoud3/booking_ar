@@ -6,6 +6,7 @@ import { accordionsData, choosingData, reviews } from "../../data";
 import { carTypes } from "../../data";
 import Filter from "../../components/filter/Filter";
 import Accordion from "../../components/accordion/Accordion";
+import { Link } from "react-router-dom";
 import './home.scss';
 
 const Home = () => {
@@ -37,8 +38,8 @@ const Home = () => {
       const maxScrollWidth = (current.scrollWidth - current.clientWidth);
 
       handleScrollReviews("left");
-      if (current.scrollLeft <= -(maxScrollWidth-1)) {
-        current.scrollLeft=0
+      if (current.scrollLeft <= -(maxScrollWidth - 1)) {
+        current.scrollLeft = 0
       }
     }, 4000);
 
@@ -51,8 +52,8 @@ const Home = () => {
       const maxScrollWidth = (current.scrollWidth - current.clientWidth);
 
       handleScroll("left");
-      if (current.scrollLeft <= -(maxScrollWidth-1)) {
-        current.scrollLeft=0
+      if (current.scrollLeft <= -(maxScrollWidth - 1)) {
+        current.scrollLeft = 0
       }
     }, 4000);
 
@@ -80,14 +81,21 @@ const Home = () => {
       </div>
 
       <section className="typeOfCars carousel_section" id="car-types">
-        <Filter
-          categories={ carTypes.categories }
-          active={ active }
-          setActive={ setActive }
-          title="انواع سيارتنا"
-          paragraph="تختارنا السيارات الأفضل لكل مشروعك"
-          show={ true }
-        />
+        <div style={ { display: "flex", justifyContent: "center", alignItems: "start" } }>
+          <Filter
+            categories={ carTypes.categories }
+            active={ active }
+            setActive={ setActive }
+            title="انواع سيارتنا"
+            paragraph="تختارنا السيارات الأفضل لكل مشروعك"
+            show={ true }
+          />
+          <Link
+            className="link"
+            to="/prices"
+            style={ { margin: "12px 0 0 5px", background: "#BBA664", color: "#fff", padding: "10px", textDecoration: "none", borderRadius: "7px" } }
+          >اسعارنا</Link>
+        </div>
         <div>
           <div className='carousel' ref={ carouselRef } style={ { width: "89%" } }>
             <div className='inner-carousel' >
@@ -182,26 +190,26 @@ const Home = () => {
             </p>
             <div className="contact_details">
               <div className="contact_item">
-              <img src="/home-icon.svg" alt="ourLocation" />
-              <div>
-                <h3>موقعنا</h3>
-                <p>99 شارع جومبلو بارك بيكانبارو,28292. اندونيسيا</p>
+                <img src="/home-icon.svg" alt="ourLocation" />
+                <div>
+                  <h3>موقعنا</h3>
+                  <p>99 شارع جومبلو بارك بيكانبارو,28292. اندونيسيا</p>
+                </div>
               </div>
-            </div>
-            <div className="contact_item">
-              <img src="/phone-icon.svg" alt="phone-number" />
-              <div>
-                <h3>رقم الهاتف</h3>
-                <p>(+62)81 414 257 9980</p>
+              <div className="contact_item">
+                <img src="/phone-icon.svg" alt="phone-number" />
+                <div>
+                  <h3>رقم الهاتف</h3>
+                  <p>(+62)81 414 257 9980</p>
+                </div>
               </div>
-            </div>
-            <div className="contact_item">
-              <img src="/email-icon.svg" alt="email-address" />
-              <div>
-                <h3>عنوان البريد الإلكتروني</h3>
-                <p>info@yourdomain.com</p>
+              <div className="contact_item">
+                <img src="/email-icon.svg" alt="email-address" />
+                <div>
+                  <h3>عنوان البريد الإلكتروني</h3>
+                  <p>info@yourdomain.com</p>
+                </div>
               </div>
-            </div>
             </div>
           </div>
           <div className="form_container">

@@ -324,7 +324,7 @@ export const blogsData = {
   ]
 };
 
-export const joinUsData = [
+export const partnerData = [
   {
     icon: 'joinus-signup.svg',
     iconName: "تسجيل الدخول كشريك",
@@ -342,6 +342,27 @@ export const joinUsData = [
     iconName: "دعونا نَكسب معا",
     title: "دعونا نَكسب معا",
     description: "ولزيادة نسبة مكافآتك، نحن نقوم بتقديم الدعم كل يوم ونقوم بكتابة مقالات مفيدة عن كيفية بيع التنقلات ومعالجة شكاوي واعتراضات السياح",
+  }
+]
+
+export const travelPartnersData = [
+  {
+    icon: 'joinus-signup.svg',
+    iconName: "كممثل للمبيعات",
+    title: "تسجيل الدخول كممثل للمبيعات",
+    description: 'قم بالتسجيل في "الراقى للتوصيل" التابع الى مندوب المبيعات، و يرجى تعبئة التفاصيل الخاصة بك وتقديم الطلب',
+  },
+  {
+    icon: 'landing-service.svg',
+    iconName: 'سعر خاص',
+    title: "احصل على سعر خاص",
+    description: "عندما تتم عملية تسجيل لك، ستبدا مباشرة بجمع بيانات” باسا” لشركات السياحة الملائمة فى مناطقكم و عنها ستقوم بتمثيل مصالحنا",
+  },
+  {
+    icon: 'agreements.svg',
+    iconName: "ابرام الاتفاقيات",
+    title: "ابرام الاتفاقيات",
+    description: "نحن نقدم توصيات مستمرة و دعم بشكل يومى، وكذلك الوثائق و الملفات المطلوبة لابرام عملية الاتفاقات مع الشركاء المحتملين",
   }
 ]
 
@@ -488,3 +509,46 @@ export const religiousData = {
     },
   ]
 };
+
+export const partners = [
+  {
+    id: 1,
+    img: "partner1.svg"
+  },
+  {
+    id: 2,
+    img: "partner2.svg"
+  },
+  {
+    id: 3,
+    img: "partner3.svg"
+  },
+  {
+    id: 4,
+    img: "partner4.svg"
+  },
+  {
+    id: 5,
+    img: "partner5.svg"
+  },
+  {
+    id: 6,
+    img: "partner6.svg"
+  },
+  {
+    id: 7,
+    img: "partner7.svg"
+  },
+  {
+    id: 8,
+    img: "partner8.svg"
+  },
+  {
+    id: 9,
+    img: "partner9.svg"
+  },
+  {
+    id: 10,
+    img: "partner10.svg"
+  },
+]

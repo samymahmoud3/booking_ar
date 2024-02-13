@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import './travelPartners.scss';
+import { travelPartnersData } from '../../data';
 import JoinUs from '../../components/joinUs/JoinUs';
+import './travelPartners.scss';
 
 const TravelPartners = () => {
   return (
@@ -28,7 +29,7 @@ const TravelPartners = () => {
           </div>
         </div>
       </div>
-      <JoinUs />
+      <JoinUs joinUsData={travelPartnersData} />
       <section className='work_features'>
         <h2 className='title'>العمل معنا سهلا جدا</h2>
         <div className='feature'>

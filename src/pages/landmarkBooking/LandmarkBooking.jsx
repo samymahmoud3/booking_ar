@@ -119,9 +119,6 @@ const LandmarkBooking = () => {
                 <div className={ `option ${selected === option.title ? "selected" : ""}` } key={ index } onClick={ () => setSelected(option.title) }>
                   <h4>{ option.title }</h4>
                   <p>{ option.description }</p>
-                  { selected === option.title &&
-                    <img className='question_mark' src='/question-mark.svg' alt='question mark' />
-                  }
                 </div>
               ))
             }

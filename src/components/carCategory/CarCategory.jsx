@@ -9,7 +9,10 @@ const CarCategory = (prop) => {
         <img className='car' src="/car.jpg" alt="car" />
         <div className="num">
           <div>د.إ 145</div>
-          <div>4x 3x</div>
+          <div style={{display:"flex", gap:"3px"}}>
+            <div><img src='person.svg' alt='' style={{width:"12px", height:"12px"}}/>4</div>
+            <div><img src='bag.svg' alt='' style={{width:"11px", height:"11px"}}/>3</div>
+          </div>
         </div>
       </div>
     </div>

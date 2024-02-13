@@ -1,8 +1,9 @@
-import { joinUsData, specialData } from "../../data";
+import { specialData } from "../../data";
 import FeatureItem from "../featureItem/FeatureItem";
 import "./joinUs.scss";
 
-const JoinUs = () => {
+const JoinUs = (prop) => {
+  const { joinUsData } = prop;
   return (
     <div className="join_container">
       <section className="join_us">
