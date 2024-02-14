@@ -3,8 +3,7 @@
 
 .navbar {
   width: 100%;
-  padding-left: 96px;
-  padding-right: 96px;
+  padding: 20px 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,8 +20,8 @@
   }
 
   @include xl {
-    padding-left: 65px;
-    padding-right: 65px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
   @include lg {
@@ -99,10 +98,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 17px;
-    margin-bottom: 17px;
     text-decoration: none;
     color: $light-color;
+    margin: 0 10px 0 0;
 
     @include xl {
       width: 130px;
@@ -112,9 +110,26 @@
 
     @include lg {
       position: absolute;
-      top: 5px;
+      top: 22px;
       left: 39px;
       z-index: 1;
+    }
+  }
+
+  .logged-in {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include lg {
+      position: absolute;
+      top: 33px;
+      left: 30px;
+      z-index: 1;
+    }
+
+    @include sm {
+      left: 15px;
     }
   }
 

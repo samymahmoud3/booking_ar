@@ -10,7 +10,6 @@ import TravelPartners from "./pages/travelPartners/TravelPartners";
 import PartnerDetails from "./pages/partnerDetails/PartnerDetails";
 import Registration from "./pages/registration/Registration";
 import Login from "./pages/login/Login";
-import './styles/global.scss';
 import Prices from "./pages/prices/Prices";
 import Packages from "./pages/packages/Packages";
 import ReligiousLandmarks from "./pages/religiousLandmarks/ReligiousLandmarks";
@@ -21,6 +20,8 @@ import LoyaltyRewards from "./pages/loyaltyRewards/LoyaltyRewards";
 import Terms from "./pages/terms/Terms";
 import Policy from "./pages/privacyPolicy/Policy";
 import AboutUs from "./pages/aboutUs/AboutUs";
+import Settings from "./pages/settings/Settings";
+import './styles/global.scss';
 
 function App() {
   const Layout = () => {
@@ -119,6 +120,10 @@ function App() {
         {
           path: '/footer',
           element: <Footer />
+        },
+        {
+          path: '/settings',
+          element: <Settings />
         },
       ]
     },

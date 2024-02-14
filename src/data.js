@@ -552,3 +552,12 @@ export const partners = [
     img: "partner10.svg"
   },
 ]
+
+export const settingsMenu = [
+  {
+    id: 1,
+    title: "الملف الشخصى",
+    icon: "profile.svg",
+    lightIcon: "light-profile.svg",
+  },
+];
