@@ -26,7 +26,7 @@ const Footer = () => {
           <div className={`links ${activeSections? 'show' : ''}`}>
             <HashLink className="link" smooth="true" to="/#home">الرئيسية</HashLink>
             <HashLink className="link" smooth="true" to="/#choose-us">لماذا تختارنا</HashLink>
-            <HashLink className="link" smooth="true" to="/#car-types">انواع سيارتنا</HashLink>
+            <HashLink className="link" smooth="true" to="/#car-types">انواع سياراتنا</HashLink>
             <HashLink className="link" smooth="true" to="/#reviews">تقييمات العملاء</HashLink>
             <HashLink className="link" smooth="true" to="/#faq">الاسئلة الشائعة</HashLink>
             <HashLink className="link" smooth="true" to="/#contact-us">تواصل معنا</HashLink>
@@ -48,6 +48,7 @@ const Footer = () => {
             <Link className="link" to="/blogs">مدونتنا</Link>
             <Link className="link" to="/book-hotel">الفنادق</Link>
             <Link className="link" to="/packages">الباقات</Link>
+            <Link className="link" to="/visas">التاشيرات</Link>
           </div>
         </div>
         <div className="social-media">

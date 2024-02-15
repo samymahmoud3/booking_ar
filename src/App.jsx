@@ -21,6 +21,7 @@ import Terms from "./pages/terms/Terms";
 import Policy from "./pages/privacyPolicy/Policy";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import Settings from "./pages/settings/Settings";
+import Visas from "./pages/visas/Visas";
 import './styles/global.scss';
 
 function App() {
@@ -124,6 +125,10 @@ function App() {
         {
           path: '/settings',
           element: <Settings />
+        },
+        {
+          path: '/visas',
+          element: <Visas />
         },
       ]
     },
