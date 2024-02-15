@@ -1,6 +1,22 @@
 @import '../../styles/variables.scss';
 @import '../../styles/responsive.scss';
 
+.visas-details {
+  padding-top: 10px;
+
+  @include lg {
+    padding: 80px 0;
+  }
+
+  @include smd {
+    padding: 60px 0 0 0;
+  }
+
+  @include sm {
+    padding: 40px 0 0 0;
+  }
+}
+
 .visas-step {
   max-width: 1232px;
   min-height: 500px;
@@ -145,13 +161,10 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-
-      div:not(:last-child) {
-        margin-left: 20px;
-      }
+      gap: 30px;
 
       .radio-box {
-        margin-top: 30px;
+        margin-top: 10px;
 
         .title {
           font-size: 16px;
@@ -169,77 +182,78 @@
 
         .radio-buttons {
           display: flex;
-        }
+          gap: 20px;
 
-        .radio {
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: start;
-          width: 210px;
-          height: 80px;
-          padding: 0 24px;
-          border-radius: 16px;
-          box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.1);
+          .radio {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            width: 210px;
+            height: 80px;
+            padding: 0 24px;
+            border-radius: 16px;
+            box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.1);
 
-          @include xl {
-            width: 180px;
-          }
-
-          @include smd {
-            width: 200px;
-          }
-
-          @include sm {
-            width: 150px;
-          }
-
-          input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 16px;
-            height: 16px;
-            right: 0;
-            display: none;
-
-            +.radio-label {
-              font-size: 16px;
-              line-height: 19px;
-              font-weight: 500;
-              color: $main-color;
-
-              &:before {
-                content: '';
-                background: #FFFFFF;
-                border-radius: 100%;
-                border: 1.5px solid $yellow-color;
-                display: inline-block;
-                width: 17px;
-                height: 17px;
-                position: relative;
-                top: 0px;
-                vertical-align: top;
-                cursor: pointer;
-                text-align: center;
-                transition: all 250ms ease;
-                margin-left: 6px;
-              }
+            @include xl {
+              width: 180px;
             }
 
-            &:checked {
+            @include smd {
+              width: 200px;
+            }
+
+            @include sm {
+              width: 150px;
+            }
+
+            input[type="radio"] {
+              position: absolute;
+              opacity: 0;
+              width: 16px;
+              height: 16px;
+              right: 0;
+              display: none;
+
               +.radio-label {
+                font-size: 16px;
+                line-height: 19px;
+                font-weight: 500;
+                color: $main-color;
+
                 &:before {
-                  background-color: $yellow-color;
-                  box-shadow: inset 0 0 0 2px #FFFFFF;
+                  content: '';
+                  background: #FFFFFF;
+                  border-radius: 100%;
+                  border: 1.5px solid $yellow-color;
+                  display: inline-block;
+                  width: 17px;
+                  height: 17px;
+                  position: relative;
+                  top: 0px;
+                  vertical-align: top;
+                  cursor: pointer;
+                  text-align: center;
+                  transition: all 250ms ease;
+                  margin-left: 6px;
                 }
               }
-            }
 
-            &:focus {
-              +.radio-label {
-                &:before {
-                  outline: none;
-                  border-color: $yellow-color;
+              &:checked {
+                +.radio-label {
+                  &:before {
+                    background-color: $yellow-color;
+                    box-shadow: inset 0 0 0 2px #FFFFFF;
+                  }
+                }
+              }
+
+              &:focus {
+                +.radio-label {
+                  &:before {
+                    outline: none;
+                    border-color: $yellow-color;
+                  }
                 }
               }
             }

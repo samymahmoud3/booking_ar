@@ -128,10 +128,25 @@
         width: 200px;
       }
 
+      .footer-logo {
+        font-size: 24px;
+        line-height: 18px;
+        font-weight: 700;
+        color: $yellow-color;
+        text-decoration: none;
+
+        @include smd {
+          font-weight: 600;
+          line-height: 21px;
+          width: 100%;
+        }
+      }
+
       p {
         font-size: 18px;
         line-height: 30px;
         font-weight: 400;
+        margin-top: 15px;
         color: $light-color;
       }
     }

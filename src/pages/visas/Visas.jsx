@@ -16,7 +16,7 @@ function Visas() {
     <Step4 key={ 3 } />,
   ];
   return (
-    <div className="partner_details">
+    <div className="visas-details">
       <VisasStepper list={ list } />
     </div>
   );
@@ -134,28 +134,28 @@ const Step2 = (prop) => {
           <div className="radio-box">
             <h3 className="title">هل هويتك او اقامتك سارية الصلاحية؟</h3>
             <div className="radio-buttons">
-              <div className="radio">
+              <label htmlFor='radio-1' className="radio">
                 <input id='radio-1' name='group1' type="radio" value='yes' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-1' className="radio-label">نعم</label>
-              </div>
-              <div className="radio">
+              </label>
+              <label htmlFor='radio-2' className="radio">
                 <input id='radio-2' name='group1' type="radio" value='no' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-2' className="radio-label">لا</label>
-              </div>
+              </label>
             </div>
           </div>
 
           <div className="radio-box">
             <h3 className="title">هل جواز سفرك سارى الصلاحية و متبقى اكثر من 6 اشهر؟</h3>
             <div className="radio-buttons">
-              <div className="radio">
+              <label htmlFor='radio-3' className="radio">
                 <input id='radio-3' name='group2' type="radio" value='yes' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-3' className="radio-label">نعم</label>
-              </div>
-              <div className="radio">
+              </label>
+              <label htmlFor='radio-4' className="radio">
                 <input id='radio-4' name='group2' type="radio" value='no' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-4' className="radio-label">لا</label>
-              </div>
+              </label>
             </div>
           </div>
 
@@ -164,14 +164,14 @@ const Step2 = (prop) => {
               <p>بعض السفارات تتطلب كشف حساب</p>
             </h3>
             <div className="radio-buttons">
-              <div className="radio">
+              <label htmlFor='radio-5' className="radio">
                 <input id='radio-5' name='group3' type="radio" value='yes' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-5' className="radio-label">نعم</label>
-              </div>
-              <div className="radio">
+              </label>
+              <label htmlFor='radio-6' className="radio">
                 <input id='radio-6' name='group3' type="radio" value='no' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-6' className="radio-label">لا</label>
-              </div>
+              </label>
             </div>
           </div>
 
@@ -180,14 +180,14 @@ const Step2 = (prop) => {
               <p>بعض السفارات تتطلب كشف حساب</p>
             </h3>
             <div className="radio-buttons">
-              <div className="radio">
+              <label htmlFor='radio-7' className="radio">
                 <input id='radio-7' name='group4' type="radio" value='yes' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-7' className="radio-label">نعم</label>
-              </div>
-              <div className="radio">
+              </label>
+              <label  htmlFor='radio-8' className="radio">
                 <input id='radio-8' name='group4' type="radio" value='no' onChange={ handleChangeRounds } />
                 <label htmlFor='radio-8' className="radio-label">لا</label>
-              </div>
+              </label>
             </div>
           </div>
 
@@ -247,6 +247,13 @@ const Step4 = () => {
   const [open, setOpen] = useState(false);
   // const [phone, setPhone] = useState('');
 
+  const scrollTop = () => { 
+    window.scrollTo({
+      top: 0,
+      behavior:'smooth'
+    });
+  }
+
   return (
     <div className="visas-step">
       <h2>المعلومات الشخصية</h2>
@@ -287,7 +294,7 @@ const Step4 = () => {
                 سيتم التواصل معك من قبل مستشار السفر
                 عبر الرقم المسجل فى اقرب وقت
               </p>
-              <Link className="return-btn" to='/'>العودة للصفحة الرئيسية</Link>
+              <Link className="return-btn" to='/'  onClick={scrollTop}>العودة للصفحة الرئيسية</Link>
             </div>
           </div>
         }

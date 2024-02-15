@@ -1,29 +1,36 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useState } from 'react';
-import './footer.scss';
 import { partners } from '../../data';
+import './footer.scss';
 
 const Footer = () => {
   const [activeSections, setActiveSections] = useState(false);
   const [activeMedia, setActiveMedia] = useState(false);
   const [active, setActive] = useState(false);
 
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="description">
-          <h2>الراقى للتوصيل</h2>
+          <Link to='/' className='footer-logo' onClick={ scrollTop }>الراقى للتوصيل</Link>
           <p>
             Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
           </p>
         </div>
         <div className="sections">
-          <div className='show-more'onClick={() => setActiveSections(!activeSections)}> 
+          <div className='show-more' onClick={ () => setActiveSections(!activeSections) }>
             <h2>الاقسام</h2>
-            <img src='expand.svg' alt=''  />
+            <img src='expand.svg' alt='' />
           </div>
-          <div className={`links ${activeSections? 'show' : ''}`}>
+          <div className={ `links ${activeSections ? 'show' : ''}` }>
             <HashLink className="link" smooth="true" to="/#home">الرئيسية</HashLink>
             <HashLink className="link" smooth="true" to="/#choose-us">لماذا تختارنا</HashLink>
             <HashLink className="link" smooth="true" to="/#our-services">خدماتنا</HashLink>
@@ -31,33 +38,33 @@ const Footer = () => {
             <HashLink className="link" smooth="true" to="/#reviews">تقييمات العملاء</HashLink>
             <HashLink className="link" smooth="true" to="/#faq">الاسئلة الشائعة</HashLink>
             <HashLink className="link" smooth="true" to="/#contact-us">تواصل معنا</HashLink>
-            <Link className="link" to="/prices">اسعارنا</Link>
+            <Link className="link" to="/prices" onClick={ scrollTop }>اسعارنا</Link>
           </div>
         </div>
         <div className="quick-links">
           <div className='show-more' onClick={ () => setActive(!active) } >
             <h2>روابط سريعة</h2>
-            <img src='expand.svg' alt=''/>
+            <img src='expand.svg' alt='' />
           </div>
-          <div className={`links ${active? 'show' : ''}`}>
-            <Link className="link" to="/loyalty-rewards">برنامج الولاء و المكافات</Link>
-            <Link className="link" to="/travel-partners">لوكالات السفر و السياحة</Link>
-            <Link className="link" to="/partner">كن شريكا</Link>
-            <Link className="link" to="/terms-conditions">الشروط و الاحكام</Link>
-            <Link className="link" to="/privacy-policy">سياسة الخصوصية</Link>
-            <Link className="link" to="/about-us">معلومات عنا</Link>
-            <Link className="link" to="/blogs">مدونتنا</Link>
-            <Link className="link" to="/book-hotel">الفنادق</Link>
-            <Link className="link" to="/packages">الباقات</Link>
-            <Link className="link" to="/visas">التأشيرات</Link>
+          <div className={ `links ${active ? 'show' : ''}` }>
+            <Link className="link" to="/loyalty-rewards" onClick={ scrollTop }>برنامج الولاء و المكافات</Link>
+            <Link className="link" to="/travel-partners" onClick={ scrollTop }>لوكالات السفر و السياحة</Link>
+            <Link className="link" to="/partner" onClick={ scrollTop }>كن شريكا</Link>
+            <Link className="link" to="/terms-conditions" onClick={ scrollTop }>الشروط و الاحكام</Link>
+            <Link className="link" to="/privacy-policy" onClick={ scrollTop }>سياسة الخصوصية</Link>
+            <Link className="link" to="/about-us" onClick={ scrollTop }>معلومات عنا</Link>
+            <Link className="link" to="/blogs" onClick={ scrollTop }>مدونتنا</Link>
+            <Link className="link" to="/book-hotel" onClick={ scrollTop }>الفنادق</Link>
+            <Link className="link" to="/packages" onClick={ scrollTop }>الباقات</Link>
+            <Link className="link" to="/visas" onClick={ scrollTop }>التأشيرات</Link>
           </div>
         </div>
         <div className="social-media">
           <div className='show-more' onClick={ () => setActiveMedia(!activeMedia) } >
             <h2>تواصل معنا</h2>
-            <img src='expand.svg' alt=''/>
+            <img src='expand.svg' alt='' />
           </div>
-          <div className={`links ${activeMedia? 'show' : ''}`}>
+          <div className={ `links ${activeMedia ? 'show' : ''}` }>
             <a className="link" href="https://facebook.com" target="_blank" rel="noreferrer" >
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <rect width="24" height="24" rx="5" fill="white" />
@@ -98,7 +105,7 @@ const Footer = () => {
         <div className='partners'>
           {
             partners.map((item) => (
-              <img src={item.img} alt='' key={item.id} />
+              <img src={ item.img } alt='' key={ item.id } />
             ))
           }
         </div>

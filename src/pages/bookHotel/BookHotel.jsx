@@ -8,7 +8,7 @@ import Select from 'react-dropdown-select';
 import './bookHotel.scss';
 
 const BookHotel = () => {
-  const [phone, setPhone] = useState('+20');
+  const [phone, setPhone] = useState('');
   const options = [
     { name: "ريفيرا" },
     { name: "بلازا" },
@@ -36,7 +36,7 @@ const BookHotel = () => {
               <div>
                 <PhoneInput
                   id="phone"
-                  country={ "eg" }
+                  country={ "sa" }
                   placeholder="رقم الجوال"
                   onChange={ (value) => setPhone(value) }
                   value={ phone }
