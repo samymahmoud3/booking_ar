@@ -25,6 +25,37 @@ export const choosingData = [
   },
 ]
 
+export const ourServicesData = [
+  {
+    icon: 'service1.svg',
+    iconName: 'car',
+    title: 'حجوزات سيارات',
+    description: 'آلام طاردة للوقت بسبب ضغوط العمل في رابطة الدول المستقلة  .',
+    to:''
+  },
+  {
+    icon: 'service2.svg',
+    iconName: 'hotel',
+    title: 'فنادق',
+    description: 'آلام طاردة للوقت بسبب ضغوط العمل في رابطة الدول المستقلة  .',
+    to:'book-hotel'
+  },
+  {
+    icon: 'service3.svg',
+    iconName: 'package',
+    title: 'باقات العمرة',
+    description: 'آلام طاردة للوقت بسبب ضغوط العمل في رابطة الدول المستقلة  .',
+    to:'packages'
+  },
+  {
+    icon: 'service4.svg',
+    iconName: 'visas',
+    title: 'تاشيرات',
+    description: 'آلام طاردة للوقت بسبب ضغوط العمل في رابطة الدول المستقلة  .',
+    to:'visas'
+  },
+]
+
 export const carTypes = {
   categories: [
     {

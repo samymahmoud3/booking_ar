@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowBack, ArrowForward, Star } from "@mui/icons-material";
 import FeatureItem from "../../components/featureItem/FeatureItem";
 import Header from "../../components/heroSection/HeroSection";
-import { accordionsData, choosingData, reviews } from "../../data";
+import { accordionsData, choosingData, ourServicesData, reviews } from "../../data";
 import { carTypes } from "../../data";
 import Filter from "../../components/filter/Filter";
 import Accordion from "../../components/accordion/Accordion";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import './home.scss';
 
 const Home = () => {
@@ -64,7 +65,7 @@ const Home = () => {
     <div className="home" id="home">
       <Header />
 
-      <div className="features" id="choose-us">
+      <section className="features" id="choose-us">
         <h2 className="title">لماذا تختارنا</h2>
         <div className="items">
           { choosingData.map((item, index) => (
@@ -78,7 +79,28 @@ const Home = () => {
             />
           )) }
         </div>
-      </div>
+      </section>
+
+      <section className="our-services" id="our-services">
+        <h2 className="title">خدماتنا</h2>
+        <div className="items">
+          { ourServicesData.map((item, index) => (
+            <div className="item" key={ index }>
+              <FeatureItem
+                icon={ item.icon }
+                iconName={ item.iconName }
+                title={ item.title }
+                description={ item.description }
+                width={ "280px" }
+                color="#8D9094"
+              />
+              <HashLink className="show-details" smooth="true" to={`/${item.to}#`}>
+                عرض التفاصيل<img src="double-arrow.svg" alt='more' />
+              </HashLink>
+            </div>
+          )) }
+        </div>
+      </section>
 
       <section className="typeOfCars carousel_section" id="car-types">
         <div style={ { display: "flex", justifyContent: "center", alignItems: "start" } }>
