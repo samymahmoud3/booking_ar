@@ -580,7 +580,13 @@ export const partners = [
   },
   {
     id: 10,
-    img: "partner10.svg"
+    img: "partner10.svg",
+    link:'https://l.facebook.com/l.php?u=https%3A%2F%2Feauthenticate.saudibusiness.gov.sa%2Finquiry%3FcertificateRefID%3D0000053077%26fbclid%3DIwAR3HqrTsOwG7czOiMgPhllPNIhRRtvtspbPFk7-YRuSQfEA3JevZOWg-x1k&h=AT3oIaFxpZ51JXjKjAhWIcBsY8MjmqZt-bxuEqJ4ytJXkp-omeTZeCKuakxNtkWxyUPNwP8wi10fXcUaOfxe4cizlINVRAe8hdfoos46R357gc6k9CI4ChBkfBtPoPBUZoOK6g'
+  },
+  {
+    id: 11,
+    img: "partner11.jpg",
+    link:'https://l.facebook.com/l.php?u=https%3A%2F%2Feauthenticate.saudibusiness.gov.sa%2Finquiry%3FcertificateRefID%3D0000053077%26fbclid%3DIwAR3HqrTsOwG7czOiMgPhllPNIhRRtvtspbPFk7-YRuSQfEA3JevZOWg-x1k&h=AT3oIaFxpZ51JXjKjAhWIcBsY8MjmqZt-bxuEqJ4ytJXkp-omeTZeCKuakxNtkWxyUPNwP8wi10fXcUaOfxe4cizlINVRAe8hdfoos46R357gc6k9CI4ChBkfBtPoPBUZoOK6g'
   },
 ]
 

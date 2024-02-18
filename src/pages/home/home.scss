@@ -31,72 +31,11 @@
     }
 
     .items {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 38px;
 
-      @include sm {
-        grid-template-columns: repeat(auto-fill, minmax(273px, 1fr));
-      }
-
-      .item {
-        place-self: center;
-      }
-    }
-  }
-
-  .our-services {
-    margin: 80px 104px;
-
-    @include sm {
-      margin: 80px 20px;
-    }
-
-    .title {
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 46px;
-      margin-bottom: 48px;
-      text-align: center;
-      color: $yellow-color;
-
-      @include sm {
-        font-size: 32px;
-      }
-    }
-
-    .items {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 38px;
-
-      @include sm {
-        grid-template-columns: repeat(auto-fill, minmax(273px, 1fr));
-      }
-
-      .item {
-        place-self: center;
-        border: 2px solid #EAE9EE;
-        border-radius: 16px;
-        box-shadow: 0 0 4px #bdbdbd, -2px -2px 12px #ffffff;
-        position: relative;
-        min-height: 230px;
-
-        .show-details {
-          font-size: 16px;
-          line-height: 22px;
-          font-weight: 700;
-          color: $yellow-color;
-          position: absolute;
-          left: 15px;
-          bottom: 10px;
-          text-decoration: none;
-
-          &:hover {
-            color: #dac88f;
-          }
-        }
-      }
     }
   }
 
@@ -252,6 +191,7 @@
       margin: auto;
       padding-top: 55px;
       display: flex;
+      justify-content: center;
 
       @include xl {
         width: 90%;
@@ -308,7 +248,6 @@
           .contact_item {
             display: flex;
 
-
             img {
               margin-left: 24px;
             }
@@ -346,7 +285,6 @@
 
         @include xl {
         width: 100%;
-        // padding: 50px 20px;
       }
 
 

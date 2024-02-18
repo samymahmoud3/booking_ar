@@ -185,6 +185,10 @@
       padding: 20px 0 0 0;
       flex-wrap: wrap;
       gap: 15px;
+
+      .disableLink {
+        pointer-events: none;
+      }
     }
 
     .copyright {

@@ -33,7 +33,7 @@ const Footer = () => {
           <div className={ `links ${activeSections ? 'show' : ''}` }>
             <HashLink className="link" smooth="true" to="/#home">الرئيسية</HashLink>
             <HashLink className="link" smooth="true" to="/#choose-us">لماذا تختارنا</HashLink>
-            <HashLink className="link" smooth="true" to="/#our-services">خدماتنا</HashLink>
+            <Link className="link" smooth="true" to="/our-services" onClick={ scrollTop }>خدماتنا</Link>
             <HashLink className="link" smooth="true" to="/#car-types">انواع سياراتنا</HashLink>
             <HashLink className="link" smooth="true" to="/#reviews">تقييمات العملاء</HashLink>
             <HashLink className="link" smooth="true" to="/#faq">الاسئلة الشائعة</HashLink>
@@ -105,7 +105,14 @@ const Footer = () => {
         <div className='partners'>
           {
             partners.map((item) => (
-              <img src={ item.img } alt='' key={ item.id } />
+              <Link
+                to={ item.link }
+                key={ item.id }
+                className={ item.link ? '' : "disableLink" }
+                target='_blank'
+              >
+                <img src={ item.img } alt='partner' />
+              </Link>
             ))
           }
         </div>

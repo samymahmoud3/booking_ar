@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="links large-screen">
         <NavLink to="/" className="link" activeclassname="active">الرئيسية</NavLink>
         <HashLink className="link" smooth="true" to="/#choose-us">لماذا تختارنا</HashLink>
-        <HashLink className="link" smooth="true" to="/#our-services">خدماتنا</HashLink>
+        <HashLink className="link" smooth="true" to="/our-services">خدماتنا</HashLink>
         <HashLink className="link" smooth="true" to="/#car-types">انواع سياراتنا</HashLink>
         <HashLink className="link" smooth="true" to="/#reviews">تقييمات العملاء</HashLink>
         <HashLink className="link" smooth="true" to="/#faq">الاسئلة الشائعة</HashLink>
@@ -36,7 +36,7 @@ const Navbar = () => {
             <Close className="overlay-close" sx={ { fontSize: 35 } } onClick={ () => setToggleMenu(false) } />
             <NavLink to="/" className="link" activeclassname="active" onClick={ () => setToggleMenu(false) }>الرئيسية</NavLink>
             <HashLink className="link" smooth="true" to="/#choose-us" onClick={ () => setToggleMenu(false) }>لماذا تختارنا</HashLink>
-            <HashLink className="link" smooth="true" to="/#our-services" onClick={ () => setToggleMenu(false) }>خدماتنا</HashLink>
+            <HashLink className="link" smooth="true" to="/our-services" onClick={ () => setToggleMenu(false) }>خدماتنا</HashLink>
             <HashLink className="link" smooth="true" to="/#car-types" onClick={ () => setToggleMenu(false) }>انواع سياراتنا</HashLink>
             <HashLink className="link" smooth="true" to="/#reviews" onClick={ () => setToggleMenu(false) }>تقييمات العملاء</HashLink>
             <HashLink className="link" smooth="true" to="/#faq" onClick={ () => setToggleMenu(false) }>الاسئلة الشائعة</HashLink>

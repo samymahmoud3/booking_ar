@@ -22,6 +22,7 @@ import Policy from "./pages/privacyPolicy/Policy";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import Settings from "./pages/settings/Settings";
 import Visas from "./pages/visas/Visas";
+import OurServices from "./pages/ourServices/OurServices";
 import './styles/global.scss';
 
 function App() {
@@ -129,6 +130,10 @@ function App() {
         {
           path: '/visas',
           element: <Visas />
+        },
+        {
+          path: '/our-services',
+          element: <OurServices />
         },
       ]
     },

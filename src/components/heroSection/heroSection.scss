@@ -66,8 +66,10 @@
     position: relative;
     height: fit-content;
     margin-bottom: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
+    max-width: 1320px;
+    min-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
 
     @include xl {
       margin-left: 70px;
@@ -596,30 +598,15 @@
           }
 
           .category {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
-            grid-gap: 5px;
-
-            @include smd {
-
-              display: flex;
-              flex-direction: column;
-              grid-gap: 10px;
-            }
-
-            @include sm {
-              display: flex;
-              flex-direction: column;
-              grid-gap: 10px;
-            }
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
 
             .boxCategory {
-              @include smd {
-                width: 300px;
-              }
+              width: 190px;
 
-              @include sm {
-                width: 100%;
+              @include smd {
+                width: 280px;
               }
             }
 

@@ -32,7 +32,7 @@ const Blog = () => {
       if (current.scrollLeft <= -(maxScrollWidth-1)) {
         current.scrollLeft=0
       }
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);

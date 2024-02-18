@@ -2,12 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowBack, ArrowForward, Star } from "@mui/icons-material";
 import FeatureItem from "../../components/featureItem/FeatureItem";
 import Header from "../../components/heroSection/HeroSection";
-import { accordionsData, choosingData, ourServicesData, reviews } from "../../data";
+import { accordionsData, choosingData, reviews } from "../../data";
 import { carTypes } from "../../data";
 import Filter from "../../components/filter/Filter";
 import Accordion from "../../components/accordion/Accordion";
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
 import './home.scss';
 
 const Home = () => {
@@ -42,7 +41,7 @@ const Home = () => {
       if (current.scrollLeft <= -(maxScrollWidth - 1)) {
         current.scrollLeft = 0
       }
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -56,7 +55,7 @@ const Home = () => {
       if (current.scrollLeft <= -(maxScrollWidth - 1)) {
         current.scrollLeft = 0
       }
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -81,27 +80,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="our-services" id="our-services">
-        <h2 className="title">خدماتنا</h2>
-        <div className="items">
-          { ourServicesData.map((item, index) => (
-            <div className="item" key={ index }>
-              <FeatureItem
-                icon={ item.icon }
-                iconName={ item.iconName }
-                title={ item.title }
-                description={ item.description }
-                width={ "280px" }
-                color="#8D9094"
-              />
-              <HashLink className="show-details" smooth="true" to={`/${item.to}#`}>
-                عرض التفاصيل<img src="double-arrow.svg" alt='more' />
-              </HashLink>
-            </div>
-          )) }
-        </div>
-      </section>
-
       <section className="typeOfCars carousel_section" id="car-types">
         <div style={ { display: "flex", justifyContent: "center", alignItems: "start" } }>
           <Filter
@@ -112,9 +90,11 @@ const Home = () => {
             paragraph="تختارنا السيارات الأفضل لكل مشروعك"
             show={ true }
           />
+          
           <Link
             className="link"
             to="/prices"
+            onClick={ () => window.scrollTo(0,0) }
             style={ { margin: "12px 0 0 5px", background: "#BBA664", color: "#fff", padding: "10px", textDecoration: "none", borderRadius: "7px" } }
           >اسعارنا</Link>
         </div>
@@ -190,12 +170,7 @@ const Home = () => {
       <section className="accordions_section" id="faq">
         <div className="triangle" />
         <div className="info">
-          <h3>التعليمات</h3>
-          <h2>أي أسئلة؟ ,انظر هنا</h2>
-          <p>
-            هناك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم
-            ,لكن الأغلبية عانت من التغيير بشكل ما.
-          </p>
+          <h2>للأسئلة الشائعة</h2>
         </div>
         <Accordion data={ accordionsData } />
       </section>

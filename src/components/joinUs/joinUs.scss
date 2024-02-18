@@ -32,16 +32,17 @@
     }
 
     .items {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
+      display: flex;
       gap: 48px;
 
-      .item {
-        place-self: center;
+      @include lg {
+        gap: 10px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
 
-        @include md {
-          margin: auto;
-        }
+      @include smd {
+        flex-wrap: wrap;
       }
     }
   }
