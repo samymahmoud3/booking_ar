@@ -56,6 +56,10 @@ h2 {
         width: 358px !important;
       }
 
+      @include smd {
+        width: 270px !important;
+      }
+
       .step-dropdown {
         width: 100%;
       }
@@ -195,6 +199,10 @@ h2 {
         width: 358px !important;
       }
 
+      @include sm {
+        width: 270px !important;
+      }
+
       .step-dropdown {
         width: 100%;
       }
@@ -216,7 +224,7 @@ h2 {
   cursor: pointer;
 
   @include sm {
-    width: 358px;
+    width: 270px;
   }
 }
 
@@ -243,7 +251,7 @@ h2 {
   }
 
   input {
-    padding: 18.5px 20px 16.5px 157px;
+    padding: 18.5px 20px 16.5px 0px;
     border-radius: 10px;
     border: none;
     background-color: #F4F6F9;

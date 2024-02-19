@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .book-hotel {
 
@@ -7,7 +8,7 @@
     margin: 80px auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
 
     .info_div {
       width: 100%;
@@ -37,21 +38,32 @@
     .customer_info {
 
       .inputs {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
         gap: 25px;
 
         .input {
           width: 333px;
 
+          @include sm {
+            width: 270px;
+          }
+
           input {
             font-size: 13px;
+            padding-left: 0;
 
             &::placeholder {
               color: #9094A0;
             }
 
             width: 100%;
+          }
+
+          .ant-input-number {
+            @include sm {
+              max-width: 270px;
+            }
           }
         }
 
@@ -66,6 +78,10 @@
           border-radius: 8px;
           padding-right: 16px;
           background-color: #F4F6F9;
+
+          @include sm {
+            width: 196px;
+          }
         }
 
         .react-tel-input .flag-dropdown {
@@ -114,6 +130,10 @@
             border-radius: 10px;
             margin-top: 10px;
 
+            @include sm {
+              width: 270px;
+            }
+
             .select-input {
               width: 333px;
               background-color: #F4F6F9;
@@ -125,16 +145,28 @@
               outline: 0 !important;
               box-shadow: 0 0 0 !important;
               color: #9094A0 !important;
+              z-index: 1;
+
+              @include sm {
+                width: 100%;
+              }
+
+              input {
+                width: 100%;
+              }
             }
           }
-        } //end dropdown search
-
-        
+        }
+        //end dropdown search
       }
     }
 
     #date-input {
       width: 330px;
+
+      @include sm {
+        width: 270px;
+      }
     }
 
     .btn {
@@ -143,6 +175,7 @@
       font-size: 14px;
       line-height: 24px;
       font-weight: 700;
+      margin-right: 25px;
     }
   }
 }

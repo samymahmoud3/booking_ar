@@ -44,7 +44,7 @@
 
         .input {
           @include sm {
-            width: 326px !important;
+            width: 270px !important;
           }
 
           input {
@@ -92,6 +92,10 @@
 
         // start input search
         .dropdown-box {
+          @include sm {
+            width: 270px;
+          }
+
           .title {
             font-size: 15px;
             line-height: 18px;
@@ -114,7 +118,7 @@
             margin-top: 10px;
 
             @include sm {
-              width: 326px !important;
+              width: 270px !important;
             }
 
             .select-input {
@@ -128,7 +132,16 @@
               box-shadow: 0 0 0 !important;
 
               @include sm {
-                width: 326px !important;
+                width: 100% !important;
+              }
+
+              span {
+                margin-top: 10px;
+              }
+              
+              input {
+                width: 100%;
+                font-size: 13px;
               }
             }
           }

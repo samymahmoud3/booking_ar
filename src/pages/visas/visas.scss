@@ -204,7 +204,7 @@
             }
 
             @include sm {
-              width: 150px;
+              width: 100px;
             }
 
             input[type="radio"] {
@@ -351,6 +351,10 @@
       .input {
         width: 333px;
 
+        @include sm {
+          width: 270px;
+        }
+
         input {
           font-size: 14px;
           font-weight: 500;
@@ -377,6 +381,10 @@
         border-radius: 8px;
         padding-right: 16px;
         background-color: #F4F6F9;
+
+        @include sm {
+          width: 196px;
+        }
       }
 
       .react-tel-input .flag-dropdown {
@@ -399,7 +407,6 @@
       .react-tel-input .selected-flag .arrow {
         left: -30px;
       }
-
       // end phone input
     }
   }
@@ -447,9 +454,9 @@
       }
 
       @include sm {
-        width: 330px;
-        right: -15%;
-        padding: 24px 5px;
+        width: 270px;
+        right: -4%;
+        padding: 14px 8px;
       }
 
       .success-container {

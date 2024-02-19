@@ -70,7 +70,8 @@ const BookPackage = () => {
                 </div>
                 <div className='input'>
                   <label >الوقت<span>*</span></label>
-                  <TimePicker style={ { backgroundColor: "#F4F6F9", height: "52px", paddingRight: "20px" } }
+                  <TimePicker 
+                    className='time-input'
                     use12Hours
                     format="h:mm A"
                     variant="borderless"

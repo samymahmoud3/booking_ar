@@ -244,7 +244,7 @@ const Booking = () => {
                     <Select className='select-input'
                       options={ options }
                       direction='rtl'
-                      placeholder='المطار،الفندق،الأماكن الأخرى'
+                        placeholder='المطار،المدينة،الفندق،الأماكن الأخرى'
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
@@ -260,7 +260,7 @@ const Booking = () => {
                     <Select className='select-input'
                       options={ options }
                       direction='rtl'
-                      placeholder='المطار،الفندق،الأماكن الأخرى'
+                      placeholder='المطار،المدينة،الفندق،الأماكن الأخرى'
                       labelField='name'
                       valueField='name'
                       color='#9094A0'
@@ -319,7 +319,7 @@ const Booking = () => {
                   <div className='title'>الركّاب <span>*</span></div>
                   <div className='input-dropdown'>
                     <img src='user.svg'/>
-                    <span style={ { fontSize: "10px" } }>العدد:</span>
+                    <span style={ { fontSize: "10px" } }>عدد:</span>
                     <Select className='select-input select-number'
                       options={ personsOptions }
                       direction='rtl'

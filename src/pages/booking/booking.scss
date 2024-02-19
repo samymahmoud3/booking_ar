@@ -196,7 +196,7 @@
             .box {
 
               @include sm {
-                max-width: 326px !important;
+                max-width: 240px !important;
               }
 
               .title {
@@ -230,17 +230,42 @@
                   width: 326px;
                 }
 
+                @include sm {
+                  width: 270px;
+                }
+
                 .select-input {
                   width: 302px;
                   background-color: transparent;
                   border: none;
                   height: 52px;
-                  font-size: 12px !important;
+                  font-size: 13px !important;
                   font-weight: 400 !important;
                   line-height: 16px !important;
                   outline: 0 !important;
                   box-shadow: 0 0 0 !important;
                   color: #9094A0 !important;
+
+                  @include sm {
+                    width: 240px !important;
+                  }
+
+
+
+                  input {
+                    width: 240px !important;
+
+                    font-size: 13px;
+
+                    @include sm {
+                      width: 100% !important;
+                    }
+
+                  }
+
+                  span {
+                    margin-top: 12px;
+                  }
                 }
 
                 .select-number {
@@ -281,6 +306,10 @@
                 @include smd {
                   width: 326px;
                 }
+
+                @include sm {
+                  width: 270px;
+                }
               }
 
               // end time range
@@ -291,6 +320,10 @@
 
                 @include smd {
                   width: 326px !important;
+                }
+
+                @include sm {
+                  width: 270px !important;
                 }
 
                 .time-field {
@@ -331,6 +364,10 @@
                 background-color: #F4F6F9;
                 direction: ltr;
 
+                @include sm {
+                  width: 270px;
+                }
+
                 input {
                   padding: 0;
                 }
@@ -368,6 +405,10 @@
 
                 @include smd {
                   width: 326px !important;
+                }
+
+                @include sm {
+                  width: 270px !important;
                 }
 
 
@@ -413,7 +454,7 @@
               grid-gap: 15px;
 
               @include sm {
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 
                 grid-gap: 5px;
 
@@ -635,6 +676,12 @@
             grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
             gap: 22px;
 
+            input {
+              @include sm {
+                width: 270px;
+              }
+            }
+
             // number input
             .react-tel-input .form-control {
               margin-right: 75px;
@@ -646,6 +693,10 @@
               border-radius: 8px;
               padding-right: 16px;
               background-color: #F4F6F9;
+
+              @include sm {
+                width: 196px;
+              }
             }
 
             .react-tel-input .flag-dropdown {
@@ -668,7 +719,6 @@
             .react-tel-input .selected-flag .arrow {
               left: -30px;
             }
-
             // end number input
           }
         }
@@ -836,8 +886,19 @@
           grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
           gap: 22px;
 
+          input {
+            padding-left: 0;
+            @include sm {
+              width: 270px;
+            }
+          }
+
           #date-input {
             width: 338px;
+
+            @include sm {
+              width: 270px;
+            }
           }
         }
       }

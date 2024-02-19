@@ -1,10 +1,15 @@
 @import '../../styles/variables.scss';
+@import '../../styles/responsive.scss';
 
 .steps-container {
   position: relative;
   max-width: 362px;
   margin: auto;
   margin-bottom: 40px;
+
+  @include sm { 
+    max-width: 270px;
+  }
 }
 
 .progress-line1 {
@@ -17,6 +22,11 @@
   z-index: -1;
   transition: all 0.25s ease;
   border-radius: 40px;
+
+  @include sm {
+    width: 60px;
+    right: 45px;
+  }
 }
 .progress-line2 {
   position: absolute;
@@ -28,6 +38,11 @@
   z-index: -1;
   transition: all 0.25s ease;
   border-radius: 40px;
+
+  @include sm {
+    width: 60px;
+    left: 45px;
+  }
 }
 
 .progress-line1.proActive, .progress-line2.proActive {

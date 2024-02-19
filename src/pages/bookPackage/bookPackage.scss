@@ -2,6 +2,7 @@
 @import '../../styles/responsive.scss';
 
 .book-package {
+  // overflow: hidden;
 
   .container {
     max-width: 754px;
@@ -46,9 +47,10 @@
     .customer_info {
 
       .inputs {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
-        gap: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
 
         @include sm {
           display: flex;
@@ -58,13 +60,34 @@
         .input {
 
           @include sm {
-            flex-basis: 326px !important;
-            width: 326px;
+            width: 270px !important;
+          }
+
+          .time-input {
+            background-color: #F4F6F9;
+            height: 52px !important;
+            padding: 0px 20px 0 0 !important;
+            font-size: 13px !important;
+
+            @include sm {
+              width: 270px !important;
+            }
+          }
+
+          @include sm {
+            flex-basis: 270px !important;
+            width: 270px;
           }
 
           input {
+            padding-left: 0;
+
             &::placeholder {
               color: #9094A0;
+            }
+
+            @include sm {
+              width: 270px;
             }
           }
         }
@@ -82,7 +105,7 @@
           background-color: #F4F6F9;
 
           @include sm {
-            width: 250px !important;
+            width: 196px !important;
           }
         }
 
@@ -111,7 +134,7 @@
 
         .persons-input {
           @include sm {
-            width: 326px !important;
+            width: 270px !important;
           }
         }
       }
@@ -121,7 +144,7 @@
       width: 333px !important;
 
       @include sm {
-        width: 326px !important;
+        width: 270px !important;
       }
     }
 
@@ -145,9 +168,9 @@
           text-align: center;
           cursor: pointer;
 
-           @include md {
-              padding: 6px !important;
-            }
+          @include md {
+            padding: 6px !important;
+          }
 
           @include sm {
             width: 116px !important;
@@ -161,9 +184,9 @@
             padding-bottom: 15px;
             border-bottom: 1.5px solid #DDDFE1;
 
-             @include md {
-                font-size: 14px !important;
-              }
+            @include md {
+              font-size: 14px !important;
+            }
 
             @include sm {
               font-size: 10px !important;
@@ -180,19 +203,13 @@
             color: $yellow-color;
 
             @include md {
-                font-size: 12px !important;
-              }
+              font-size: 12px !important;
+            }
 
-            @include sm{
+            @include sm {
               font-size: 8px !important;
               line-height: 12px !important;
             }
-          }
-
-          .question_mark {
-            position: absolute;
-            bottom: -5px;
-            left: -5px;
           }
         }
       }
@@ -271,13 +288,19 @@
       }
 
       .inputs {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(338px, 1fr));
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
         gap: 22px;
 
         .input {
+
+          input {
+            padding-left: 0;
+          }
+
           @include sm {
-            width: 326px !important;
+            width: 270px !important;
           }
         }
 
@@ -285,7 +308,7 @@
           width: 338px !important;
 
           @include sm {
-            width: 326px !important;
+            width: 270px !important;
           }
         }
       }
