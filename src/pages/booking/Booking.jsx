@@ -277,7 +277,7 @@ const Booking = () => {
                         <TimePicker
                           className='time-input'
                           use12Hours
-                          format="h:mm a"
+                          format="h:mm A"
                           variant="borderless"
                           placeholder='حدد الوقت '
                           suffixIcon={ <ExpandMore /> }
@@ -291,8 +291,8 @@ const Booking = () => {
                       endMoment={ endTime }
                       onChange={ handleChangeTime }
                       showErrors={ false }
-                      startLabel="حدد وقت الوصول"
-                      endLabel=" حدد وقت الرجوع"
+                      startLabel="الوصول"
+                      endLabel="الرجوع"
                     />
                   }
 
@@ -312,7 +312,8 @@ const Booking = () => {
                         placeholderText="يوم / شهر / سنه "
                       />
                     </div>
-                    : <DateRangePicker placeholder={ ['يوم/ شهر/ سنه  - يوم/ شهر/ سنه '] } />
+                    : 
+                    <DateRangePicker showOneCalendar placeholder='يوم/ شهر/ سنه  - يوم/ شهر/ سنه ' />
                   }
                 </div>
                 <div className='box'>

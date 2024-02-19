@@ -40,19 +40,21 @@
   }
 
   .typeOfCars {
-    
+
     .carousel {
       @include lg {
         width: 100% !important;
       }
     }
+
     .item {
       width: 352px;
       height: 260px;
       margin-left: 50px;
 
       @include sm {
-        margin-left: 10px;
+        margin-left: 5px;
+        margin-right: 20px;
       }
     }
   }
@@ -214,8 +216,8 @@
         padding: 0 10px;
 
         @include xl {
-        max-width: 100%;
-      }
+          max-width: 100%;
+        }
 
 
 
@@ -284,13 +286,13 @@
         z-index: 1;
 
         @include xl {
-        width: 100%;
-      }
+          width: 100%;
+        }
 
-      @include sm {
-        padding-right: 0;
-        padding-left: 0;
-      }
+        @include sm {
+          padding-right: 0;
+          padding-left: 0;
+        }
 
         .circle_shape {
           position: absolute;
@@ -336,12 +338,13 @@
           width: 470px;
 
           @include xl {
-        width: 100%;
-      }
+            width: 100%;
+          }
 
           @include sm {
             padding: 10px;
-            width: 320px;
+            max-width: 430px;
+            flex: 1;
           }
 
           input {

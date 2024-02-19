@@ -250,8 +250,6 @@
                     width: 240px !important;
                   }
 
-
-
                   input {
                     width: 240px !important;
 
@@ -348,7 +346,7 @@
                   }
 
                   .time-input input {
-                    font-size: 11px;
+                    font-size: 13px;
                     color: #9094A0;
                     padding: 0;
                   }
@@ -363,6 +361,7 @@
                 border: none;
                 background-color: #F4F6F9;
                 direction: ltr;
+                outline: none !important;
 
                 @include sm {
                   width: 270px;
@@ -416,7 +415,7 @@
                   border: none;
                   outline: none;
                   margin-right: 5px;
-                  font-size: 9px;
+                  font-size: 13px;
                   width: 206px;
                   background-color: #F4F6F9;
                   border-radius: 10px;
@@ -719,6 +718,7 @@
             .react-tel-input .selected-flag .arrow {
               left: -30px;
             }
+
             // end number input
           }
         }
@@ -888,6 +888,7 @@
 
           input {
             padding-left: 0;
+
             @include sm {
               width: 270px;
             }
@@ -921,6 +922,11 @@
     display: flex;
     flex-direction: column;
     width: 338px;
+
+
+    @include sm {
+      width: 270px;
+    }
 
     label {
       font-size: 15px;

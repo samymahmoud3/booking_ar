@@ -6,7 +6,6 @@ import { accordionsData, choosingData, reviews } from "../../data";
 import { carTypes } from "../../data";
 import Filter from "../../components/filter/Filter";
 import Accordion from "../../components/accordion/Accordion";
-import { Link } from "react-router-dom";
 import './home.scss';
 
 const Home = () => {
@@ -81,7 +80,7 @@ const Home = () => {
       </section>
 
       <section className="typeOfCars carousel_section" id="car-types">
-        <div style={ { display: "flex", justifyContent: "center", alignItems: "start" } }>
+        <div>
           <Filter
             categories={ carTypes.categories }
             active={ active }
@@ -89,14 +88,8 @@ const Home = () => {
             title="انواع سيارتنا"
             paragraph="تختارنا السيارات الأفضل لكل مشروعك"
             show={ true }
+            showPrices={ true }
           />
-          
-          <Link
-            className="link"
-            to="/prices"
-            onClick={ () => window.scrollTo(0,0) }
-            style={ { margin: "12px 0 0 5px", background: "#BBA664", color: "#fff", padding: "10px", textDecoration: "none", borderRadius: "7px" } }
-          >اسعارنا</Link>
         </div>
         <div>
           <div className='carousel' ref={ carouselRef } style={ { width: "89%" } }>

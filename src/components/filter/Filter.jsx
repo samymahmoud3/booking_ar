@@ -1,10 +1,19 @@
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import './filter.scss';
 
-const Filter = ({title, paragraph, categories, setActive, active, show  }) => {
+const Filter = ({title, paragraph, categories, setActive, active, show, showPrices=false  }) => {
   return (
     <div className="filter_container">
           <h2 className="title"> { title } </h2>
+          {showPrices &&
+          <Link
+            className="link"
+            to="/prices"
+            onClick={ () => window.scrollTo(0,0) }
+            style={ { margin: "0", background: "#BBA664", color: "#fff", padding: "10px", textDecoration: "none", borderRadius: "7px" } }
+          >اسعارنا</Link>
+          }
       <p> { paragraph } </p>
       { show &&
         <div className="filter_btns">
@@ -30,7 +39,8 @@ Filter.propTypes = {
   })),
   setActive: PropTypes.func,
   active: PropTypes.string,
-  show: PropTypes.bool
+  show: PropTypes.bool,
+  showPrices: PropTypes.bool
 }
 
 export default Filter

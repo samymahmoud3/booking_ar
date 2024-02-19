@@ -199,7 +199,9 @@ const HeroSection = () => {
                           placeholderText="يوم / شهر / سنه "
                         />
                       </div>
-                      : <DateRangePicker placeholder='يوم/ شهر/ سنه  - يوم/ شهر/ سنه ' />
+                      : 
+                      <DateRangePicker showOneCalendar placeholder='يوم/ شهر/ سنه  - يوم/ شهر/ سنه ' />
+
                     }
                   </div>
                   <div className='box'>
@@ -222,7 +224,7 @@ const HeroSection = () => {
                   </div>
                   <div className='box'>
                     <div className='input-dropdown'>
-                      <img src='user.svg' style={ { width: "12px" } } /><span style={ { fontSize: "14px", marginTop: "2px" } }>عدد</span>
+                      <img src='user.svg' style={ { width: "12px" } } /><span style={ { fontSize: "14px" } }>عدد</span>
                       <Select className='select-input'
                         options={ personsOptions }
                         direction='rtl'
