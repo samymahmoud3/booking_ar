@@ -6,7 +6,6 @@ import 'rsuite/dist/rsuite-rtl.css';
 import DatePicker from "react-datepicker";
 import { TimeRng } from '../rangeTime/RangeTime';
 import { TimePicker } from 'antd';
-import { ExpandMore } from '@mui/icons-material';
 import Select from 'react-dropdown-select';
 import './heroSection.scss';
 
@@ -157,7 +156,7 @@ const HeroSection = () => {
                 <>
                   <div className='box'>
                     <div className='input-dropdown'>
-                      <img src='/arrow-left.svg' style={ { marginTop: "4px" } } /><span style={ { fontSize: "14px" } }>من:</span>
+                      <img src='/arrow-left.svg' style={ { marginTop: "4px" } } /><span style={ { fontSize: "12px" } }>من:</span>
                       <Select className='select-input'
                         options={ options }
                         direction='rtl'
@@ -172,7 +171,7 @@ const HeroSection = () => {
                   { active === "bookNow" &&
                     <div className='box'>
                       <div className='input-dropdown'>
-                        <img src='/location.svg' style={ { marginTop: "2px", marginLeft: "1px" } } /><span style={ { fontSize: "14px" } }>الى:</span>
+                        <img src='/location.svg' style={ { marginTop: "2px", marginLeft: "1px" } } /><span style={ { fontSize: "12px" } }>الى:</span>
                         <Select className='select-input'
                           options={ options }
                           direction='rtl'
@@ -190,7 +189,7 @@ const HeroSection = () => {
                       <div className='oneRoundDate' style={ { border: "none" } }>
                         <label htmlFor='date-input' style={ { marginTop: "4px", display: "flex" } }>
                           <img src='/calender.svg' alt='calender' style={ { marginLeft: "1px" } } />
-                          <span style={ { fontSize: "13px", marginTop: "1px" } }>التاريخ:</span>
+                          <span style={ { fontSize: "11px", marginTop: "1px" } }>التاريخ:</span>
                         </label>
                         <DatePicker id="date-input"
                           selected={ selectedDate }
@@ -214,7 +213,7 @@ const HeroSection = () => {
                           format="h:mm A"
                           variant="borderless"
                           placeholder='حدد الوقت'
-                          suffixIcon={ <ExpandMore /> }
+                          suffixIcon="" 
                           onChange={ onChangeTime }
                           size="small"
                         />
@@ -224,11 +223,11 @@ const HeroSection = () => {
                   </div>
                   <div className='box'>
                     <div className='input-dropdown'>
-                      <img src='user.svg' style={ { width: "12px" } } /><span style={ { fontSize: "14px" } }>عدد</span>
+                      <img src='user.svg' style={ { width: "12px" } } /><span style={ { fontSize: "12px" } }>عدد:</span>
                       <Select className='select-input'
                         options={ personsOptions }
                         direction='rtl'
-                        placeholder='عدد الركّاب'
+                        placeholder='الركّاب'
                         labelField='name'
                         valueField='name'
                         color='#9094A0'

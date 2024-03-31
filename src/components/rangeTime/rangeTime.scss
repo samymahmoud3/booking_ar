@@ -6,6 +6,10 @@
   margin-left: 15px;
   margin-top: 5px;
   min-width: 240px;
+
+  @include smd {
+    min-width: 100%;
+  }
 }
 
 #react-time-range {

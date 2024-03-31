@@ -20,14 +20,15 @@ const Navbar = () => {
         <HashLink className="link" smooth="true" to="/#contact-us">التواصل</HashLink>
       </div>
       <Link to="/login" className="login link ">تسجيل الدخول</Link>
-      <div className="logged-in">
+      {/* when the user is logged in, show the logout button and the settings button */}
+      {/* <div className="logged-in">
         <Link to="/settings" className="link ">
           <img src="settings.svg" alt="settings" />
         </Link>
         <Link to="/login" className="link ">
           <img src="logout.svg" alt="logout" />
         </Link>
-      </div>
+      </div> */}
       
       <div className="smallscreen ">
         <Menu className="overlay-open" sx={ { fontSize: 30 } } onClick={ () => setToggleMenu(true) } />

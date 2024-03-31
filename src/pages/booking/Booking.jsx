@@ -183,7 +183,9 @@ const Booking = () => {
   }, [destinationValue]);
 
   if (!isLoaded) {
-    return;
+    return <div className='spinner-container'>
+      <img src='/spinner1.gif' alt='loading' />
+    </div>;
   }
 
   return (

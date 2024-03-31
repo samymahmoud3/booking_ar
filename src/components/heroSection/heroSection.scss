@@ -38,7 +38,7 @@
     }
 
     @include sm {
-      margin: 156px 0px 32px 0px;
+      margin: 156px 10px 32px 10px;
     }
 
     h2 {
@@ -86,7 +86,7 @@
       margin-right: 20px;
     }
 
-    @include sm {
+    @include smd {
       padding-left: 3px;
       padding-right: 3px;
       margin-left: 0;
@@ -208,6 +208,7 @@
 
       @include sm {
         padding-right: 15px;
+        padding-left: 15px;
       }
 
 
@@ -301,6 +302,18 @@
             align-items: center;
             width: 240px;
 
+            @include smd {
+              min-width: 100%;
+            }
+
+            .css-nykehw-DropdownHandleComponent {
+              display: none;
+            }
+
+            .react-dropdown-select-dropdown-handle {
+              display: none;
+            }
+
             .title {
               font-weight: 500;
 
@@ -345,6 +358,10 @@
                   width: 186px !important;
                   height: 11px;
                   font-size: 13px;
+
+                  @include smd {
+                    width: 77vw !important;
+                  }
                 }
 
                 span {
@@ -368,6 +385,13 @@
               outline: none !important;
               margin-top: 4px;
 
+              @include smd {
+                width: 80vw;
+              } 
+              @include sm {
+                width: 87vw;
+              }
+
               input {
                 font-size: 12px !important;
               }
@@ -386,6 +410,10 @@
               font-size: 9px;
               background-color: transparent;
               color: #9094A0;
+
+              @include smd {
+                  width: 100vw !important;
+              }
 
               &:focus {
                 outline: none;
@@ -411,6 +439,10 @@
               display: flex;
               align-items: center;
 
+              @include smd {
+                    width: 100%;
+                  }
+
               .react-datepicker-popper {
                 transform: translate3d(0px, 10px, 0) !important;
               }
@@ -420,8 +452,12 @@
                 outline: none;
                 margin-right: 5px;
                 font-size: 13px;
-                width: 100% !important;
+                width: 180px !important;
                 margin-top: 7px;
+
+                @include smd {
+                  width: 70vw !important;
+                }
               }
 
               &::after {
@@ -441,6 +477,10 @@
               display: flex;
               background-color: transparent;
               width: 240px;
+
+              @include smd {
+                width: 100%;
+              }
 
               &::after {
                 position: absolute;
@@ -500,18 +540,14 @@
           }
 
           .category {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
 
-            .boxCategory {
-              width: 190px;
+            display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
+              grid-gap: 15px;
 
               @include smd {
-                width: 240px;
+                grid-template-columns: repeat(auto-fit, minmax(142px, 1fr));
               }
-            }
-
           }
         }
       }

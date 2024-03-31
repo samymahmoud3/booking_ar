@@ -25,6 +25,7 @@
 
       @include sm {
         padding: 45px 10px;
+        box-shadow: none !important;
       }
 
       &:nth-child(2) {
@@ -88,6 +89,12 @@
 
             @include sm {
               width: 270px;
+            }
+          }
+
+          .ant-input-number {
+            @include sm {
+              max-width: 270px;
             }
           }
         }
@@ -321,6 +328,10 @@
         align-items: center;
         margin-top: 32px;
         cursor: pointer;
+
+        @include sm {
+          width: 270px !important;
+        }
       }
     }
 

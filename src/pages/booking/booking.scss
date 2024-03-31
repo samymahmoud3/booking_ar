@@ -109,6 +109,7 @@
 
           @include sm {
             padding: 45px 15px;
+            box-shadow: 0 0 0;
           }
 
           h3 {
@@ -195,9 +196,21 @@
 
             .box {
 
-              @include sm {
-                max-width: 240px !important;
+              @include smd {
+                min-width: 100%;
               }
+
+            .css-nykehw-DropdownHandleComponent {
+              display: none;
+            }
+
+            .react-dropdown-select-dropdown-handle {
+              display: none;
+            }
+
+              // @include sm {
+              //   max-width: 240px !important;
+              // }
 
               .title {
                 font-weight: 500;
@@ -227,15 +240,15 @@
                 padding-right: 5px;
 
                 @include smd {
-                  width: 326px;
+                  min-width: 100% !important;
                 }
 
-                @include sm {
-                  width: 270px;
-                }
+                // @include sm {
+                //   width: 270px;
+                // }
 
                 .select-input {
-                  width: 302px;
+                  width: 100%;
                   background-color: transparent;
                   border: none;
                   height: 52px;
@@ -246,8 +259,8 @@
                   box-shadow: 0 0 0 !important;
                   color: #9094A0 !important;
 
-                  @include sm {
-                    width: 240px !important;
+                  @include smd {
+                    min-width: 100% !important;
                   }
 
                   input {
@@ -255,8 +268,8 @@
 
                     font-size: 13px;
 
-                    @include sm {
-                      width: 100% !important;
+                    @include smd {
+                      min-width: 76vw !important;
                     }
 
                   }
@@ -302,11 +315,7 @@
                 width: 330px;
 
                 @include smd {
-                  width: 326px;
-                }
-
-                @include sm {
-                  width: 270px;
+                  width: 100%;
                 }
               }
 
@@ -317,11 +326,7 @@
                 width: 333px !important;
 
                 @include smd {
-                  width: 326px !important;
-                }
-
-                @include sm {
-                  width: 270px !important;
+                  width: 100% !important;
                 }
 
                 .time-field {
@@ -336,12 +341,12 @@
                     height: 52px;
                     padding-right: 5px;
 
-                    span {
-                      width: 11px;
+                    @include smd {
+                      width: 100% !important;
+                    }
 
-                      svg {
-                        width: 19px;
-                      }
+                    span {
+                      display: none;
                     }
                   }
 
@@ -363,10 +368,6 @@
                 direction: ltr;
                 outline: none !important;
 
-                @include sm {
-                  width: 270px;
-                }
-
                 input {
                   padding: 0;
                 }
@@ -386,6 +387,10 @@
                 padding-left: 0px;
                 text-align: right;
                 width: 290px;
+
+                @include smd {
+                  width: 100vw !important;
+                }
               }
 
               //end date range
@@ -403,13 +408,8 @@
                 padding-right: 5px;
 
                 @include smd {
-                  width: 326px !important;
+                  width: 100% !important;
                 }
-
-                @include sm {
-                  width: 270px !important;
-                }
-
 
                 #date-input {
                   border: none;
@@ -422,7 +422,7 @@
                   height: 52px;
 
                   @include smd {
-                    width: 200px !important;
+                    width: 75vw !important;
                   }
                 }
               }
@@ -432,7 +432,7 @@
           }
 
           .categories {
-            padding-left: 100px;
+            padding-left: 0px;
 
             .title {
               font-size: 15px;
@@ -452,17 +452,8 @@
               grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
               grid-gap: 15px;
 
-              @include sm {
-                grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-
-                grid-gap: 5px;
-
-              }
-
-              .item {
-                @include sm {
-                  max-width: 320px;
-                }
+              @include smd {
+                grid-template-columns: repeat(auto-fit, minmax(142px, 1fr));
               }
             }
           }
@@ -554,6 +545,7 @@
                   .checkbox {
                     display: flex;
                     align-items: center;
+                    height: 45px;
 
                     /* The container */
                     .container {
@@ -573,7 +565,7 @@
 
                       @include sm {
                         font-weight: 400;
-                        font-size: 11px;
+                        font-size: 9px;
                       }
 
                       .text {
@@ -593,7 +585,7 @@
                     /* Create a custom checkbox */
                     .checkmark {
                       position: absolute;
-                      top: 10px;
+                      top: 4px;
                       left: 50px;
                       height: 25px;
                       width: 25px;
@@ -676,6 +668,7 @@
             gap: 22px;
 
             input {
+              padding-left: 0;
               @include sm {
                 width: 270px;
               }
@@ -731,6 +724,10 @@
           align-items: center;
           margin-top: 32px;
           cursor: pointer;
+
+          @include sm {
+            width: 272px;
+          }
         }
       }
 
@@ -962,4 +959,12 @@
       }
     }
   }
+}
+
+.spinner-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -27,7 +27,6 @@
         font-weight: 700;
         margin-bottom: 32px;
         color: #1A202C;
-        text-align: center;
       }
 
       &:not(:last-child) {
@@ -58,6 +57,10 @@
             }
 
             width: 100%;
+
+            @include sm {
+              max-width: 275px;
+            }
           }
 
           .ant-input-number {
@@ -170,12 +173,16 @@
     }
 
     .btn {
-      width: 272px;
+      width: 320px;
       padding: 13px 0;
       font-size: 14px;
       line-height: 24px;
       font-weight: 700;
       margin-right: 25px;
+
+      @include sm {
+        width: 270px;
+      }
     }
   }
 }

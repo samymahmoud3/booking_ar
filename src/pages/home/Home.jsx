@@ -72,7 +72,7 @@ const Home = () => {
               iconName={ item.iconName }
               title={ item.title }
               description={ item.description }
-              width={ "279px" }
+              width={ "249px" }
               color="#8D9094"
             />
           )) }
